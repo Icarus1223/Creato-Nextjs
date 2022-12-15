@@ -1,12 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./pages/**/*.tsx",
+    "./src/**/*.tsx",
   ],
   darkMode: 'class',
   theme: {
-    extend: {},
+    screens: {
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
+    },
     colors: {
       neutral: {
         50: '#f5f5f4',
@@ -67,7 +73,8 @@ module.exports = {
         700: '#B91C1C',
         800: '#991B1B',
         900: '#7F1D1D'
-      }
+      },
+      white: '#FFFFFF'
     }
   },
   plugins: [],
