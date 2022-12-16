@@ -4,7 +4,7 @@ import Container from "../src/components/Container";
 export default function Home() {
   return (
     <div className="px-2 py-2">
-      <h1 className="text-2xl">Colors</h1>
+      <h1 className="text-3xl">Colors</h1>
       <h1 className="text-xl">Neutral</h1>
       <div className="flex">
         <div className="w-[130px] h-[50px] bg-neutral-50">50</div>
@@ -71,7 +71,7 @@ export default function Home() {
         <div className="w-[130px] h-[50px] bg-error-900">900</div>
       </div>
       <br />
-      <h1 className="text-2xl">Buttons</h1>
+      <h1 className="text-3xl">Buttons</h1>
       <h2 className="text-xl">Primary</h2>
       <div className="flex">
         <Button
@@ -112,7 +112,7 @@ export default function Home() {
           disabled
         />
       </div>
-      <h2 className="text-2xl">Secondary</h2>
+      <h2 className="text-xl">Secondary</h2>
       <div className="flex">
         <Button
           color="secondary"
@@ -158,7 +158,7 @@ export default function Home() {
         />
       </div>
       <br />
-      <h1 className="text-2xl">Container</h1>
+      <h1 className="text-3xl">Container</h1>
       <h2 className="text-xl">Primary</h2>
       <div className="flex">
         <Container

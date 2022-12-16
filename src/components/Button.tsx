@@ -34,7 +34,6 @@ export default function Button(props: ButtonProps) {
 
     return (
         <button
-            style={{ width: width ? width : '' }}
             className={`
                 ${text ? 'p-[16px]' : 'p-[8px] w-[40px] h-[40px]'}
                 transition duration-300

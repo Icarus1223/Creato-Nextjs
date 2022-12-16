@@ -31,8 +31,8 @@ export default function Container(props: ButtonProps) {
 
     return (
         <button
-            style={{ width: width ? width : '330px' }}
             className={`
+                w-[330px]
                 ${icon ? 'py-[1px]' : 'py-[11.5px]'}
                 transition duration-300
                 flex items-center justify-center
