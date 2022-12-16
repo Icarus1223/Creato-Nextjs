@@ -7,10 +7,10 @@ module.exports = {
   darkMode: 'class',
   theme: {
     screens: {
-      'sm': '640px',
-      'md': '768px',
-      'lg': '1024px',
-      'xl': '1280px',
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
       '2xl': '1536px',
     },
     colors: {
@@ -75,6 +75,14 @@ module.exports = {
         900: '#7F1D1D'
       },
       white: '#FFFFFF'
+    },
+    fontSize: {
+      sm: ['14px', '18px'],
+      base: ['16px', '18px'],
+      lg: ['18px', '20px'],
+      xl: ['22px', '26px'],
+      '2xl': ['24px', '28px'],
+      '3xl': ['26px', '30px']
     }
   },
   plugins: [],

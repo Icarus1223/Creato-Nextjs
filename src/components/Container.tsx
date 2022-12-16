@@ -4,7 +4,6 @@ import Icon from "./Icon"
 interface ButtonProps {
     color?: string,
     text?: string,
-    rounded: string,
     outlined?: boolean,
     disabled?: boolean,
     width?: string,
@@ -12,8 +11,8 @@ interface ButtonProps {
     handleClick?: MouseEventHandler
 }
 
-export default function Button(props: ButtonProps) {
-    const { color, text, rounded, outlined, disabled, icon, width, handleClick } = props
+export default function Container(props: ButtonProps) {
+    const { color, text, outlined, disabled, icon, width, handleClick } = props
     const [hover, setHover] = useState(false)
 
     const buttonConfig: any = {
@@ -27,19 +26,17 @@ export default function Button(props: ButtonProps) {
             fill: 'bg-secondary-500 text-white hover:bg-secondary-300 active:bg-secondary-500',
             outline: 'outline outline-1 text-secondary-500 bg-white hover:outline-0 hover:bg-secondary-300 hover:text-white active:bg-secondary-500 active:text-white'
         },
-        rounded: 'rounded-[8px]',
-        pill: 'rounded-full',
         disable: 'bg-neutral-100 cursor-not-allowed text-neutral-500',
     }
 
     return (
         <button
-            style={{ width: width ? width : '' }}
+            style={{ width: width ? width : '330px' }}
             className={`
-                ${text ? 'p-[16px]' : 'p-[8px] w-[40px] h-[40px]'}
+                ${icon ? 'py-[1px]' : 'py-[11.5px]'}
                 transition duration-300
                 flex items-center justify-center
-                ${buttonConfig[rounded]}
+                rounded-[10px]
                 ${disabled && buttonConfig.disable}
                 ${color && (outlined ? buttonConfig[color].outline : buttonConfig[color].fill)}
             `}
@@ -48,7 +45,7 @@ export default function Button(props: ButtonProps) {
             onMouseLeave={() => setHover(false)}
         >
             {icon &&
-                <div className={text ? 'w-[20px] h-[20px] flex justify-center items-center mr-[8px]' : ''}>
+                <div className={text ? 'w-[40px] h-[40px] flex justify-center items-center' : ''}>
                     <Icon
                         icon={icon}
                         color={`
@@ -60,7 +57,7 @@ export default function Button(props: ButtonProps) {
                     />
                 </div>
             }
-            <span className="text-[16px] leading-5 font-normal">{text}</span>
+            <span className="text-[16px] leading-5 font-normal tracking-wider">{text}</span>
         </button>
     )
 }
