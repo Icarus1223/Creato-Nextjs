@@ -1,6 +1,3 @@
-import Button from "../src/components/Button";
-import Container from "../src/components/Container";
-
 export default function Home() {
   return (
     <div className="px-2 py-2">
@@ -77,6 +74,12 @@ export default function Home() {
       <h4>H4 heading</h4>
       <h5>H5 heading</h5>
       <h6>H6 heading</h6>
+      <br />
+      <h1 className="font-light">Light</h1>
+      <h1 className="font-normal">Normal</h1>
+      <h1 className="font-semibold">SemiBold</h1>
+      <h1 className="font-bold">Bold</h1>
+      <h1 className="font-extrabold">Extra Bold</h1>
       {/* <h1>Buttons</h1>
       <h2>Primary</h2>
       <div className="flex">

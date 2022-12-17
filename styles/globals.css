@@ -2,6 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'Lato-light';
+    src: url('./../src/fonts/lato/Lato-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Lato-normal';
+    src: url('./../src/fonts/lato/Lato-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Lato-semibold';
+    src: url('./../src/fonts/lato/Lato-Semibold.ttf');
+}
+
+@font-face {
+    font-family: 'Lato-bold';
+    src: url('./../src/fonts/lato/Lato-Bold.ttf')
+}
+
+@font-face {
+    font-family: 'Lato-extrabold';
+    src: url('./../src/fonts/lato/Lato-Heavy.ttf');
+}
+
 h1 {
     @apply text-2xl sm:text-3xl
 }
@@ -29,4 +54,3 @@ h6 {
 button {
     @apply p-4
 }
-

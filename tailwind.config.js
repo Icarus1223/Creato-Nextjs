@@ -84,6 +84,13 @@ module.exports = {
       xl: ['22px', '26px'],
       '2xl': ['24px', '28px'],
       '3xl': ['26px', '30px']
+    },
+    fontFamily: {
+      'light': ['Lato-light'],
+      'normal': ['Lato-normal'],
+      'semibold': ['Lato-semibold'],
+      'bold': ['Lato-bold'],
+      'extrabold': ['Lato-extrabold']
     }
   },
   plugins: [],
