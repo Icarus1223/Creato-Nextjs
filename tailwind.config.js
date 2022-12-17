@@ -77,9 +77,10 @@ module.exports = {
       white: '#FFFFFF'
     },
     fontSize: {
-      sm: ['14px', '18px'],
-      base: ['16px', '18px'],
-      lg: ['18px', '20px'],
+      xm: ['14px', '18px'],
+      sm: ['16px', '18px'],
+      base: ['18px', '20px'],
+      lg: ['20px', '24px'],
       xl: ['22px', '26px'],
       '2xl': ['24px', '28px'],
       '3xl': ['26px', '30px']
