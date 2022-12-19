@@ -77,148 +77,16 @@ export default function Home() {
       <br />
       <h1 className="font-light">Light</h1>
       <h1 className="font-normal">Normal</h1>
+      <h1 className="font-normalitalic">Normal Italic</h1>
       <h1 className="font-semibold">SemiBold</h1>
       <h1 className="font-bold">Bold</h1>
       <h1 className="font-extrabold">Extra Bold</h1>
-      {/* <h1>Buttons</h1>
-      <h2>Primary</h2>
-      <div className="flex">
-        <Button
-          color="primary"
-          text="Primary Rounded Fill"
-          rounded="rounded"
-          handleClick={() => { console.log("Primary Rounded Fill") }}
-        />
-        <Button
-          color="primary"
-          text="Primary Pill Fill"
-          rounded="pill"
-          handleClick={() => { console.log("Primary Pill Fill") }}
-        />
-        <Button
-          color="primary"
-          text="Primary Rounded Outline"
-          rounded="rounded"
-          outlined
-          handleClick={() => { console.log("Primary Rounded Outline") }}
-        />
-        <Button
-          color="primary"
-          text="Primary Pill Outline"
-          rounded="pill"
-          outlined
-          handleClick={() => { console.log("Primary Rounded Fill") }}
-        />
-        <Button
-          text="Disable Rouned Fill"
-          rounded="rounded"
-          disabled
-          handleClick={() => { console.log("Primary Rounded Fill") }}
-        />
-        <Button
-          text="Disable Pill Outline"
-          rounded="pill"
-          disabled
-        />
-      </div>
-      <h2>Secondary</h2>
-      <div className="flex">
-        <Button
-          color="secondary"
-          text="Secondary Rounded Fill"
-          rounded="rounded"
-        />
-        <Button
-          color="secondary"
-          text="Secondary Pill Fill"
-          rounded="pill"
-        />
-        <Button
-          color="secondary"
-          text="Secondary Rounded Fill"
-          rounded="rounded"
-          outlined
-        />
-        <Button
-          color="secondary"
-          text="Secondary Pill Outline"
-          rounded="pill"
-          outlined
-        />
-        <Button
-          color="secondary"
-          rounded="pill"
-          outlined
-          icon="close"
-        />
-        <Button
-          text="primary"
-          color="secondary"
-          rounded="pill"
-          outlined
-          icon="close"
-        />
-        <Button
-          text="primary"
-          width="300px"
-          color="secondary"
-          rounded="rounded"
-          icon="close"
-        />
-      </div>
       <br />
-      <h1>Container</h1>
-      <h2>Primary</h2>
-      <div className="flex">
-        <Container
-          color="primary"
-          text="Primary Rounded Fill"
-        />
-        <Container
-          color="primary"
-          text="Primary Rounded Fill"
-          icon="close"
-        />
-         <Container
-          color="primary"
-          text="Primary Rounded Fill"
-          outlined
-        />
-        <Container
-          color="primary"
-          text="Primary Rounded Fill"
-          outlined
-          icon="close"
-        />
-        <Container
-          disabled
-          text="Primary Rounded Fill"
-          icon="close"
-        />
-      </div>
-      <h2>Secondary</h2>
-      <div className="flex">
-      <Container
-          color="secondary"
-          text="Primary Rounded Fill"
-        />
-        <Container
-          color="secondary"
-          text="Primary Rounded Fill"
-          icon="close"
-        />
-         <Container
-          color="secondary"
-          text="Primary Rounded Fill"
-          outlined
-        />
-        <Container
-          color="secondary"
-          text="Primary Rounded Fill"
-          outlined
-          icon="close"
-        />
-      </div> */}
+      <h1>Input</h1>
+      <h2>Normal</h2>
+      <input type="text" defaultValue="Normal" />
+      <h2>Placeholder</h2>
+      <input type="text" placeholder="Placeholder" />
     </div>
   );
 }

@@ -88,6 +88,7 @@ module.exports = {
     fontFamily: {
       'light': ['Lato-light'],
       'normal': ['Lato-normal'],
+      'normalitalic': ['Lato-normal-italic'],
       'semibold': ['Lato-semibold'],
       'bold': ['Lato-bold'],
       'extrabold': ['Lato-extrabold']
