@@ -1,16 +1,13 @@
-import React from "react";
-import { ButtonProps } from "./interface";
-import IconButton from "./IconButton";
-import TextButton from "./TextButton";
-import TextWithIconButton from "./TextwithIconButton";
+import BaseButton, { BaseButtonProps } from "./BaseButton"
 
-export default function PrimaryButton(props: ButtonProps) {
-    const { text, icon } = props
+export default function PrimaryButton(props: BaseButtonProps) {
     return (
-        <React.Fragment>
-            {(text && typeof icon === 'undefined') && <TextButton />}
-            {(typeof text === 'undefined' && icon) && <IconButton />}
-            {(text && icon) && <TextWithIconButton />}
-        </React.Fragment>
+        <BaseButton
+            type="button"
+            className={`${props.outline === 'true' ? 'btn-primary-outline' : 'btn-primary'} ${props.rounded === 'true' ? 'btn-rounded' : 'btn-pill'}`}
+            {...props}
+        >
+            <span>{props.value}</span>
+        </BaseButton>
     )
 }

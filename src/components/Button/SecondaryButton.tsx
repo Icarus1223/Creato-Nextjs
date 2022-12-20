@@ -1,10 +1,13 @@
-import { ButtonProps } from "./interface";
+import BaseButton, { BaseButtonProps } from "./BaseButton"
 
-export default function SecondaryButton(props: ButtonProps) {
+export default function PrimaryButton(props: BaseButtonProps) {
     return (
-        <button>
-            <span></span>
-            <span></span>
-        </button>
+        <BaseButton
+            type="button"
+            className={`${props.outline === 'true' ? 'btn-secondary-outline' : 'btn-secondary'} ${props.rounded === 'true' ? 'btn-rounded' : 'btn-pill'}`}
+            {...props}
+        >
+            <span>{props.value}</span>
+        </BaseButton>
     )
 }

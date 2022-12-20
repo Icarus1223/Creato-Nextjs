@@ -114,3 +114,51 @@ select:hover {
 option {
     @apply text-neutral-800 font-normal text-sm
 }
+
+button[type="button"] {
+    @apply transition duration-300 leading-5 text-[16px] font-normal
+}
+
+button[type="button"]:active {
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+button[type="button"]:disabled {
+    @apply bg-neutral-100 cursor-not-allowed text-neutral-500
+}
+
+button[type="button"]:disabled:hover {
+    @apply bg-neutral-100 cursor-not-allowed text-neutral-500
+}
+
+button[type="button"]:disabled:active {
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.15);
+}
+
+.btn {
+    @apply px-4 py-4
+}
+
+.btn-rounded {
+    @apply rounded-[8px]
+}
+
+.btn-pill {
+    @apply rounded-full
+}
+
+.btn-primary {
+    @apply bg-primary-600 hover:bg-primary-300 active:bg-primary-600 text-shades-0
+}
+
+.btn-primary-outline {
+    @apply outline outline-1 text-primary-600 bg-shades-0 hover:text-shades-0 hover:bg-primary-300 hover:outline-none active:bg-primary-600
+}
+
+.btn-secondary {
+    @apply bg-secondary-600 hover:bg-secondary-300 active:bg-secondary-600 text-shades-0
+}
+
+.btn-secondary-outline {
+    @apply outline outline-1 text-secondary-600 bg-shades-0 hover:text-shades-0 hover:bg-secondary-300 hover:outline-none active:bg-secondary-600
+}
