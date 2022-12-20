@@ -50,16 +50,11 @@ export default function Home() {
       <div className="flex">
         <Button.PrimaryButton value="PrimaryButton" rounded="true"></Button.PrimaryButton>
         <Button.PrimaryButton value="PrimaryButton" outline="true"></Button.PrimaryButton>
-        <Button.PrimaryButton value={"PrimaryButton"} disabled></Button.PrimaryButton>
+        <Button.PrimaryButton value={"PrimaryButton"} disabled onClick={() => alert("test")}></Button.PrimaryButton>
         <Button.SecondaryButton value="ScondaryButton"></Button.SecondaryButton>
         <Button.SecondaryButton value="ScondaryButton" outline="true" rounded="true"></Button.SecondaryButton>
         <Button.PrimaryButton value="PrimaryButton" rounded="true"><Icon icon="close" /></Button.PrimaryButton>
         <Button.PrimaryButton value="PrimaryButton" outline="true"><Icon icon="close" /></Button.PrimaryButton>
-        <Button.PrimaryButton value={"PrimaryButton"} disabled></Button.PrimaryButton>
-        <Button.SecondaryButton value="ScondaryButton"><Icon icon="close" /></Button.SecondaryButton>
-        <Button.SecondaryButton value="ScondaryButton" outline="true"><Icon icon="close" /></Button.SecondaryButton>
-        <Button.PrimaryButton rounded="true"><Icon icon="close" /></Button.PrimaryButton>
-        <Button.PrimaryButton outline="true"><Icon icon="close" /></Button.PrimaryButton>
       </div>
     </div>
   );
