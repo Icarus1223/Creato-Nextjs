@@ -1,4 +1,5 @@
 import { Button } from "../src/components/Button";
+import Icon from "../src/components/Icon";
 
 export default function Home() {
   return (
@@ -46,11 +47,20 @@ export default function Home() {
       </select>
       <br /><br />
       <h1>Button</h1>
-      <Button.PrimaryButton value="PrimaryButton" rounded="true"></Button.PrimaryButton>
-      <Button.PrimaryButton value="PrimaryButton" outline="true"></Button.PrimaryButton>
-      <Button.PrimaryButton value={"PrimaryButton"} disabled></Button.PrimaryButton>
-      <Button.SecondaryButton value="ScondaryButton"></Button.SecondaryButton>
-      <Button.SecondaryButton value="ScondaryButton" outline="true" rounded="true"></Button.SecondaryButton>
+      <div className="flex">
+        <Button.PrimaryButton value="PrimaryButton" rounded="true"></Button.PrimaryButton>
+        <Button.PrimaryButton value="PrimaryButton" outline="true"></Button.PrimaryButton>
+        <Button.PrimaryButton value={"PrimaryButton"} disabled></Button.PrimaryButton>
+        <Button.SecondaryButton value="ScondaryButton"></Button.SecondaryButton>
+        <Button.SecondaryButton value="ScondaryButton" outline="true" rounded="true"></Button.SecondaryButton>
+        <Button.PrimaryButton value="PrimaryButton" rounded="true"><Icon icon="close" /></Button.PrimaryButton>
+        <Button.PrimaryButton value="PrimaryButton" outline="true"><Icon icon="close" /></Button.PrimaryButton>
+        <Button.PrimaryButton value={"PrimaryButton"} disabled></Button.PrimaryButton>
+        <Button.SecondaryButton value="ScondaryButton"><Icon icon="close" /></Button.SecondaryButton>
+        <Button.SecondaryButton value="ScondaryButton" outline="true"><Icon icon="close" /></Button.SecondaryButton>
+        <Button.PrimaryButton rounded="true"><Icon icon="close" /></Button.PrimaryButton>
+        <Button.PrimaryButton outline="true"><Icon icon="close" /></Button.PrimaryButton>
+      </div>
     </div>
   );
 }

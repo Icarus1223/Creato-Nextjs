@@ -50,12 +50,12 @@ export default function Button(props: ButtonProps) {
                 <div className={text ? 'w-[20px] h-[20px] flex justify-center items-center mr-[8px]' : ''}>
                     <Icon
                         icon={icon}
-                        color={`
-                            transition duration-300
-                            ${disabled ? 'fill-neutral-500' :
-                                color ? (outlined && hover) || !outlined ?
-                                    'fill-white' : `${buttonConfig[color].iconColor}` : ''}
-                        `}
+                        // color={`
+                        //     transition duration-300
+                        //     ${disabled ? 'fill-neutral-500' :
+                        //         color ? (outlined && hover) || !outlined ?
+                        //             'fill-white' : `${buttonConfig[color].iconColor}` : ''}
+                        // `}
                     />
                 </div>
             }
