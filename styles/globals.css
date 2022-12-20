@@ -60,30 +60,57 @@ button {
     @apply p-4
 }
 
-input[type="text"] {
-    @apply outline outline-1 outline-neutral-800 bg-white rounded-[15px] px-4 py-[15px] font-normal text-sm
+input {
+    @apply outline outline-1 outline-neutral-800 bg-shades-0 rounded-[15px] px-4 py-[15px] font-normal text-sm text-neutral-800
 }
 
-input[type="text"]::placeholder {
-    @apply font-normalitalic text-neutral-800
+input::placeholder {
+    @apply font-normalitalic text-neutral-800 text-sm
 }
 
-input[type="text"]:hover {
+input:hover {
     @apply outline-primary-500 text-primary-500
 }
 
-input[type="text"]:hover::placeholder {
+input:hover::placeholder {
     @apply text-primary-500
 }
 
-input[type="text"]:focus {
+input:focus {
     @apply outline-neutral-800 text-neutral-800
 }
 
-input[type="text"]:focus::placeholder {
+input:focus::placeholder {
     color: transparent;
 }
 
-input[type="text"]:disabled {
-    
+input:disabled {
+    @apply bg-neutral-100 outline-none cursor-not-allowed
+}
+
+input:disabled:hover {
+    @apply text-neutral-800
+}
+
+input:disabled:hover::placeholder {
+    @apply text-neutral-800
+}
+
+select {
+    appearance: none;
+    background: transparent;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: calc(100% - 10px);
+    background-position-y: 10px;
+    @apply outline outline-1 outline-neutral-800 bg-shades-0 rounded-[15px] pl-4 pr-8 py-[13.5px] font-normal text-sm text-neutral-800
+}
+
+select:hover {
+    background-image: url("data:image/svg+xml;utf8,<svg fill='rgb(239 ,160, 88)' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    @apply outline-primary-500 text-primary-500
+}
+
+option {
+    @apply text-neutral-800 font-normal text-sm
 }
