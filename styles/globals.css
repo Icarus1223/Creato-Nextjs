@@ -65,11 +65,11 @@ input::placeholder {
 }
 
 input:hover {
-    @apply outline-primary-500 text-primary-500
+    @apply outline-primary-600 text-primary-600
 }
 
 input:hover::placeholder {
-    @apply text-primary-500
+    @apply text-primary-600
 }
 
 input:focus {
@@ -104,7 +104,12 @@ select {
 
 select:hover {
     background-image: url("data:image/svg+xml;utf8,<svg fill='rgb(239 ,160, 88)' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
-    @apply outline-primary-500 text-primary-500
+    @apply outline-primary-600 text-primary-600
+}
+
+select:focus {
+    background-image: url("data:image/svg+xml;utf8,<svg fill='rgb(199 ,105, 19)' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    @apply outline-primary-700 text-primary-700
 }
 
 option {
@@ -152,7 +157,7 @@ button[type="button"]:disabled svg {
 }
 
 .btn-primary {
-    @apply bg-primary-600 hover:bg-primary-300 active:bg-primary-600 text-shades-0
+    @apply bg-primary-600 hover:bg-primary-300 active:bg-primary-700 text-shades-0
 }
 
 .btn-primary svg {
@@ -160,7 +165,7 @@ button[type="button"]:disabled svg {
 }
 
 .btn-primary-outline {
-    @apply outline outline-1 text-primary-600 bg-shades-0 hover:text-shades-0 hover:bg-primary-300 hover:outline-none active:bg-primary-600
+    @apply outline outline-1 text-primary-600 bg-shades-0 hover:text-shades-0 hover:bg-primary-300 hover:outline-none active:bg-primary-700
 }
 
 .btn-primary-outline svg {
@@ -172,7 +177,7 @@ button[type="button"]:disabled svg {
 }
 
 .btn-secondary {
-    @apply bg-secondary-600 hover:bg-secondary-300 active:bg-secondary-600 text-shades-0
+    @apply bg-secondary-600 hover:bg-secondary-300 active:bg-secondary-700 text-shades-0
 }
 
 .btn-secondary svg {
@@ -180,7 +185,7 @@ button[type="button"]:disabled svg {
 }
 
 .btn-secondary-outline {
-    @apply outline outline-1 text-secondary-600 bg-shades-0 hover:text-shades-0 hover:bg-secondary-300 hover:outline-none active:bg-secondary-600
+    @apply outline outline-1 text-secondary-600 bg-shades-0 hover:text-shades-0 hover:bg-secondary-300 hover:outline-none active:bg-secondary-700
 }
 
 .btn-secondary-outline svg {
