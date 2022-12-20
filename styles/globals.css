@@ -120,7 +120,7 @@ button[type="button"]:active {
 }
 
 button[type="button"]:disabled {
-    @apply bg-neutral-100 cursor-not-allowed text-neutral-500
+    @apply bg-neutral-100 cursor-not-allowed text-neutral-500 outline-none
 }
 
 button[type="button"]:disabled:hover {
@@ -189,4 +189,32 @@ button[type="button"]:disabled svg {
 
 .btn-secondary-outline:hover svg {
     @apply fill-shades-0
+}
+
+.containerBtn {
+    @apply py-[11.5px] rounded-[10px]
+}
+
+.containerBtn-primary {
+    @apply bg-primary-600 hover:bg-primary-300 active:bg-primary-600 text-shades-0
+}
+
+.containerBtn-primary svg {
+    @apply fill-shades-0
+}
+
+.containerBtn-secondary {
+    @apply outline outline-1 text-primary-600 bg-shades-0 hover:text-shades-0 hover:bg-primary-300 hover:outline-none active:bg-primary-600
+}
+
+.containerBtn-secondary svg {
+    @apply fill-primary-600
+}
+
+.containerBtn-secondary:hover svg {
+    @apply fill-shades-0
+}
+
+.containerBtn:active {
+    @apply bg-primary-700
 }

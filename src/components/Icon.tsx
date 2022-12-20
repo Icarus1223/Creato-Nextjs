@@ -1,4 +1,4 @@
-import CloseIcon from "./svg"
+import { CloseIcon } from "./svg"
 
 interface IconProps {
     icon: string

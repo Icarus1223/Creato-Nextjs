@@ -1,4 +1,5 @@
 import { Button } from "../src/components/Button";
+import { ContainerButton } from "../src/components/ContainerButton";
 import Icon from "../src/components/Icon";
 
 export default function Home() {
@@ -51,11 +52,20 @@ export default function Home() {
         <Button.PrimaryButton value="PrimaryButton" rounded="true"></Button.PrimaryButton>
         <Button.PrimaryButton value="PrimaryButton" outline="true"></Button.PrimaryButton>
         <Button.PrimaryButton value={"PrimaryButton"} disabled onClick={() => alert("test")}></Button.PrimaryButton>
-        <Button.SecondaryButton value="ScondaryButton"></Button.SecondaryButton>
+        <Button.SecondaryButton disabled value="ScondaryButton"></Button.SecondaryButton>
         <Button.SecondaryButton value="ScondaryButton" outline="true" rounded="true"></Button.SecondaryButton>
         <Button.PrimaryButton value="PrimaryButton" rounded="true"><Icon icon="close" /></Button.PrimaryButton>
         <Button.PrimaryButton value="PrimaryButton" outline="true"><Icon icon="close" /></Button.PrimaryButton>
       </div>
+      <h1>Container Button</h1>
+      <div className="flex">
+        <ContainerButton.PrimaryButton value="Primary Button"></ContainerButton.PrimaryButton>
+        <ContainerButton.SecondaryButton value="Secondary Button"></ContainerButton.SecondaryButton>
+        <ContainerButton.PrimaryButton disabled value="Primary Button"></ContainerButton.PrimaryButton>
+        <ContainerButton.SecondaryButton disabled value="Secondary Button"></ContainerButton.SecondaryButton>
+      </div>
+      <ContainerButton.PrimaryButton value="Primary Button"><Icon icon="close" /></ContainerButton.PrimaryButton>
+      <ContainerButton.SecondaryButton value="Secondary Button"><Icon icon="close" /></ContainerButton.SecondaryButton>
     </div>
   );
 }
