@@ -20,8 +20,8 @@ export default function Home() {
       <h1 className="font-extrabold">Extra Bold</h1>
       <br /><br />
       <h1>Input</h1>
-      <h2>Normal</h2>
-      <input type="text" defaultValue="Normal" />
+      <h2>TEXT</h2>
+      <input type="text" defaultValue="Default Input" />
       <h2>Placeholder</h2>
       <input type="text" placeholder="Placeholder" />
       <h2>Disabled with Text</h2>
@@ -64,8 +64,10 @@ export default function Home() {
         <ContainerButton.PrimaryButton disabled value="Primary Button"></ContainerButton.PrimaryButton>
         <ContainerButton.SecondaryButton disabled value="Secondary Button"></ContainerButton.SecondaryButton>
       </div>
-      <ContainerButton.PrimaryButton value="Primary Button"><Icon icon="close" /></ContainerButton.PrimaryButton>
-      <ContainerButton.SecondaryButton value="Secondary Button"><Icon icon="close" /></ContainerButton.SecondaryButton>
+      <div className="flex">
+        <ContainerButton.PrimaryButton value="Primary Button"><Icon icon="close" /></ContainerButton.PrimaryButton>
+        <ContainerButton.SecondaryButton value="Secondary Button"><Icon icon="close" /></ContainerButton.SecondaryButton>
+      </div>
     </div>
   );
 }
