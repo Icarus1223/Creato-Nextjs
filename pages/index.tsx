@@ -1,5 +1,6 @@
 import { Button } from "../src/components/Button";
 import { ContainerButton } from "../src/components/ContainerButton";
+import { Input } from "../src/components/Input";
 import Icon from "../src/components/Icon";
 
 export default function Home() {
@@ -21,21 +22,21 @@ export default function Home() {
       <br /><br />
       <h1>Input</h1>
       <h2>TEXT</h2>
-      <input type="text" defaultValue="Default Input" />
+      <Input.TextInput value="Text Input"></Input.TextInput>
       <h2>Placeholder</h2>
-      <input type="text" placeholder="Placeholder" />
+      <Input.TextInput placeholder="text placeholder"></Input.TextInput>
       <h2>Disabled with Text</h2>
-      <input type="text" defaultValue={"Disabled Normal"} disabled />
+      <Input.TextInput value={"Text Input"} disabled></Input.TextInput>
       <h2>Disabled with Placeholder</h2>
-      <input type="text" placeholder="Disabled Placeholder" disabled />
+      <Input.TextInput placeholder="text placeholder" disabled></Input.TextInput>
       <h2>Number Normal</h2>
-      <input type="number" defaultValue="123" />
+      <Input.NumberInput value={23}></Input.NumberInput>
       <h2>Placeholder</h2>
-      <input type="number" placeholder="Mumber placeholder" />
+      <Input.NumberInput placeholder="Number"></Input.NumberInput>
       <h2>Disabled with Text</h2>
-      <input type="number" defaultValue={"12321"} disabled />
+      <Input.NumberInput value={23} disabled></Input.NumberInput>
       <h2>Disabled with Placeholder</h2>
-      <input type="number" placeholder="Number placeholder" disabled />
+      <Input.NumberInput placeholder="Number" disabled></Input.NumberInput>
       <br /><br />
       <h1>Select</h1>
       <select>

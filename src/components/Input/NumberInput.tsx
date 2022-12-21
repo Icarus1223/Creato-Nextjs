@@ -1,11 +1,11 @@
 import BaseInput, { IBaseInputProps } from "./BaseInput";
 
 interface BaseNumberInputProps extends IBaseInputProps {
-    value: number
+    value?: number
 }
 
 function NumberInput(props: BaseNumberInputProps) {
-    return <BaseInput {...props} />
+    return <BaseInput type="number" {...props} />
 }
 
 export default NumberInput
