@@ -4,8 +4,8 @@ interface BaseNumberInputProps extends IBaseInputProps {
     value?: number
 }
 
-function NumberInput(props: BaseNumberInputProps) {
-    return <BaseInput type="number" {...props} />
+const NumberInput: React.FunctionComponent<BaseNumberInputProps> = ({ step, min, max, ...props }) => {
+    return <BaseInput type="number" max={max} min={min} step={step} {...props} />
 }
 
 export default NumberInput

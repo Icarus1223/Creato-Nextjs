@@ -37,6 +37,12 @@ export default function Home() {
       <Input.NumberInput value={23} disabled></Input.NumberInput>
       <h2>Disabled with Placeholder</h2>
       <Input.NumberInput placeholder="Number" disabled></Input.NumberInput>
+      <h2>Password</h2>
+      <Input.PasswordInput></Input.PasswordInput>
+      <h2>CheckBox</h2>
+      <Input.CheckBox checked></Input.CheckBox>
+      <h2>Date</h2>
+      <Input.DateInput></Input.DateInput>
       <br /><br />
       <h1>Select</h1>
       <select>

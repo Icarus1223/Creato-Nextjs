@@ -4,8 +4,8 @@ interface BaseTextInputProps extends IBaseInputProps {
     value?: string
 }
 
-function TextInput(props: BaseTextInputProps) {
-    return <BaseInput type="text" {...props} />
+const TextInput: React.FunctionComponent<BaseTextInputProps> = ({ required, ...props }) => {
+    return <BaseInput type="text" required {...props} />
 }
 
 export default TextInput
