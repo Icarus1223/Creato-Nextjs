@@ -22,30 +22,38 @@ export default function Home() {
       <br /><br />
       <h1>Input</h1>
       <h2>TEXT</h2>
-      <Input.TextInput value="Text Input"></Input.TextInput>
+      <Input.TextInput value="Text Input" onChange={() => {}}></Input.TextInput>
       <h2>Placeholder</h2>
       <Input.TextInput placeholder="text placeholder"></Input.TextInput>
       <h2>Disabled with Text</h2>
-      <Input.TextInput value={"Text Input"} disabled></Input.TextInput>
+      <Input.TextInput value="Text Input" disabled onChange={() => {}}></Input.TextInput>
       <h2>Disabled with Placeholder</h2>
       <Input.TextInput placeholder="text placeholder" disabled></Input.TextInput>
       <h2>Number Normal</h2>
-      <Input.NumberInput value={23}></Input.NumberInput>
+      <Input.NumberInput value={23} onChange={() => {}}></Input.NumberInput>
       <h2>Placeholder</h2>
       <Input.NumberInput placeholder="Number"></Input.NumberInput>
       <h2>Disabled with Text</h2>
-      <Input.NumberInput value={23} disabled></Input.NumberInput>
+      <Input.NumberInput value={23} disabled onChange={() => {}}></Input.NumberInput>
       <h2>Disabled with Placeholder</h2>
       <Input.NumberInput placeholder="Number" disabled></Input.NumberInput>
       <h2>Password</h2>
       <Input.PasswordInput></Input.PasswordInput>
       <h2>CheckBox</h2>
-      <Input.CheckBox checked></Input.CheckBox>
+      <Input.CheckBox checked onChange={() => {}}></Input.CheckBox>
       <h2>Date</h2>
       <Input.DateInput></Input.DateInput>
       <br /><br />
       <h1>Select</h1>
       <select>
+        <option>USD</option>
+        <option>AUD - AUSTRALIAN DOLLARS</option>
+        <option>SGD</option>
+        <option>HKD</option>
+        <option>TWD</option>
+        <option>JPY</option>
+      </select>
+      <select disabled>
         <option>USD</option>
         <option>AUD - AUSTRALIAN DOLLARS</option>
         <option>SGD</option>

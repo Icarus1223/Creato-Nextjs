@@ -112,6 +112,16 @@ select:focus {
     @apply outline-primary-700 text-primary-700
 }
 
+select:disabled {
+    background-image: url("data:image/svg+xml;utf8,<svg fill='rgb(84 ,80, 78)' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    @apply outline-none bg-neutral-100
+}
+
+select:disabled:hover {
+    background-image: url("data:image/svg+xml;utf8,<svg fill='rgb(84 ,80, 78)' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+   @apply text-neutral-800 
+}
+
 option {
     @apply text-neutral-800 font-normal text-sm
 }
