@@ -1,6 +1,7 @@
 import { Button } from "../src/components/Button";
 import { ContainerButton } from "../src/components/ContainerButton";
 import { Input } from "../src/components/Input";
+import { Avatar } from "../src/components/Avatar";
 import Icon from "../src/components/Icon";
 
 export default function Home() {
@@ -82,6 +83,11 @@ export default function Home() {
       <div className="flex">
         <ContainerButton.PrimaryButton value="Primary Button"><Icon icon="close" /></ContainerButton.PrimaryButton>
         <ContainerButton.SecondaryButton value="Secondary Button"><Icon icon="close" /></ContainerButton.SecondaryButton>
+      </div>
+      <h1>Avatar</h1>
+      <h2>CreatorAvatar</h2>
+      <div className="flex">
+          <Avatar.CreatorAvatar src="https://gravatar.com/avatar/6de1528243686644f4da9433a78607b3?s=400&d=robohash&r=x"/>
       </div>
     </div>
   );

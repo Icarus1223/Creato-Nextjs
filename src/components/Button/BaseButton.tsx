@@ -9,8 +9,6 @@ export interface BaseButtonProps extends IBaseButtonProps {
     width?: string | undefined
 }
 
-function BaseButton({ className, children, ...props }: BaseButtonProps) {
+export default function BaseButton({ className, children, ...props }: BaseButtonProps) {
     return <button className={`${props.value ? 'btn' : 'btn-icon'} ${className} ${props.width ? `w-full` : ''}`}{...props}>{children}</button>
 }
-
-export default BaseButton

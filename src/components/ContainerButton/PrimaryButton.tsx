@@ -1,6 +1,5 @@
 import BaseButton, { IBaseButtonProps } from "./BaseButton"
 
-
 export default function PrimaryButton(props: IBaseButtonProps) {
     return (
         <BaseButton
