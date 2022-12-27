@@ -87,7 +87,9 @@ export default function Home() {
       <h1>Avatar</h1>
       <h2>CreatorAvatar</h2>
       <div className="flex">
-          <Avatar.CreatorAvatar src="https://gravatar.com/avatar/6de1528243686644f4da9433a78607b3?s=400&d=robohash&r=x"/>
+          <Avatar.CreatorAvatar size="sm" src="https://i.pravatar.cc/150?img=3"/>
+          <Avatar.CreatorAvatar size="md" src="https://i.pravatar.cc/150?img=3"/>
+          <Avatar.CreatorAvatar size="lg" src="https://i.pravatar.cc/150?img=3"/>
       </div>
     </div>
   );

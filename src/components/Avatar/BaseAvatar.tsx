@@ -4,9 +4,9 @@ type IBaseImgProps = React.DetailedHTMLProps<
 >;
 
 export interface BaseImgProps extends IBaseImgProps {
-
+    size: string
 }
 
-export function BaseAvatar ({ className, ...props }: BaseImgProps) {
-    return <img className={`avatar ${className}`} {...props} />
+export function BaseAvatar ({ className, size, ...props }: BaseImgProps) {
+    return <img className={`avatar avatar-${size} ${className}`} {...props} />
 }

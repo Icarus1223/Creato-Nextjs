@@ -233,3 +233,19 @@ button[type="button"]:disabled svg {
 .containerBtn:active {
     @apply bg-primary-700
 }
+
+.avatar {
+    @apply rounded-full
+}
+
+.avatar-sm {
+    @apply w-[34px] h-[34px]
+}
+
+.avatar-md {
+    @apply w-[70px] h-[70px]
+}
+
+.avatar-lg {
+    @apply w-[120px] h-[120px]
+}
