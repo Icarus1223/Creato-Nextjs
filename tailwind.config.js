@@ -113,5 +113,7 @@ module.exports = {
       'extrabold': ['Lato-extrabold']
     }
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/line-clamp')
+  ],
 }

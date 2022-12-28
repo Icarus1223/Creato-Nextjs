@@ -117,11 +117,13 @@ export default function Home() {
       </div>
       <br/><br/>
       <h1>Chip</h1>
-      <Chip type="free">Free</Chip>
-      <Chip type="locked">Lock</Chip>
-      <Chip type="unlocked">Unlocked</Chip>
-      <Chip type="mine">Mine</Chip>
+      <Chip type="free" value="free" />
+      <Chip type="locked" value="Lock" />
+      <Chip type="unlocked" value="Unlocked"/>
+      <Chip type="mine" value="Mine" />
       <br/><br/>
+      <h1>BSK Card</h1>
+      <h2>Home Card</h2>
       <BSKCard.HomeCard
 
       />
