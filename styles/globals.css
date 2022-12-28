@@ -249,3 +249,15 @@ button[type="button"]:disabled svg {
 .avatar-lg {
     @apply w-[120px] h-[120px]
 }
+
+.sidemenu {
+    @apply h-[50px] w-[100%] bg-primary-500 rounded-[10px] flex px-2 py-[5px]
+}
+
+.sidemenu-menu {
+    @apply w-[50%] cursor-pointer flex justify-center text-shades-0 bg-primary-500 items-center rounded-[10px] font-bold text-sm sm:text-base
+}
+
+.sidemenu-menu.active {
+    @apply bg-shades-0 text-primary-500
+}

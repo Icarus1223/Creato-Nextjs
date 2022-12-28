@@ -2,9 +2,12 @@ import { Button } from "../src/components/Button";
 import { ContainerButton } from "../src/components/ContainerButton";
 import { Input } from "../src/components/Input";
 import { Avatar } from "../src/components/Avatar";
+import SideMenu from "../src/components/SideMenu";
 import Icon from "../src/components/Icon";
+import { useState } from "react";
 
 export default function Home() {
+  const [tab, setTab] = useState(0)
   return (
     <div className="px-2 py-2">
       <h1>H1 heading</h1>
@@ -23,25 +26,25 @@ export default function Home() {
       <br /><br />
       <h1>Input</h1>
       <h2>TEXT</h2>
-      <Input.TextInput value="Text Input" onChange={() => {}}></Input.TextInput>
+      <Input.TextInput value="Text Input" onChange={() => { }}></Input.TextInput>
       <h2>Placeholder</h2>
       <Input.TextInput placeholder="text placeholder"></Input.TextInput>
       <h2>Disabled with Text</h2>
-      <Input.TextInput value="Text Input" disabled onChange={() => {}}></Input.TextInput>
+      <Input.TextInput value="Text Input" disabled onChange={() => { }}></Input.TextInput>
       <h2>Disabled with Placeholder</h2>
       <Input.TextInput placeholder="text placeholder" disabled></Input.TextInput>
       <h2>Number Normal</h2>
-      <Input.NumberInput value={23} onChange={() => {}}></Input.NumberInput>
+      <Input.NumberInput value={23} onChange={() => { }}></Input.NumberInput>
       <h2>Placeholder</h2>
       <Input.NumberInput placeholder="Number"></Input.NumberInput>
       <h2>Disabled with Text</h2>
-      <Input.NumberInput value={23} disabled onChange={() => {}}></Input.NumberInput>
+      <Input.NumberInput value={23} disabled onChange={() => { }}></Input.NumberInput>
       <h2>Disabled with Placeholder</h2>
       <Input.NumberInput placeholder="Number" disabled></Input.NumberInput>
       <h2>Password</h2>
       <Input.PasswordInput></Input.PasswordInput>
       <h2>CheckBox</h2>
-      <Input.CheckBox checked onChange={() => {}}></Input.CheckBox>
+      <Input.CheckBox checked onChange={() => { }}></Input.CheckBox>
       <h2>Date</h2>
       <Input.DateInput></Input.DateInput>
       <br /><br />
@@ -84,12 +87,25 @@ export default function Home() {
         <ContainerButton.PrimaryButton value="Primary Button"><Icon icon="close" /></ContainerButton.PrimaryButton>
         <ContainerButton.SecondaryButton value="Secondary Button"><Icon icon="close" /></ContainerButton.SecondaryButton>
       </div>
+      <br /><br />
       <h1>Avatar</h1>
       <h2>CreatorAvatar</h2>
       <div className="flex">
-          <Avatar.CreatorAvatar size="sm" src="https://i.pravatar.cc/150?img=3"/>
-          <Avatar.CreatorAvatar size="md" src="https://i.pravatar.cc/150?img=3"/>
-          <Avatar.CreatorAvatar size="lg" src="https://i.pravatar.cc/150?img=3"/>
+        <Avatar.CreatorAvatar size="sm" src="https://i.pravatar.cc/150?img=3" />
+        <Avatar.CreatorAvatar size="md" src="https://i.pravatar.cc/150?img=3" />
+        <Avatar.CreatorAvatar size="lg" src="https://i.pravatar.cc/150?img=3" />
+      </div>
+      <br /><br />
+      <h1>SideMenu</h1>
+      <div className="w-[500px]">
+        <SideMenu
+          tab={tab}
+          setTab={setTab}
+          tabs={[
+            { url: "tab1", name: "Tab1" },
+            { url: "tab2", name: "Tab2" },
+          ]}
+        />
       </div>
     </div>
   );
