@@ -92,7 +92,48 @@ input:disabled:hover::placeholder {
     @apply text-neutral-800
 }
 
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    position: relative;
+    @apply w-6 h-6 rounded-[5px] outline-none border-shades-100 cursor-pointer border-[0.25px] px-0 py-0
+}
+
+input[type="checkbox"]::before {
+    content: url("data:image/svg+xml;utf8,<svg width='18' height='18' viewBox='0 0 29 22' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M8.9527 17.7793L2.94673 11.7085C2.27171 11.0262 1.18129 11.0262 0.506267 11.7085C-0.168756 12.3909 -0.168756 13.493 0.506267 14.1753L7.74112 21.4883C8.41614 22.1706 9.50657 22.1706 10.1816 21.4883L28.4937 2.97853C29.1688 2.29622 29.1688 1.19404 28.4937 0.51173C27.8187 -0.170577 26.7283 -0.170577 26.0533 0.51173L8.9527 17.7793Z' fill='white'/></svg>");
+    position: absolute;
+    right: 2px;
+    top: 2px;
+}
+
+input[type="checkbox"]:hover {
+    @apply border-primary-500
+}
+
+input[type="checkbox"]:checked {
+    @apply bg-primary-500 border-primary-500
+}
+
+input[type="checkbox"]:disabled {
+    @apply bg-neutral-100 outline-none cursor-not-allowed border-neutral-100
+}
+
+input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+    position: relative;
+    @apply outline-none w-5 h-5 border-primary-500 border-2 px-0 py-0 cursor-pointer
+}
+
+input[type="radio"]:checked::before {
+    content: url("data:image/svg+xml;utf8,<svg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M5 10C7.76142 10 10 7.76142 10 5C10 2.23858 7.76142 0 5 0C2.23858 0 0 2.23858 0 5C0 7.76142 2.23858 10 5 10Z' fill='rgb(239 ,160, 88)'/></svg>");
+    position: absolute;
+    right: 3px;
+    top: -2px;
+}
+
 select {
+    -webkit-appearance: none;
     appearance: none;
     background: transparent;
     background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
@@ -119,7 +160,7 @@ select:disabled {
 
 select:disabled:hover {
     background-image: url("data:image/svg+xml;utf8,<svg fill='rgb(84 ,80, 78)' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
-   @apply text-neutral-800 
+    @apply text-neutral-800
 }
 
 option {
@@ -263,7 +304,7 @@ button[type="button"]:disabled svg {
 }
 
 .chip {
-     @apply h-[19px] rounded-[90px] px-[12px] w-fit text-shades-0 text-xm font-bold inline-flex items-center
+    @apply h-[19px] rounded-[90px] px-[12px] w-fit text-shades-0 text-xm font-bold inline-flex items-center
 }
 
 .chip-free {

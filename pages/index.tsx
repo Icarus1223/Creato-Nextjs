@@ -45,7 +45,11 @@ export default function Home() {
       <h2>Password</h2>
       <Input.PasswordInput></Input.PasswordInput>
       <h2>CheckBox</h2>
+      <Input.CheckBox onChange={() => { }}></Input.CheckBox>
       <Input.CheckBox checked onChange={() => { }}></Input.CheckBox>
+      <h2>Radio</h2>
+      <Input.RadioButton onChange={() => {}}></Input.RadioButton>
+      <Input.RadioButton checked onChange={() => {}}></Input.RadioButton>
       <h2>Date</h2>
       <Input.DateInput></Input.DateInput>
       <br /><br />
