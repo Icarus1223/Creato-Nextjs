@@ -4,6 +4,7 @@ import { Input } from "../src/components/Input";
 import { Avatar } from "../src/components/Avatar";
 import SideMenu from "../src/components/SideMenu";
 import Chip from "../src/components/Chip";
+import { BSKCard } from "../src/components/BSKCard";
 import Icon from "../src/components/Icon";
 import { useState } from "react";
 
@@ -99,6 +100,7 @@ export default function Home() {
         <Avatar.CreatorAvatar size="sm" src="https://i.pravatar.cc/150?img=3" />
         <Avatar.CreatorAvatar size="md" src="https://i.pravatar.cc/150?img=3" />
         <Avatar.CreatorAvatar size="lg" src="https://i.pravatar.cc/150?img=3" />
+        <Avatar.CreatorAvatar size="xl" src="https://i.pravatar.cc/150?img=3" />
       </div>
       <br /><br />
       <h1>SideMenu</h1>
@@ -109,6 +111,7 @@ export default function Home() {
           tabs={[
             { url: "tab1", name: "Tab1" },
             { url: "tab2", name: "Tab2" },
+            { url: "tab3", name: "Tab3" },
           ]}
         />
       </div>
@@ -118,6 +121,10 @@ export default function Home() {
       <Chip type="locked">Lock</Chip>
       <Chip type="unlocked">Unlocked</Chip>
       <Chip type="mine">Mine</Chip>
+      <br/><br/>
+      <BSKCard.HomeCard
+
+      />
     </div>
   );
 }

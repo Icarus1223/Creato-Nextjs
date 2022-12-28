@@ -191,6 +191,8 @@ button[type="button"]:disabled svg {
     @apply fill-neutral-500
 }
 
+
+/* Button */
 .btn {
     @apply p-4
 }
@@ -247,6 +249,8 @@ button[type="button"]:disabled svg {
     @apply fill-shades-0
 }
 
+
+/* ContainerBtn */
 .containerBtn {
     @apply py-[11.5px] rounded-[10px]
 }
@@ -275,6 +279,8 @@ button[type="button"]:disabled svg {
     @apply bg-primary-700
 }
 
+
+/* Avatar */
 .avatar {
     @apply rounded-full
 }
@@ -288,9 +294,15 @@ button[type="button"]:disabled svg {
 }
 
 .avatar-lg {
+    @apply w-[80px] h-[80px]
+}
+
+.avatar-xl {
     @apply w-[120px] h-[120px]
 }
 
+
+/* SideMenu */
 .sidemenu {
     @apply h-[50px] w-[100%] bg-primary-500 rounded-[10px] flex px-2 py-[5px]
 }
@@ -303,6 +315,8 @@ button[type="button"]:disabled svg {
     @apply bg-shades-0 text-primary-500
 }
 
+
+/* Chip */
 .chip {
     @apply h-[19px] rounded-[90px] px-[12px] w-fit text-shades-0 text-xm font-bold inline-flex items-center
 }
@@ -321,4 +335,27 @@ button[type="button"]:disabled svg {
 
 .chip-mine {
     @apply bg-mine-500
+}
+
+
+/* BSK card */
+.bskcard-home {
+    @apply relative w-[335px] h-[685px]
+}
+
+.bskcard-home .bsk-avatar {
+    @apply absolute w-[110px] h-[110px] rounded-full bg-shades-0 inline-flex justify-center items-center z-10;
+    box-shadow: 0px 3.82609px 3.82609px rgba(0, 0, 0, 0.25);
+}
+
+.bskcard-home .bsk-body {
+    @apply absolute min-w-[320px] h-[655px] bottom-[0px] left-[15px];
+    background: linear-gradient(180deg, #D9D9D9 0%, #FFFFFF 11.98%, #FFFFFF 100%);
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 25px 25px 30px 30px;
+}
+
+.bskcard-home .bsk-body .header {
+    @apply bg-shades-0 min-h-[50px] pl-[115px] flex flex-col justify-evenly;
+    border-radius: 20px 20px 0px 0px;
 }
