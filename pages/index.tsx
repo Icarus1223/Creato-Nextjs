@@ -3,6 +3,7 @@ import { ContainerButton } from "../src/components/ContainerButton";
 import { Input } from "../src/components/Input";
 import { Avatar } from "../src/components/Avatar";
 import SideMenu from "../src/components/SideMenu";
+import Chip from "../src/components/Chip";
 import Icon from "../src/components/Icon";
 import { useState } from "react";
 
@@ -107,6 +108,12 @@ export default function Home() {
           ]}
         />
       </div>
+      <br/><br/>
+      <h1>Chip</h1>
+      <Chip type="free">Free</Chip>
+      <Chip type="locked">Lock</Chip>
+      <Chip type="unlocked">Unlocked</Chip>
+      <Chip type="mine">Mine</Chip>
     </div>
   );
 }

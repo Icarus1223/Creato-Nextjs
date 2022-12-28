@@ -261,3 +261,23 @@ button[type="button"]:disabled svg {
 .sidemenu-menu.active {
     @apply bg-shades-0 text-primary-500
 }
+
+.chip {
+     @apply h-[19px] rounded-[90px] px-[12px] w-fit text-shades-0 text-xm font-bold inline-flex items-center
+}
+
+.chip-free {
+    @apply bg-free-500
+}
+
+.chip-locked {
+    @apply bg-locked-500
+}
+
+.chip-unlocked {
+    @apply bg-unlocked-500
+}
+
+.chip-mine {
+    @apply bg-mine-500
+}
