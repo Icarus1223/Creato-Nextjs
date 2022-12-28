@@ -124,9 +124,9 @@ export default function Home() {
       <br/><br/>
       <h1>BSK Card</h1>
       <h2>Home Card</h2>
-      <BSKCard.HomeCard
-
-      />
+      <BSKCard.HomeCard />
+      <h2>Profile Card</h2>
+      <BSKCard.ProfileCard />
     </div>
   );
 }
