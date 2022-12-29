@@ -38,3 +38,44 @@
 .bskcard-home .bsk-content .footer {
     @apply pt-[15px] px-[20px] h-[100px]
 }
+
+.bskcard-profile {
+    @apply relative w-[280px] h-[625px] bg-shades-0 rounded-[5px];
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.bskcard-profile .header-locked {
+    @apply rounded-t-[5px] bg-locked-500 px-3 py-[5px] h-[28px]
+}
+
+.bskcard-profile .header-unlocked {
+    @apply rounded-t-[5px] bg-unlocked-500 px-3 py-[5px] h-[28px]
+}
+
+.bskcard-profile .header-free {
+    @apply rounded-t-[5px] bg-free-500 px-3 py-[5px] h-[28px]
+}
+
+.bskcard-profile .header-mine {
+    @apply rounded-t-[5px] bg-mine-500 px-3 py-[5px] h-[28px]
+}
+
+.bskcard-profile .body-free {
+    @apply bg-free-300 h-[495px] rounded-b-[5px]
+}
+
+.bskcard-profile .body-unlocked {
+    @apply bg-unlocked-300 h-[495px] rounded-b-[5px]
+}
+
+.bskcard-profile .body-locked {
+    @apply bg-locked-300 h-[495px] rounded-b-[5px]
+}
+
+.bskcard-profile .body-mine {
+    @apply bg-mine-300 h-[495px] rounded-b-[5px]
+}
+
+.bskcard-profile .footer {
+    @apply my-[13px] mx-[9px]
+}
