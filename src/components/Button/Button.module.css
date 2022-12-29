@@ -1,0 +1,55 @@
+.btn {
+    @apply p-4
+}
+
+.btn-icon {
+    @apply p-2.5 w-[40px] h-[40px]
+}
+
+.btn-rounded {
+    @apply rounded-[8px]
+}
+
+.btn-pill {
+    @apply rounded-full
+}
+
+.btn-primary {
+    @apply bg-primary-600 hover:bg-primary-300 active:bg-primary-700 text-shades-0
+}
+
+.btn-primary svg {
+    @apply fill-shades-0 transition duration-300
+}
+
+.btn-primary-outline {
+    @apply outline outline-1 text-primary-600 bg-shades-0 hover:text-shades-0 hover:bg-primary-300 hover:outline-none active:bg-primary-700
+}
+
+.btn-primary-outline svg {
+    @apply fill-primary-600 transition duration-300
+}
+
+.btn-primary-outline:hover svg {
+    @apply fill-shades-0
+}
+
+.btn-secondary {
+    @apply bg-secondary-600 hover:bg-secondary-300 active:bg-secondary-700 text-shades-0
+}
+
+.btn-secondary svg {
+    @apply fill-shades-0 transition duration-300
+}
+
+.btn-secondary-outline {
+    @apply outline outline-1 text-secondary-600 bg-shades-0 hover:text-shades-0 hover:bg-secondary-300 hover:outline-none active:bg-secondary-700
+}
+
+.btn-secondary-outline svg {
+    @apply fill-secondary-600 transition duration-300
+}
+
+.btn-secondary-outline:hover svg {
+    @apply fill-shades-0
+}

@@ -8,7 +8,8 @@ export interface BaseButtonProps extends IBaseButtonProps {
     rounded?: string | undefined,
     width?: string | undefined
 }
+import styles from "./Button.module.css";
 
 export default function BaseButton({ className, children, ...props }: BaseButtonProps) {
-    return <button className={`${props.value ? 'btn' : 'btn-icon'} ${className} ${props.width ? `w-full` : ''}`}{...props}>{children}</button>
+    return <button className={`${props.value ? styles['btn'] : styles['btn-icon']} ${className} ${props.width ? `w-full` : ''}`}{...props}>{children}</button>
 }
