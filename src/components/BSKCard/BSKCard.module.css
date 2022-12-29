@@ -24,15 +24,15 @@
 }
 
 .bskcard-home .bsk-content .body .thumbnail-free {
-    @apply absolute h-[495px] w-[280px] rounded-b-[15px] flex items-center justify-center top-[-19px] bg-free-300
+    @apply bg-free-300
 }
 
 .bskcard-home .bsk-content .body .thumbnail-locked {
-    @apply absolute h-[495px] w-[280px] rounded-b-[15px] flex items-center justify-center top-[-19px] bg-locked-300
+    @apply bg-locked-300
 }
 
 .bskcard-home .bsk-content .body .thumbnail-unlocked {
-    @apply absolute h-[495px] w-[280px] rounded-b-[15px] flex items-center justify-center top-[-19px] bg-unlocked-300
+    @apply bg-unlocked-300
 }
 
 .bskcard-home .bsk-content .footer {
@@ -45,35 +45,35 @@
 }
 
 .bskcard-profile .header-locked {
-    @apply rounded-t-[5px] bg-locked-500 px-3 py-[5px] h-[28px]
+    @apply  bg-locked-500
 }
 
 .bskcard-profile .header-unlocked {
-    @apply rounded-t-[5px] bg-unlocked-500 px-3 py-[5px] h-[28px]
+    @apply bg-unlocked-500
 }
 
 .bskcard-profile .header-free {
-    @apply rounded-t-[5px] bg-free-500 px-3 py-[5px] h-[28px]
+    @apply bg-free-500
 }
 
 .bskcard-profile .header-mine {
-    @apply rounded-t-[5px] bg-mine-500 px-3 py-[5px] h-[28px]
+    @apply bg-mine-500
 }
 
 .bskcard-profile .body-free {
-    @apply bg-free-300 h-[495px] rounded-b-[5px]
+    @apply bg-free-300 
 }
 
 .bskcard-profile .body-unlocked {
-    @apply bg-unlocked-300 h-[495px] rounded-b-[5px]
+    @apply bg-unlocked-300
 }
 
 .bskcard-profile .body-locked {
-    @apply bg-locked-300 h-[495px] rounded-b-[5px]
+    @apply bg-locked-300
 }
 
 .bskcard-profile .body-mine {
-    @apply bg-mine-300 h-[495px] rounded-b-[5px]
+    @apply bg-mine-300
 }
 
 .bskcard-profile .footer {
