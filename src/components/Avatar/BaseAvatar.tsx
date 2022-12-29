@@ -6,7 +6,8 @@ type IBaseImgProps = React.DetailedHTMLProps<
 export interface BaseImgProps extends IBaseImgProps {
     size: string
 }
+import styles from "./Avatar.module.css";
 
-export function BaseAvatar ({ className, size, ...props }: BaseImgProps) {
-    return <img className={`avatar avatar-${size} ${className}`} {...props} />
+export function BaseAvatar({ className, size, ...props }: BaseImgProps) {
+    return <img className={`${styles['avatar']} ${styles[`avatar-${size}`]} ${className}`} {...props} />
 }

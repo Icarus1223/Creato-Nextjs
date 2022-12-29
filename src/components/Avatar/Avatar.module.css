@@ -1,0 +1,19 @@
+.avatar {
+    @apply rounded-full
+}
+
+.avatar-sm {
+    @apply w-[34px] h-[34px]
+}
+
+.avatar-md {
+    @apply w-[70px] h-[70px]
+}
+
+.avatar-lg {
+    @apply w-[80px] h-[80px]
+}
+
+.avatar-xl {
+    @apply w-[120px] h-[120px]
+}
