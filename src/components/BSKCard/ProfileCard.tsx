@@ -1,19 +1,20 @@
 import { Avatar } from "../Avatar"
 import Chip from "../Chip"
 import Icon from "../Icon"
+import styles from "./BSKCard.module.css"
 
 interface BSKProfileProps {
 
 }
 
-export default function ProfileCard(props: BSKProfileProps) {
+export default function HomeCard(props: BSKProfileProps) {
     return (
-        <div className="bskcard-home">
-            <div className="bsk-avatar">
+        <div className={styles['bskcard-home']}>
+            <div className={styles['bsk-avatar']}>
                 <Avatar.CreatorAvatar size="lg" src="https://i.pravatar.cc/150?img=3" />
             </div>
-            <div className="bsk-content">
-                <div className="header">
+            <div className={styles["bsk-content"]}>
+                <div className={styles["header"]}>
                     <div className="font-extrabold text-neutral-700 text-sm">
                         <span>Owner Name</span>
                     </div>
@@ -22,15 +23,15 @@ export default function ProfileCard(props: BSKProfileProps) {
                         <span>Posted 3 days ago</span>
                     </div>
                 </div>
-                <div className="body">
-                    <div className="thumbnail locked">
+                <div className={styles["body"]}>
+                    <div className={styles[`thumbnail-locked`]}>
                         <img
                             className="absolute w-full"
-                            src="https://picsum.photos/id/237/300/200"
+                            src="https://picsum.photos/id/27/300/200"
                         />
                     </div>
                 </div>
-                <div className="footer">
+                <div className={styles["footer"]}>
                     <div className="flex justify-center">
                         <Chip className="mr-[9px]" type="locked">$USD 100</Chip>
                         <Chip type="locked" value="1 purchased"><Icon icon="noofpeople" className="fill-shades-0 mr-[3px]"/></Chip>

@@ -10,13 +10,14 @@ interface SideMenuProps {
     tab: number,
     setTab: Dispatch<SetStateAction<number>>
 }
+import styles from "./SideMenu.module.css";
 
 export default function SideMenu(props: SideMenuProps) {
     return (
-        <div className="sidemenu">
+        <div className={styles['sidemenu']}>
             {props.tabs.map((tab: Tab, index: number) => (
-                <div 
-                    className={`sidemenu-menu${index === props.tab ? ' active' : ''}`}
+                <div
+                    className={index === props.tab ? styles[`sidemenu-menu-active`] : styles['sidemenu-menu']}
                     key={index}
                     onClick={() => {
                         props.setTab(index)
