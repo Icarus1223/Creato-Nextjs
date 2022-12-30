@@ -23,6 +23,36 @@
     @apply relative h-[475px] flex justify-center
 }
 
+.bskcard-home .bsk-content .body .locked-bg {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.bskcard-home .bsk-content .body .locked-bg .lock-btn {
+    @apply bg-shades-0
+}
+
+.bskcard-home .bsk-content .body .locked-bg .lock-btn span {
+    @apply text-primary-500
+}
+
+.bskcard-home .bsk-content .body .locked-bg .lock-btn span::before {
+    content: url("data:image/svg+xml;utf8,<svg width='17' height='20' viewBox='0 0 17 20' xmlns='http://www.w3.org/2000/svg'><path d='M14.3078 7.04955H13.3349V5.31999C13.3349 2.9332 11.1557 0.996094 8.47052 0.996094C5.78538 0.996094 3.60613 2.9332 3.60613 5.31999V7.04955H2.63325C1.56309 7.04955 0.6875 7.82785 0.6875 8.77911V17.4269C0.6875 18.3782 1.56309 19.1565 2.63325 19.1565H14.3078C15.3779 19.1565 16.2535 18.3782 16.2535 17.4269V8.77911C16.2535 7.82785 15.3779 7.04955 14.3078 7.04955ZM8.47052 14.8326C7.40035 14.8326 6.52476 14.0543 6.52476 13.103C6.52476 12.1518 7.40035 11.3735 8.47052 11.3735C9.54068 11.3735 10.4163 12.1518 10.4163 13.103C10.4163 14.0543 9.54068 14.8326 8.47052 14.8326ZM11.4864 7.04955H5.4546V5.31999C5.4546 3.84122 6.8069 2.63918 8.47052 2.63918C10.1341 2.63918 11.4864 3.84122 11.4864 5.31999V7.04955Z' fill='rgb(239 ,160, 88)'/></svg>");
+    @apply absolute left-[-25px]
+}
+
+.bskcard-home:hover .bsk-content .body .locked-bg .lock-btn {
+    @apply bg-primary-500
+}
+
+.bskcard-home:hover .bsk-content .body .locked-bg .lock-btn span {
+    @apply text-shades-0
+}
+
+.bskcard-home:hover .bsk-content .body .locked-bg .lock-btn span::before {
+    content: url("data:image/svg+xml;utf8,<svg width='17' height='20' viewBox='0 0 17 20' xmlns='http://www.w3.org/2000/svg'><path d='M9 12C7.7625 12 6.75 12.9 6.75 14C6.75 15.1 7.7625 16 9 16C10.2375 16 11.25 15.1 11.25 14C11.25 12.9 10.2375 12 9 12ZM15.75 7H14.625V5C14.625 2.24 12.105 0 9 0C6.435 0 4.19625 1.54 3.555 3.75C3.3975 4.29 3.7575 4.83 4.365 4.97C4.96125 5.11 5.58 4.79 5.7375 4.25C6.12 2.93 7.45875 2 9 2C10.8562 2 12.375 3.35 12.375 5V7H2.25C1.0125 7 0 7.9 0 9V19C0 20.1 1.0125 21 2.25 21H15.75C16.9875 21 18 20.1 18 19V9C18 7.9 16.9875 7 15.75 7ZM15.75 18C15.75 18.55 15.2438 19 14.625 19H3.375C2.75625 19 2.25 18.55 2.25 18V10C2.25 9.45 2.75625 9 3.375 9H14.625C15.2438 9 15.75 9.45 15.75 10V18Z' fill='rgb(255 ,255, 255)' /></svg>");
+    @apply absolute left-[-25px]
+}
+
 .bskcard-home .bsk-content .body .thumbnail-free {
     @apply bg-free-300
 }
@@ -45,7 +75,7 @@
 }
 
 .bskcard-profile .header-locked {
-    @apply  bg-locked-500
+    @apply bg-locked-500
 }
 
 .bskcard-profile .header-unlocked {
@@ -61,7 +91,7 @@
 }
 
 .bskcard-profile .body-free {
-    @apply bg-free-300 
+    @apply bg-free-300
 }
 
 .bskcard-profile .body-unlocked {

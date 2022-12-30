@@ -8,6 +8,10 @@ import { BSKCard } from "../src/components/BSKCard";
 import Icon from "../src/components/Icon";
 import { useState } from "react";
 
+import image from "../src/assets/test.png"
+import image1 from "../src/assets/test1.jpg"
+import image2 from "../src/assets/test2.png"
+
 export default function Home() {
   const [tab, setTab] = useState(0)
   return (
@@ -124,7 +128,36 @@ export default function Home() {
       <br/><br/>
       <h1>BSK Card</h1>
       <h2>Home Card</h2>
-      <BSKCard.HomeCard />
+      <BSKCard.HomeCard
+        user={{
+          name: 'Benjamin',
+          avatar: 'https://i.pravatar.cc/150?img=3',
+          profileUrl: '/'
+        }}
+        thumbnails={[image, image1, image2]}
+        locked={true}
+        type="locked"
+      />
+      <BSKCard.HomeCard
+        user={{
+          name: 'Benjamin',
+          avatar: 'https://i.pravatar.cc/150?img=3',
+          profileUrl: '/'
+        }}
+        thumbnails={[image, image1, image2]}
+        locked={true}
+        type="free"
+      />
+      <BSKCard.HomeCard
+        user={{
+          name: 'Benjamin',
+          avatar: 'https://i.pravatar.cc/150?img=3',
+          profileUrl: '/'
+        }}
+        thumbnails={[image, image1, image2]}
+        locked={true}
+        type="unlocked"
+      />
       <h2>Profile Card</h2>
       <BSKCard.ProfileCard />
     </div>
