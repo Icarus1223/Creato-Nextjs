@@ -138,6 +138,7 @@ export default function Home() {
           thumbnails={[image, image1, image2]}
           isLogin={false}
           locked={true}
+          time={20000}
           title="BSK title BSK title BSK titlte BSK title BSK title BSK title BSK title BSK title"
           currency="usd"
           price={10}
@@ -152,6 +153,7 @@ export default function Home() {
           thumbnails={[image, image1, image2]}
           isLogin={false}
           locked={true}
+          time={50000}
           title="BSK title BSK title BSK titlte BSK title BSK title BSK title BSK title BSK title"
           unlockedCnt={2}
         />
@@ -164,6 +166,7 @@ export default function Home() {
           thumbnails={[image, image1, image2]}
           isLogin={true}
           locked={true}
+          time={3000}
           title="BSK title BSK title BSK titlte BSK title BSK title BSK title BSK title BSK title"
           currency="usd"
           price={10}
@@ -178,6 +181,7 @@ export default function Home() {
           thumbnails={[image, image1, image2]}
           isLogin={true}
           locked={true}
+          time={120000}
           title="BSK  title BSK title BSK titlte BSK title BSK title BSK title BSK title BSK title"
           unlockedCnt={2}
         />
@@ -192,12 +196,80 @@ export default function Home() {
           locked={false}
           title="BSK  title BSK title BSK titlte BSK title BSK title BSK title BSK title BSK title"
           currency="aud"
+          time={25000}
           price={10}
           unlockedCnt={2}
         />
       </div>
       <h2>Profile Card</h2>
-      <BSKCard.ProfileCard />
+      <div className="flex flex-wrap">
+        <BSKCard.ProfileCard
+          thumbnails={[image, image1, image2]}
+          isLogin={false}
+          locked={true}
+          time={20000}
+          title="BSK title BSK title BSK titlte BSK title BSK title BSK title BSK title BSK title"
+          currency="usd"
+          price={10}
+          unlockedCnt={2}
+        />
+        <BSKCard.ProfileCard
+          thumbnails={[image, image1, image2]}
+          isLogin={false}
+          locked={true}
+          time={50000}
+          title="BSK title BSK title BSK titlte BSK title BSK title BSK title BSK title BSK title"
+          unlockedCnt={2}
+        />
+         <BSKCard.ProfileCard
+          thumbnails={[image, image1, image2]}
+          isLogin={true}
+          locked={true}
+          time={3000}
+          title="BSK title BSK title BSK titlte BSK title BSK title BSK title BSK title BSK title"
+          currency="usd"
+          price={10}
+          unlockedCnt={2}
+        />
+        <BSKCard.ProfileCard
+          thumbnails={[image, image1, image2]}
+          isLogin={true}
+          locked={true}
+          time={120000}
+          title="BSK  title BSK title BSK titlte BSK title BSK title BSK title BSK title BSK title"
+          unlockedCnt={2}
+        />
+        <BSKCard.ProfileCard
+          thumbnails={[image, image1, image2]}
+          isLogin={true}
+          locked={false}
+          title="BSK  title BSK title BSK titlte BSK title BSK title BSK title BSK title BSK title"
+          currency="aud"
+          time={25000}
+          price={10}
+          unlockedCnt={2}
+        />
+        <BSKCard.ProfileCard
+          thumbnails={[image, image1, image2]}
+          isLogin={true}
+          locked={true}
+          isMine={true}
+          time={120000}
+          title="BSK  title BSK title BSK titlte BSK title BSK title BSK title BSK title BSK title"
+          unlockedCnt={2}
+        />
+        <BSKCard.ProfileCard
+          thumbnails={[image, image1, image2]}
+          isLogin={true}
+          locked={false}
+          isMine={true}
+          title="BSK  title BSK title BSK titlte BSK title BSK title BSK title BSK title BSK title"
+          currency="aud"
+          time={25000}
+          price={10}
+          unlockedCnt={2}
+        />
+      </div>
     </div>
   );
 }

@@ -2,7 +2,7 @@ import Image, { StaticImageData } from "next/image"
 import { Avatar } from "../Avatar"
 import Chip from "../Chip"
 import Icon from "../Icon"
-import { displayCurrency } from "../../functions"
+import { displayCurrency, displayPostTime } from "../../functions"
 import styles from "./BSKCard.module.css"
 
 type UserType = {
@@ -17,6 +17,7 @@ interface BSKHomeProps {
     isLogin: boolean,
     locked: boolean,
     title: string,
+    time: number,
     currency?: string
     price?: number,
     unlockedCnt: number
@@ -37,7 +38,7 @@ export default function HomeCard(props: BSKHomeProps) {
                     </div>
                     <div className="font-extrabold text-error-500 text-xm inline-flex items-center">
                         <Icon icon="clock" className="mr-[5px] fill-error-500" />
-                        <span>Posted 3 days ago</span>
+                        <span>{displayPostTime(props.time)}</span>
                     </div>
                 </div>
                 <div className={styles["body"]}>
@@ -58,7 +59,7 @@ export default function HomeCard(props: BSKHomeProps) {
                 </div>
                 <div className={styles["footer"]}>
                     <div className="flex justify-center">
-                        <Chip className="mr-[9px]" type={type}>{type === 'unlocked' ? 'Unlcoked' : props.currency ? displayCurrency(props.currency) + ' ' + props.price : 'Free'} </Chip>
+                        <Chip className="mr-[9px]" type={type}>{type === 'unlocked' ? 'Unlcoked' : props.currency ? displayCurrency(props.currency) + ' ' + props.price : 'Free'}</Chip>
                         <Chip type={type} value={`${props.unlockedCnt} ${props.currency ? 'purchased' : 'unlocked'}`}><Icon icon="noofpeople" className="fill-shades-0 mr-[3px]" /></Chip>
                     </div>
                     <div className="line-clamp-2 mt-[10px] font-bold text-xl text-primary-500">
