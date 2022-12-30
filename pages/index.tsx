@@ -53,8 +53,8 @@ export default function Home() {
       <Input.CheckBox onChange={() => { }}></Input.CheckBox>
       <Input.CheckBox checked onChange={() => { }}></Input.CheckBox>
       <h2>Radio</h2>
-      <Input.RadioButton onChange={() => {}}></Input.RadioButton>
-      <Input.RadioButton checked onChange={() => {}}></Input.RadioButton>
+      <Input.RadioButton onChange={() => { }}></Input.RadioButton>
+      <Input.RadioButton checked onChange={() => { }}></Input.RadioButton>
       <h2>Date</h2>
       <Input.DateInput></Input.DateInput>
       <br /><br />
@@ -119,45 +119,83 @@ export default function Home() {
           ]}
         />
       </div>
-      <br/><br/>
+      <br /><br />
       <h1>Chip</h1>
       <Chip type="free" value="free" />
       <Chip type="locked" value="Lock" />
-      <Chip type="unlocked" value="Unlocked"/>
+      <Chip type="unlocked" value="Unlocked" />
       <Chip type="mine" value="Mine" />
-      <br/><br/>
+      <br /><br />
       <h1>BSK Card</h1>
       <h2>Home Card</h2>
-      <BSKCard.HomeCard
-        user={{
-          name: 'Benjamin',
-          avatar: 'https://i.pravatar.cc/150?img=3',
-          profileUrl: '/'
-        }}
-        thumbnails={[image, image1, image2]}
-        locked={true}
-        type="locked"
-      />
-      <BSKCard.HomeCard
-        user={{
-          name: 'Benjamin',
-          avatar: 'https://i.pravatar.cc/150?img=3',
-          profileUrl: '/'
-        }}
-        thumbnails={[image, image1, image2]}
-        locked={true}
-        type="free"
-      />
-      <BSKCard.HomeCard
-        user={{
-          name: 'Benjamin',
-          avatar: 'https://i.pravatar.cc/150?img=3',
-          profileUrl: '/'
-        }}
-        thumbnails={[image, image1, image2]}
-        locked={true}
-        type="unlocked"
-      />
+      <div className="flex">
+        <BSKCard.HomeCard
+          user={{
+            name: 'Benjamin',
+            avatar: 'https://i.pravatar.cc/150?img=3',
+            profileUrl: '/'
+          }}
+          thumbnails={[image, image1, image2]}
+          isLogin={false}
+          locked={true}
+          title="BSK title BSK title BSK titlte BSK title BSK title BSK title BSK title BSK title"
+          currency="usd"
+          price={10}
+          unlockedCnt={2}
+        />
+        <BSKCard.HomeCard
+          user={{
+            name: 'Benjamin',
+            avatar: 'https://i.pravatar.cc/150?img=3',
+            profileUrl: '/'
+          }}
+          thumbnails={[image, image1, image2]}
+          isLogin={false}
+          locked={true}
+          title="BSK title BSK title BSK titlte BSK title BSK title BSK title BSK title BSK title"
+          unlockedCnt={2}
+        />
+        <BSKCard.HomeCard
+          user={{
+            name: 'Benjamin',
+            avatar: 'https://i.pravatar.cc/150?img=3',
+            profileUrl: '/'
+          }}
+          thumbnails={[image, image1, image2]}
+          isLogin={true}
+          locked={true}
+          title="BSK title BSK title BSK titlte BSK title BSK title BSK title BSK title BSK title"
+          currency="usd"
+          price={10}
+          unlockedCnt={2}
+        />
+        <BSKCard.HomeCard
+          user={{
+            name: 'Benjamin',
+            avatar: 'https://i.pravatar.cc/150?img=3',
+            profileUrl: '/'
+          }}
+          thumbnails={[image, image1, image2]}
+          isLogin={true}
+          locked={true}
+          title="BSK  title BSK title BSK titlte BSK title BSK title BSK title BSK title BSK title"
+          unlockedCnt={2}
+        />
+        <BSKCard.HomeCard
+          user={{
+            name: 'Benjamin',
+            avatar: 'https://i.pravatar.cc/150?img=3',
+            profileUrl: '/'
+          }}
+          thumbnails={[image, image1, image2]}
+          isLogin={true}
+          locked={false}
+          title="BSK  title BSK title BSK titlte BSK title BSK title BSK title BSK title BSK title"
+          currency="aud"
+          price={10}
+          unlockedCnt={2}
+        />
+      </div>
       <h2>Profile Card</h2>
       <BSKCard.ProfileCard />
     </div>
