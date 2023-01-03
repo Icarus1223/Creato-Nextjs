@@ -1,0 +1,9 @@
+.admin-creator {
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+    @apply w-[320px] bg-shades-0 rounded-[24px] p-5
+}
+
+.creator-avatar {
+    filter: drop-shadow(2px 4px 10px rgba(0, 0, 0, 0.15));
+    @apply flex justify-center mb-5
+}

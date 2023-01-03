@@ -5,6 +5,7 @@ export default function PrimaryButton(props: BaseButtonProps) {
     return (
         <BaseButton
             type="button"
+            style={props.width ? { width: props.width } : {}}
             className={`inline-flex items-center justify-center ${props.outline === 'true' ? styles['btn-secondary-outline'] : styles['btn-secondary']} ${props.rounded === 'true' ? styles['btn-rounded'] : styles['btn-pill']}`}
             {...props}
         >

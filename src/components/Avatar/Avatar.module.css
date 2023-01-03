@@ -2,16 +2,20 @@
     @apply rounded-full
 }
 
-.avatar-sm {
+.avatar-xs {
     @apply w-[34px] h-[34px]
 }
 
-.avatar-md {
+.avatar-sm {
     @apply w-[70px] h-[70px]
 }
 
-.avatar-lg {
+.avatar-md {
     @apply w-[80px] h-[80px]
+}
+
+.avatar-lg {
+    @apply w-[100px] h-[100px]
 }
 
 .avatar-xl {

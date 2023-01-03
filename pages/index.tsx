@@ -5,6 +5,7 @@ import { Avatar } from "../src/components/Avatar";
 import SideMenu from "../src/components/SideMenu";
 import Chip from "../src/components/Chip";
 import { BSKCard } from "../src/components/BSKCard";
+import { Creator } from "../src/components/Creator";
 import Icon from "../src/components/Icon";
 import { useState } from "react";
 
@@ -101,6 +102,7 @@ export default function Home() {
       <h1>Avatar</h1>
       <h2>CreatorAvatar</h2>
       <div className="flex">
+      <Avatar.CreatorAvatar size="xs" src="https://i.pravatar.cc/150?img=3" />
         <Avatar.CreatorAvatar size="sm" src="https://i.pravatar.cc/150?img=3" />
         <Avatar.CreatorAvatar size="md" src="https://i.pravatar.cc/150?img=3" />
         <Avatar.CreatorAvatar size="lg" src="https://i.pravatar.cc/150?img=3" />
@@ -268,6 +270,16 @@ export default function Home() {
           time={25000}
           price={10}
           unlockedCnt={2}
+        />
+      </div>
+      <br /><br />
+      <h1>Creator Component</h1>
+      <h2>Admin Component</h2>
+      <div className="flex">
+        <Creator.AdminCreator 
+          avatar="https://i.pravatar.cc/150?img=3"
+          categories="Tictok Creator"
+          name="Benjamin"
         />
       </div>
     </div>
