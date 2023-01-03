@@ -12,7 +12,7 @@ import styles from "./Creator.module.css";
 export default function Creator(props: CreatorProps) {
     return (
         <div className={styles["admin-creator"]}>
-            <div className={styles["creator-avatar"]}>
+            <div className={`${styles["creator-avatar"]} mb-5`}>
                 <Avatar.CreatorAvatar size="lg" src={props.avatar} />
             </div>
             <div className="flex justify-center flex-col items-center">

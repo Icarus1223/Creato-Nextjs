@@ -102,7 +102,7 @@ export default function Home() {
       <h1>Avatar</h1>
       <h2>CreatorAvatar</h2>
       <div className="flex">
-      <Avatar.CreatorAvatar size="xs" src="https://i.pravatar.cc/150?img=3" />
+        <Avatar.CreatorAvatar size="xs" src="https://i.pravatar.cc/150?img=3" />
         <Avatar.CreatorAvatar size="sm" src="https://i.pravatar.cc/150?img=3" />
         <Avatar.CreatorAvatar size="md" src="https://i.pravatar.cc/150?img=3" />
         <Avatar.CreatorAvatar size="lg" src="https://i.pravatar.cc/150?img=3" />
@@ -130,7 +130,7 @@ export default function Home() {
       <br /><br />
       <h1>BSK Card</h1>
       <h2>Home Card</h2>
-      <div className="flex">
+      <div className="flex flex-wrap">
         <BSKCard.HomeCard
           user={{
             name: 'Benjamin',
@@ -223,7 +223,7 @@ export default function Home() {
           title="BSK title BSK title BSK titlte BSK title BSK title BSK title BSK title BSK title"
           unlockedCnt={2}
         />
-         <BSKCard.ProfileCard
+        <BSKCard.ProfileCard
           thumbnails={[image, image1, image2]}
           isLogin={true}
           locked={true}
@@ -275,13 +275,18 @@ export default function Home() {
       <br /><br />
       <h1>Creator Component</h1>
       <h2>Admin Component</h2>
-      <div className="flex">
-        <Creator.AdminCreator 
-          avatar="https://i.pravatar.cc/150?img=3"
-          categories="Tictok Creator"
-          name="Benjamin"
-        />
-      </div>
+      <Creator.AdminCreator
+        avatar="https://i.pravatar.cc/150?img=3"
+        categories="Tictok Creator"
+        name="Benjamin"
+      />
+      <h2>User Component</h2>
+      <Creator.UserCreator
+        avatar="https://i.pravatar.cc/150?img=3"
+        categories="Tictok Creator"
+        name="Benjamin"
+        profileUrl="/"
+      />
     </div>
   );
 }
