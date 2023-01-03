@@ -1,5 +1,5 @@
 .chip {
-    @apply h-[19px] rounded-[90px] px-[12px] w-fit text-shades-0 text-xm font-bold inline-flex items-center
+    @apply h-[19px] rounded-[90px] px-[12px] w-fit text-shades-0 text-xs font-bold inline-flex items-center
 }
 
 .chip-free {

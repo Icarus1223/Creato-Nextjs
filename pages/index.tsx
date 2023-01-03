@@ -6,6 +6,7 @@ import SideMenu from "../src/components/SideMenu";
 import Chip from "../src/components/Chip";
 import { BSKCard } from "../src/components/BSKCard";
 import { Creator } from "../src/components/Creator";
+import Profile from "../src/components/Profile";
 import Icon from "../src/components/Icon";
 import { useState } from "react";
 
@@ -286,6 +287,15 @@ export default function Home() {
         categories="Tictok Creator"
         name="Benjamin"
         profileUrl="/"
+      />
+      <br /><br />
+      <h1>Profile Component</h1>
+      <Profile 
+        cateogries="Photographer/TikTok Creator"
+        avatar="https://i.pravatar.cc/150?img=3"
+        name="Benjamin"
+        profileUrl="/"
+        bio="Full Stack Developer"
       />
     </div>
   );

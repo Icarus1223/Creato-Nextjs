@@ -96,7 +96,8 @@ module.exports = {
       },
     },
     fontSize: {
-      xm: ['14px', '18px'],
+      'xxs': ['12px', '14px'],
+      xs: ['14px', '18px'],
       sm: ['16px', '18px'],
       base: ['18px', '20px'],
       lg: ['20px', '24px'],

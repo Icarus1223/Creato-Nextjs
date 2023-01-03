@@ -53,7 +53,7 @@ h5 {
 }
 
 h6 {
-    @apply text-xm sm:text-sm
+    @apply text-xs sm:text-sm
 }
 
 input {

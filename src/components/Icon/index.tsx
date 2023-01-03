@@ -1,4 +1,4 @@
-import { AddIcon, ClockIcon, CloseIcon, NoOfPeopleIcon, ProfileIcon } from "../../assets/svg"
+import { AddIcon, ClockIcon, CloseIcon, EditIcon, NoOfPeopleIcon, ProfileIcon } from "../../assets/svg"
 
 interface IconProps {
     icon: string,
@@ -12,5 +12,6 @@ export default function Icon(props: IconProps) {
     else if (icon === 'noofpeople') return <NoOfPeopleIcon className={props.className} />
     else if (icon === 'add') return <AddIcon className={props.className} />
     else if (icon === 'profile') return <ProfileIcon className={props.className} />
+    else if (icon === 'edit') return <EditIcon className={props.className} />
     else return null
 }
