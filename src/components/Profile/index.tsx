@@ -35,8 +35,8 @@ export default function Profile(props: ProfileProps) {
                         </div>
                     }
                     menu={[
-                        <span className="font-normal text-sm p-1 w-full text-center" onClick={() => setOpenMore(false)}>Menu1</span>,
-                        <span className="font-normal text-sm p-1 w-full text-center" onClick={() => setOpenMore(false)}>Menu2</span>
+                        <span className="font-normal text-sm p-1 w-full text-center" onClick={() => setOpenMore(false)}>Copy link</span>,
+                        <span className="font-normal text-sm p-1 w-full text-center" onClick={() => setOpenMore(false)}>Cancel</span>
                     ]}
                 />
             </div>
