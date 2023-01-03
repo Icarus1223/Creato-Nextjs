@@ -1,0 +1,20 @@
+.dropdown {
+    @apply relative
+}
+
+.menu {
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+    @apply absolute my-[5px] mx-0 p-0 w-[300px] bg-shades-0 transition duration-300
+}
+
+.menu > li {
+    @apply p-0 m-3 flex justify-center cursor-pointer
+}
+
+.menu > li:hover {
+    @apply bg-neutral-100 rounded-[10px]
+}
+
+.menu > li > .menu-item {
+    @apply font-normal text-sm
+}
