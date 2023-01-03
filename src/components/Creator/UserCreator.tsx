@@ -23,7 +23,7 @@ export default function Creator(props: CreatorProps) {
                 </div>
             </div>
             <div className="mt-5 flex justify-center sm:mt-0 sm:items-center sm:float-right">
-                <Button.PrimaryButton outline="true" value="Profile"><Icon icon="add" /></Button.PrimaryButton>
+                <Button.PrimaryButton outline="true" value="Profile"><Icon icon="profile" /></Button.PrimaryButton>
             </div>
         </div>
     )
