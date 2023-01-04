@@ -1,6 +1,8 @@
+import { useState } from "react"
 import Image, { StaticImageData } from "next/image"
 import Chip from "../Chip"
 import Icon from "../Icon"
+import nextImg from "../../assets/img/next-bright.png";
 import { displayCurrency, displayPostTime } from "../../functions"
 import styles from "./BSKCard.module.css"
 
@@ -18,6 +20,7 @@ interface BSKProfileProps {
 
 export default function ProfileCard(props: BSKProfileProps) {
     const type = props.isMine ? 'mine' : props.locked ? props.currency ? 'locked' : 'free' : 'unlocked'
+    const [videoIndex, setVideoIndex] = useState(0)
 
     return (
         <div className={styles['bskcard-profile']}>
@@ -29,7 +32,7 @@ export default function ProfileCard(props: BSKProfileProps) {
                 <Image
                     alt="BSKProfileImage"
                     className="w-full"
-                    src={props.thumbnails[0]}
+                    src={props.thumbnails[videoIndex]}
                 />
                 {!props.isLogin &&
                     <div className={`absolute h-[495px] w-[280px] flex justify-center items-center ${styles['locked-bg']}`}>
@@ -38,6 +41,29 @@ export default function ProfileCard(props: BSKProfileProps) {
                         </div>
                     </div>
                 }
+                <div className="absolute w-[280px] h-[495px]">
+                    {videoIndex > 0 &&
+                        <Image
+                            className="absolute top-[200px] left-[5px] rotate-180 cursor-pointer"
+                            src={nextImg}
+                            alt="PrevImage"
+                            onClick={() => { setVideoIndex((prevIndex: number) => (prevIndex - 1) % props.thumbnails.length) }}
+                        />
+                    }
+                    {videoIndex < (props.thumbnails.length - 1) &&
+                        <Image
+                            className="absolute top-[200px] right-[5px] cursor-pointer"
+                            src={nextImg}
+                            alt="NextImage"
+                            onClick={() => { setVideoIndex((prevIndex: number) => (prevIndex + 1) % props.thumbnails.length) }}
+                        />
+                    }
+                </div>
+                <div className="absolute flex bottom-[8px]">
+                    {props.thumbnails.map((thumb: any, index: number) => (
+                        <div className={`h-[9px] w-[52px] ${videoIndex === index ? 'bg-primary-500' : 'bg-shades-200'} mx-2 rounded-[7px]`}></div>
+                    ))}
+                </div>
             </div>
             <div className={styles["footer"]}>
                 <div className="font-extrabold text-error-500 text-xm inline-flex items-center">

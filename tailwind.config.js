@@ -92,7 +92,8 @@ module.exports = {
       },
       shades: {
         0: '#FFFFFF',
-        100: '#000000'
+        100: '#000000',
+        200: '#D9D9D9'
       },
     },
     fontSize: {
