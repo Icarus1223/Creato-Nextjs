@@ -17,7 +17,7 @@ import image2 from "../src/assets/test2.png"
 export default function Home() {
   const [tab, setTab] = useState(0)
   return (
-    <div className="px-2 py-2">
+    <div className="px-2 py-2 dark:bg-neutral-800">
       <h1>H1 heading</h1>
       <h2>H2 heading</h2>
       <h3>H3 heading</h3>
