@@ -11,7 +11,7 @@ import styles from "./Creator.module.css";
 
 export default function Creator(props: CreatorProps) {
     return (
-        <div className={styles["admin-creator"]}>
+        <div className={`${styles["admin-creator"]} dark:bg-neutral-800`}>
             <div className={`${styles["creator-avatar"]} mb-5`}>
                 <Avatar.CreatorAvatar size="lg" src={props.avatar} />
             </div>

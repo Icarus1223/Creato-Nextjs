@@ -31,7 +31,7 @@ export default function HomeCard(props: BSKHomeProps) {
 
     return (
         <div className={styles['bskcard-home']}>
-            <div className={styles['bsk-avatar']}>
+            <div className={`${styles['bsk-avatar']}`}>
                 <Avatar.CreatorAvatar size="md" src={props.user.avatar} />
             </div>
             <div className={styles["bsk-content"]}>
