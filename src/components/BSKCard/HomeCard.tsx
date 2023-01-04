@@ -31,12 +31,12 @@ export default function HomeCard(props: BSKHomeProps) {
 
     return (
         <div className={styles['bskcard-home']}>
-            <div className={`${styles['bsk-avatar']}`}>
+            <div className={`${styles['bsk-avatar']} bg-shades-0 dark:bg-neutral-800`}>
                 <Avatar.CreatorAvatar size="md" src={props.user.avatar} />
             </div>
-            <div className={styles["bsk-content"]}>
-                <div className={styles["header"]}>
-                    <div className="font-extrabold text-neutral-700 text-sm">
+            <div className={`${styles["bsk-content"]} bg-gradient-to-b from-shades-200 to-shades-0 dark:from-neutral-700 dark:to-neutral-800`}>
+                <div className={`${styles["header"]} bg-shades-0 dark:bg-neutral-800`}>
+                    <div className="font-extrabold text-neutral-700 text-sm dark:text-shades-0">
                         <span>{props.user.name}</span>
                     </div>
                     <div className="font-extrabold text-error-500 text-xm inline-flex items-center">

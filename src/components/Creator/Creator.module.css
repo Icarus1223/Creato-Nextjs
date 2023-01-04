@@ -1,11 +1,11 @@
 .admin-creator {
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
-    @apply w-[320px] bg-shades-0 rounded-[24px] p-5
+    @apply w-[320px] bg-shades-0 rounded-[24px] p-5 dark:bg-neutral-800
 }
 
 .user-creator {
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
-    @apply rounded-[24px] bg-shades-0 w-[320px] p-5 sm:px-[60px] sm:py-[20px] sm:max-w-[850px] sm:w-full sm:inline-flex sm:justify-between
+    @apply rounded-[24px] bg-shades-0 w-[320px] p-5 sm:px-[60px] sm:py-[20px] sm:max-w-[850px] sm:w-full sm:inline-flex sm:justify-between dark:bg-neutral-800
 }
 
 .creator-avatar {

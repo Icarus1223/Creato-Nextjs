@@ -23,7 +23,7 @@ export default function ProfileCard(props: BSKProfileProps) {
     const [videoIndex, setVideoIndex] = useState(0)
 
     return (
-        <div className={styles['bskcard-profile']}>
+        <div className={`${styles['bskcard-profile']} bg-shades-0 dark:bg-neutral-800`}>
             <div className={`flex items-center rounded-t-[5px] px-3 py-[5px] h-[28px] ${styles[`header-${type}`]}`}>
                 <Chip type={type}>{type === "mine" ? 'My Bite' : type === 'unlocked' ? 'Unlcoked' : props.currency ? displayCurrency(props.currency) + ' ' + props.price : 'Free'}</Chip>
                 <Chip type={type} value={`${props.unlockedCnt} ${props.currency ? 'purchased' : 'unlocked'}`}><Icon icon="noofpeople" className="fill-shades-0 mr-[3px]" /></Chip>
