@@ -4,7 +4,8 @@ type IBaseImgProps = React.DetailedHTMLProps<
 >;
 
 export interface BaseImgProps extends IBaseImgProps {
-    size: string
+    size: string,
+    hover?: string,
 }
 import styles from "./Avatar.module.css";
 

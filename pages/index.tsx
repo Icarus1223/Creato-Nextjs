@@ -107,7 +107,7 @@ export default function Home() {
         <Avatar.CreatorAvatar size="sm" src="https://i.pravatar.cc/150?img=3" />
         <Avatar.CreatorAvatar size="md" src="https://i.pravatar.cc/150?img=3" />
         <Avatar.CreatorAvatar size="lg" src="https://i.pravatar.cc/150?img=3" />
-        <Avatar.CreatorAvatar size="xl" src="https://i.pravatar.cc/150?img=3" />
+        <Avatar.CreatorAvatar size="xl" hover="true" src="https://i.pravatar.cc/150?img=3" />
       </div>
       <br /><br />
       <h1>SideMenu</h1>
