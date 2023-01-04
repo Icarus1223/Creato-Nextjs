@@ -35,8 +35,8 @@ export default function Profile(props: ProfileProps) {
                         </div>
                     }
                     menu={[
-                        <span className="font-normal text-sm p-1 w-full text-center" onClick={() => setOpenMore(false)}>Copy link</span>,
-                        <span className="font-normal text-sm p-1 w-full text-center" onClick={() => setOpenMore(false)}>Cancel</span>
+                        <span key={1} className="font-normal text-sm p-1 w-full text-center" onClick={() => setOpenMore(false)}>Copy link</span>,
+                        <span key={2} className="font-normal text-sm p-1 w-full text-center" onClick={() => setOpenMore(false)}>Cancel</span>
                     ]}
                 />
             </div>
@@ -59,8 +59,8 @@ export default function Profile(props: ProfileProps) {
             </div>
             <div className="mt-[16px] flex justify-between">
                 <div>
-                    <div className="font-bold text-xs mb-[4px]"><span>{props.name}</span></div>
-                    <div className="font-normal text-xxs text-neutral-900"><span>{props.cateogries}</span></div>
+                    <div className="font-bold text-xs mb-[4px] text-shades-0"><span>{props.name}</span></div>
+                    <div className="font-normal text-xxs text-neutral-900 dark:text-neutral-300"><span>{props.cateogries}</span></div>
                 </div>
                 <div>
                     <Button.PrimaryButton
@@ -70,7 +70,7 @@ export default function Profile(props: ProfileProps) {
                 </div>
             </div>
             {props.bio &&
-                <div className="mt-[12px] text-xxs">
+                <div className="mt-[12px] text-xxs text-shades-0">
                     <span>{props.bio}</span>
                 </div>
             }
