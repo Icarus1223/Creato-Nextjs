@@ -11,13 +11,13 @@ import styles from "./Creator.module.css";
 
 export default function Creator(props: CreatorProps) {
     return (
-        <div className={`${styles["admin-creator"]}`}>
+        <div className={`${styles["admin-creator"]} bg-shades-0 dark:bg-neutral-800`}>
             <div className={`${styles["creator-avatar"]} mb-5`}>
                 <Avatar.CreatorAvatar size="lg" src={props.avatar} />
             </div>
             <div className="flex justify-center flex-col items-center">
                 <span className="font-extrabold text-xl text-primary-500">{props.name}</span>
-                <span className="font-bold text-sm text-neutral-500 mt-[6px]">{props.categories}</span>
+                <span className="font-bold text-sm text-neutral-500 mt-[6px] dark:text-shades-0">{props.categories}</span>
             </div>
             <div className="mt-5 flex justify-around">
                 <Button.PrimaryButton outline="true" value="FREE Bite" width="130px"><Icon icon="add" /></Button.PrimaryButton>

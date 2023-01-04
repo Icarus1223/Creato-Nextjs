@@ -12,14 +12,14 @@ import styles from "./Creator.module.css";
 
 export default function Creator(props: CreatorProps) {
     return (
-        <div className={styles["user-creator"]}>
+        <div className={`${styles["user-creator"]} bg-shades-0 dark:bg-neutral-800`}>
             <div className="sm:flex">
                 <div className={styles["creator-avatar"]}>
                     <Avatar.CreatorAvatar size="lg" src={props.avatar} />
                 </div>
                 <div className="flex justify-center flex-col items-center mt-5 sm:mt-0 sm:ml-5 sm:items-start">
                     <span className="font-extrabold text-xl text-primary-500">{props.name}</span>
-                    <span className="font-bold text-sm text-neutral-500 mt-[6px]">{props.categories}</span>
+                    <span className="font-bold text-sm text-neutral-500 mt-[6px] dark:text-shades-0">{props.categories}</span>
                 </div>
             </div>
             <div className="mt-5 flex justify-center sm:mt-0 sm:items-center sm:float-right">
