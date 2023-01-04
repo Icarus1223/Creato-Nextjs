@@ -26,7 +26,7 @@ export default function Profile(props: ProfileProps) {
         <div className={styles["profile"]}>
             <div className="absolute top-[10px] right-[20px]">
                 <Dropdown
-                    className="right-0 top-[15px]"
+                    className="right-0 top-[15px] dark:bg-neutral-800"
                     open={openMore}
                     setOpen={setOpenMore}
                     trigger={
@@ -35,8 +35,8 @@ export default function Profile(props: ProfileProps) {
                         </div>
                     }
                     menu={[
-                        <span key={1} className="font-normal text-sm p-1 w-full text-center" onClick={() => setOpenMore(false)}>Copy link</span>,
-                        <span key={2} className="font-normal text-sm p-1 w-full text-center" onClick={() => setOpenMore(false)}>Cancel</span>
+                        <span key={1} className="font-normal text-sm p-1 w-full text-center dark:text-shades-0" onClick={() => setOpenMore(false)}>Copy link</span>,
+                        <span key={2} className="font-normal text-sm p-1 w-full text-center dark:text-shades-0" onClick={() => setOpenMore(false)}>Cancel</span>
                     ]}
                 />
             </div>

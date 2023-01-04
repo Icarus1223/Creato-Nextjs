@@ -21,7 +21,7 @@ export default function Dropdown(props: DropdownProps) {
             {props.open ?
                 <ul className={`${styles["menu"]} ${props.className}`} ref={wrapRef}>
                     {props.menu.map((item: React.ReactElement, index: number) => (
-                        <li key={index} className={styles["menu-item"]}>{item}</li>
+                        <li key={index} className={`${styles["menu-item"]} hover:bg-neutral-100 dark:hover:bg-neutral-700`}>{item}</li>
                     ))}
                 </ul>
                 : null}

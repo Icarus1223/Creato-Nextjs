@@ -12,7 +12,7 @@
 }
 
 .menu > li:hover {
-    @apply bg-neutral-100 rounded-[10px]
+    @apply rounded-[10px]
 }
 
 .menu > li > .menu-item {
