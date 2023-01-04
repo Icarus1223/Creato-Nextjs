@@ -61,7 +61,7 @@ export default function ProfileCard(props: BSKProfileProps) {
                 </div>
                 <div className="absolute flex bottom-[8px]">
                     {props.thumbnails.map((thumb: any, index: number) => (
-                        <div className={`h-[9px] w-[52px] ${videoIndex === index ? 'bg-primary-500' : 'bg-shades-200'} mx-2 rounded-[7px]`}></div>
+                        <div key={index} className={`h-[9px] w-[52px] ${videoIndex === index ? 'bg-primary-500' : 'bg-shades-200'} mx-2 rounded-[7px]`}></div>
                     ))}
                 </div>
             </div>
