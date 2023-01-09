@@ -14,11 +14,42 @@ import image from "../src/assets/test.png"
 import image1 from "../src/assets/test1.jpg"
 import image2 from "../src/assets/test2.png"
 
-export default function Home() {
+import type { NextPage } from 'next'
+import { useSession, signIn, signOut } from "next-auth/react"
+
+const Home: NextPage = () => {
+  const { data: session } = useSession()
   const [tab, setTab] = useState(0)
+
   return (
     <div className="px-2 py-2 dark:bg-neutral-800">
-      <h1>H1 heading</h1>
+      <div>
+        {session && session.user ? (
+          <button onClick={() => signOut()}>Sign out</button>
+        ) : (
+          <button onClick={() => signIn()}>Sign in</button>
+        )}
+      </div>
+      <div>
+        {session && session.user ? (
+          <div >
+            <div>
+              <h2>Computer Programming Cookbook</h2>
+              <p>
+                This is a simple hero unit, a simple jumbotron-style component for calling
+                extra attention to featured content or information.
+              </p>
+              <p>
+              </p>
+            </div>
+          </div>
+        ) : (
+          <p>You need to sign in to access the books</p>
+        )}
+      </div>
+      <br />
+      <hr />
+      {/* <h1>H1 heading</h1>
       <h2>H2 heading</h2>
       <h3>H3 heading</h3>
       <h4>H4 heading</h4>
@@ -290,13 +321,15 @@ export default function Home() {
       />
       <br /><br />
       <h1>Profile Component</h1>
-      <Profile 
+      <Profile
         cateogries="Photographer/TikTok Creator"
         avatar="https://i.pravatar.cc/150?img=3"
         name="Benjamin"
         profileUrl="/"
         bio="Full Stack Developer"
-      />
+      /> */}
     </div>
   );
 }
+
+export default Home
