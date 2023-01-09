@@ -3,6 +3,7 @@
 BITE
 
 ```bash
+createBite = get('api/v1/bites/create')
 getBites = get('api/v1/bites')
 getBiteById = get('api/v1/bites/:id')
 deleteBiteById = delete('api/v1/bites/:id')
