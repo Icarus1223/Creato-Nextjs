@@ -1,25 +1,25 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import API from "../../axiosInstance"
+import API from "../../../../../axiosInstance"
 
-const getBiteById = async (
+const BiteVideo = async (
     req: NextApiRequest,
     res: NextApiResponse
 ) => {
     const {
-        query: { id },
+        query: { id, index },
         method,
     } = req
 
     switch (method) {
-        case 'GET': {
-            const response = await API.get(`/api/v1/bites/${id}`)
+        case 'DELETE': {
+            const response = await API.delete(`bites/${id}/video/${index}`)
             return res.status(response.status).json(response.data)
         }
         default: {
-            res.setHeader('Allow', ['GET'])
+            res.setHeader('Allow', ['DELETE'])
             res.status(405).end(`Method ${method} Not Allowed`)
         }
     }
 }
 
-export default getBiteById
+export default BiteVideo
