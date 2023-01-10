@@ -1,4 +1,20 @@
-export const CONSTANTS = {
-    CURRENCY_SYMBOLS: ['$', '₹', '$', '$', 'RM', '$', '€', '£', '$', 'R', '¥', '₣', '$', '¥', '$', '฿', '₱', 'Rp'],
-    CURRENCIES: ['USD', 'INR', 'TWD', 'HKD', 'MYR', 'AUD', 'EUR', 'GBP', 'CAD', 'ZAR', 'JPY', 'CHF', 'NZD', 'CNY', 'SGD', 'THB', 'PHP', 'IDR']
+export enum CURRENCIES {
+    USD = '$',
+    INR = '₹',
+    TWD = '$',
+    HKD = '$',
+    MYR = 'RM',
+    AUD = '$',
+    EUR = '€',
+    GBP = '£',
+    CAD = '$',
+    ZAR = 'R',
+    JPY = '¥',
+    CHF = '₣',
+    NZD = '$',
+    CNY = '¥',
+    SGD = '$',
+    THB = '฿',
+    PHP = '₱',
+    IDR = 'Rp'
 }

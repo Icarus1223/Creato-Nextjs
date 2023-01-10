@@ -49,7 +49,7 @@ const Home: NextPage = () => {
       </div>
       <br />
       <hr />
-      {/* <h1>H1 heading</h1>
+      <h1>H1 heading</h1>
       <h2>H2 heading</h2>
       <h3>H3 heading</h3>
       <h4>H4 heading</h4>
@@ -327,7 +327,7 @@ const Home: NextPage = () => {
         name="Benjamin"
         profileUrl="/"
         bio="Full Stack Developer"
-      /> */}
+      />
     </div>
   );
 }

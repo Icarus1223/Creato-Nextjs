@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import API from "../../../axiosInstance"
+import API from "../../../../../src/utils/axiosInstance"
 
 const CreateBite = async (
     req: NextApiRequest,

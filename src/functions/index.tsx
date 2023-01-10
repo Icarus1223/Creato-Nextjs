@@ -1,8 +1,10 @@
-import { CONSTANTS } from "../constants"
+import { CURRENCIES } from "../constants"
 
 export const displayCurrency = (localCurrency: string) => {
-    const foundIndex = CONSTANTS.CURRENCIES.findIndex((currency: string) => currency === localCurrency.toUpperCase())
-    return CONSTANTS.CURRENCY_SYMBOLS[foundIndex] + ' ' + localCurrency.toUpperCase()
+    const keys = Object.keys(CURRENCIES)
+    const values = Object.values(CURRENCIES)
+    const index = keys.findIndex(key => key === localCurrency.toUpperCase())
+    return values[index] + ' ' + keys[index]
 }
 
 export const displayPostTime = (postTime: number) => {
