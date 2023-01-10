@@ -7,6 +7,7 @@ const BiteById = async (
 ) => {
     const {
         query: { id },
+        body,
         method,
     } = req
 
@@ -19,8 +20,12 @@ const BiteById = async (
             const response = await API.delete(`bites/${id}`)
             return res.status(response.status).json(response.data)
         }
+        case 'PUT': {
+            const response = await API.put(`bites/${id}`, body)
+            return res.status(response.status).json(response.data)
+        }
         default: {
-            res.setHeader('Allow', ['GET', 'DELETE'])
+            res.setHeader('Allow', ['GET', 'DELETE', 'PUT'])
             res.status(405).end(`Method ${method} Not Allowed`)
         }
     }

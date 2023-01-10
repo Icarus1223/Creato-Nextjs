@@ -1,22 +1,22 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import API from "../../../axiosInstance"
 
-const CreateBite = async (
+const TransactionByBite = async (
     req: NextApiRequest,
     res: NextApiResponse
 ) => {
-    const { method, body } = req
+    const { method, query: { id } } = req
 
     switch (method) {
         case 'GET': {
-            const response = await API.post('bites/create', body)
+            const response = await API.get(`transactions/bites/${id}`)
             return res.status(response.status).json(response.data)
         }
         default: {
-            res.setHeader('Allow', ['POST'])
+            res.setHeader('Allow', ['GET'])
             res.status(405).end(`Method ${method} Not Allowed`)
         }
     }
 }
 
-export default CreateBite
+export default TransactionByBite

@@ -1,19 +1,19 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import API from "../../../../../../axiosInstance"
+import API from "../../../../axiosInstance"
 
-const BiteVideoVisible = async (
+const UnlockBite = async (
     req: NextApiRequest,
     res: NextApiResponse
 ) => {
     const {
-        query: { id, index },
+        query: { id },
         body,
         method,
     } = req
 
     switch (method) {
         case 'PUT': {
-            const response = await API.put(`bites/${id}/video/${index}/set_visible`, body)
+            const response = await API.put(`bites/${id}/unlock`, body)
             return res.status(response.status).json(response.data)
         }
         default: {
@@ -23,4 +23,4 @@ const BiteVideoVisible = async (
     }
 }
 
-export default BiteVideoVisible
+export default UnlockBite

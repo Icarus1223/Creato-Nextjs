@@ -1,15 +1,19 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import API from "../../../axiosInstance"
+import API from "../../../../../axiosInstance"
 
-const CreateBite = async (
+const CreateComment = async (
     req: NextApiRequest,
     res: NextApiResponse
 ) => {
-    const { method, body } = req
+    const {
+        query: { id, index },
+        body,
+        method,
+    } = req
 
     switch (method) {
-        case 'GET': {
-            const response = await API.post('bites/create', body)
+        case 'POST': {
+            const response = await API.post(`bites/${id}/comments/${index}`, body)
             return res.status(response.status).json(response.data)
         }
         default: {
@@ -19,4 +23,4 @@ const CreateBite = async (
     }
 }
 
-export default CreateBite
+export default CreateComment
