@@ -2,10 +2,13 @@ import { useState } from "react"
 import Image, { StaticImageData } from "next/image"
 import Chip from "@/src/components/Chip"
 import Icon from "@/src/components/Icon"
-import CurrencyText from "../CurrencyText"
+import CurrencyText from "@/src/components/CurrencyText"
+import PostTime from "@/src/components/PostTime"
 import nextImg from "../../assets/img/next-bright.png";
-import { displayPostTime } from "../../functions"
+import { CURRENCIES } from "src/constants"
 import styles from "./BSKCard.module.css"
+
+type ICurrency = keyof typeof CURRENCIES
 
 interface BSKProfileProps {
     thumbnails: Array<string | StaticImageData>,
@@ -26,7 +29,8 @@ export default function ProfileCard(props: BSKProfileProps) {
     return (
         <div className={`${styles['bskcard-profile']} bg-shades-0 dark:bg-neutral-800`}>
             <div className={`flex items-center rounded-t-[5px] px-3 py-[5px] h-[28px] ${styles[`header-${type}`]}`}>
-                <Chip type={type}>{type === "mine" ? 'My Bite' : type === 'unlocked' ? 'Unlcoked' : props.currency ? <CurrencyText currency={props.currency} /> + ' ' + props.price : 'Free'}</Chip>
+                <Chip type={type}>
+                    {type === "mine" ? 'My Bite' : type === 'unlocked' ? 'Unlcoked' : props.currency ? <><CurrencyText currency={props.currency.toUpperCase() as ICurrency} />{` ${props.price}`}</> : 'Free'}</Chip>
                 <Chip type={type} value={`${props.unlockedCnt} ${props.currency ? 'purchased' : 'unlocked'}`}><Icon icon="noofpeople" className="fill-shades-0 mr-[3px]" /></Chip>
             </div>
             <div className={`relative flex justify-center items-center h-[495px] rounded-b-[5px] overflow-hidden ${styles[`body-${type}`]}`}>
@@ -69,7 +73,7 @@ export default function ProfileCard(props: BSKProfileProps) {
             <div className={styles["footer"]}>
                 <div className="font-extrabold text-error-500 text-xm inline-flex items-center">
                     <Icon icon="clock" className="mr-[5px] fill-error-500" />
-                    <span>{displayPostTime(props.time)}</span>
+                    <span><PostTime time={props.time} /></span>
                 </div>
                 <div className="line-clamp-2 font-bold text-xl text-primary-500">
                     <span>{props.title}</span>

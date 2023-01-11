@@ -1,14 +1,12 @@
+import React from "react"
 import { CURRENCIES } from "src/constants"
 
 interface CurrencyTextProps {
-    currency: string
+    currency: keyof typeof CURRENCIES,
 }
 
 const CurrencyText = ({ currency }: CurrencyTextProps) => {
-    type Currencies = keyof typeof CURRENCIES
-    let currencyLiteral: Currencies
-    currencyLiteral = currency.toUpperCase() as Currencies
-    return <>{CURRENCIES[currencyLiteral] + ' ' + currencyLiteral}</>
+    return <React.Fragment>{CURRENCIES[currency] + ' ' + currency}</React.Fragment>
 }
 
 export default CurrencyText
