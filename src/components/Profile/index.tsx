@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import Image from "next/image"
 
 interface ProfileProps {
@@ -22,6 +22,15 @@ import styles from "./Profile.module.css"
 export default function Profile(props: ProfileProps) {
     const [openMore, setOpenMore] = useState(false)
 
+    const Bio = useMemo(() => {
+        if (props.bio) return (
+            <div className="mt-[12px] text-xxs text-shades-0">
+                <span>{props.bio}</span>
+            </div>
+        )
+        else return <></>
+    }, [props.bio])
+
     return (
         <div className={styles["profile"]}>
             <div className="absolute top-[10px] right-[20px]">
@@ -35,8 +44,8 @@ export default function Profile(props: ProfileProps) {
                         </div>
                     }
                     menu={[
-                        <span key={1} className="font-normal text-sm p-1 w-full text-center dark:text-shades-0" onClick={() => setOpenMore(false)}>Copy link</span>,
-                        <span key={2} className="font-normal text-sm p-1 w-full text-center dark:text-shades-0" onClick={() => setOpenMore(false)}>Cancel</span>
+                        <span key={0} className="font-normal text-sm p-1 w-full text-center dark:text-shades-0" onClick={() => setOpenMore(false)}>Copy link</span>,
+                        <span key={1} className="font-normal text-sm p-1 w-full text-center dark:text-shades-0" onClick={() => setOpenMore(false)}>Cancel</span>
                     ]}
                 />
             </div>
@@ -69,11 +78,7 @@ export default function Profile(props: ProfileProps) {
                     />
                 </div>
             </div>
-            {props.bio &&
-                <div className="mt-[12px] text-xxs text-shades-0">
-                    <span>{props.bio}</span>
-                </div>
-            }
+            {Bio}
             <div className="mt-[22px] flex justify-center">
                 <Button.PrimaryButton
                     value="Edit Profile"

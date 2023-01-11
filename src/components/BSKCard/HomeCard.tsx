@@ -1,10 +1,11 @@
 import { useState } from "react"
 import Image, { StaticImageData } from "next/image"
-import { Avatar } from "../Avatar"
-import Chip from "../Chip"
-import Icon from "../Icon"
+import { Avatar } from "@/src/components/Avatar"
+import Chip from "@/src/components/Chip"
+import Icon from "@/src/components/Icon"
+import CurrencyText from "@/src/components//CurrencyText"
 import nextImg from "../../assets/img/next-bright.png";
-import { displayCurrency, displayPostTime } from "../../functions"
+import { displayPostTime } from "../../functions"
 import styles from "./BSKCard.module.css"
 
 type UserType = {
@@ -85,7 +86,7 @@ export default function HomeCard(props: BSKHomeProps) {
                 </div>
                 <div className={styles["footer"]}>
                     <div className="flex justify-center">
-                        <Chip className="mr-[9px]" type={type}>{type === 'unlocked' ? 'Unlcoked' : props.currency ? displayCurrency(props.currency) + ' ' + props.price : 'Free'}</Chip>
+                        <Chip className="mr-[9px]" type={type}>{type === 'unlocked' ? 'Unlcoked' : props.currency ? <CurrencyText currency={props.currency} /> + ' ' + props.price : 'Free'}</Chip>
                         <Chip type={type} value={`${props.unlockedCnt} ${props.currency ? 'purchased' : 'unlocked'}`}><Icon icon="noofpeople" className="fill-shades-0 mr-[3px]" /></Chip>
                     </div>
                     <div className="line-clamp-2 mt-[10px] font-bold text-xl text-primary-500">

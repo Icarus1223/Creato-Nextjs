@@ -1,9 +1,10 @@
 import { useState } from "react"
 import Image, { StaticImageData } from "next/image"
-import Chip from "../Chip"
-import Icon from "../Icon"
+import Chip from "@/src/components/Chip"
+import Icon from "@/src/components/Icon"
+import CurrencyText from "../CurrencyText"
 import nextImg from "../../assets/img/next-bright.png";
-import { displayCurrency, displayPostTime } from "../../functions"
+import { displayPostTime } from "../../functions"
 import styles from "./BSKCard.module.css"
 
 interface BSKProfileProps {
@@ -25,7 +26,7 @@ export default function ProfileCard(props: BSKProfileProps) {
     return (
         <div className={`${styles['bskcard-profile']} bg-shades-0 dark:bg-neutral-800`}>
             <div className={`flex items-center rounded-t-[5px] px-3 py-[5px] h-[28px] ${styles[`header-${type}`]}`}>
-                <Chip type={type}>{type === "mine" ? 'My Bite' : type === 'unlocked' ? 'Unlcoked' : props.currency ? displayCurrency(props.currency) + ' ' + props.price : 'Free'}</Chip>
+                <Chip type={type}>{type === "mine" ? 'My Bite' : type === 'unlocked' ? 'Unlcoked' : props.currency ? <CurrencyText currency={props.currency} /> + ' ' + props.price : 'Free'}</Chip>
                 <Chip type={type} value={`${props.unlockedCnt} ${props.currency ? 'purchased' : 'unlocked'}`}><Icon icon="noofpeople" className="fill-shades-0 mr-[3px]" /></Chip>
             </div>
             <div className={`relative flex justify-center items-center h-[495px] rounded-b-[5px] overflow-hidden ${styles[`body-${type}`]}`}>

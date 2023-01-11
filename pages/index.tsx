@@ -276,9 +276,9 @@ const Home: NextPage = () => {
         <BSKCard.ProfileCard
           thumbnails={[image, image1, image2]}
           isLogin={true}
-          locked={false}
+          locked={true}
           title="BSK  title BSK title BSK titlte BSK title BSK title BSK title BSK title BSK title"
-          currency="aud"
+          currency="gbp"
           time={25000}
           price={10}
           unlockedCnt={2}

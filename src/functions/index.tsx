@@ -1,12 +1,3 @@
-import { CURRENCIES } from "../constants"
-
-export const displayCurrency = (localCurrency: string) => {
-    const keys = Object.keys(CURRENCIES)
-    const values = Object.values(CURRENCIES)
-    const index = keys.findIndex(key => key === localCurrency.toUpperCase())
-    return values[index] + ' ' + keys[index]
-}
-
 export const displayPostTime = (postTime: number) => {
     const passTime = Math.abs(postTime)
     let res: string = 'Posted'
