@@ -1,10 +1,10 @@
 import { useState } from "react";
 import Image from "next/image"
-import { Avatar } from "template/Avatar"
-import { Button } from "@/template/Button";
+import { Avatar } from "@/src/components/Avatar"
+import { Button } from "@/src/components/Button";
 import Dropdown from "@/src/components/Dropdown";
-import Icon from "@/template/Icon";
-import Bio from "@/src/components/Profile/Bio";
+import Icon from "@/src/components/Icon";
+import Bio from "./Bio";
 import YoutubeImg from "@/src/assets/img/youtube.png";
 import InstagramImg from "@/src/assets/img/instagram.png";
 import styles from "./Profile.module.css"

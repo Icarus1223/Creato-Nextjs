@@ -1,11 +1,11 @@
-import { useMemo, useState } from "react"
+import { useState } from "react"
 import Image, { StaticImageData } from "next/image"
-import { Avatar } from "template/Avatar"
-import Chip from "@/template/Chip"
-import Icon from "@/template/Icon"
+import { Avatar } from "@/src/components/Avatar"
+import Chip from "@/src/components/Chip"
+import Icon from "@/src/components/Icon"
 import CurrencyText from "@/src/components/CurrencyText"
 import PostTime from "@/src/components/PostTime"
-import NavigatorBtn from "@/src/components/BSKCard/NavigatorBtn"
+import NavigatorBtn from "./NavigatorBtn"
 import { CURRENCIES } from "src/constants"
 import styles from "./BSKCard.module.css"
 
@@ -82,7 +82,7 @@ const HomeCard: React.FC<BSKHomeProps> = (props) => {
                             {type === 'unlocked' ? 'Unlcoked' : props.currency ? <><CurrencyText currency={props.currency.toUpperCase() as ICurrency} />{` ${props.price}`}</> : 'Free'}
                         </Chip>
                         <Chip type={type} value={`${props.unlockedCnt} ${props.currency ? 'purchased' : 'unlocked'}`}>
-                            <Icon icon="noofpeople" className="fill-shades-0 mr-[3px]" />
+                            <Icon icon="noofpeople" className={styles["profile-icon"]} />
                         </Chip>
                     </div>
                     <div className={styles["title"]}>

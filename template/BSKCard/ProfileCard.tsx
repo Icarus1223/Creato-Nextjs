@@ -1,10 +1,10 @@
-import { useState, useMemo } from "react"
+import { useState } from "react"
 import Image, { StaticImageData } from "next/image"
-import Chip from "@/template/Chip"
-import Icon from "@/template/Icon"
+import Chip from "@/src/components/Chip"
+import Icon from "@/src/components/Icon"
 import CurrencyText from "@/src/components/CurrencyText"
 import PostTime from "@/src/components/PostTime"
-import NavigatorBtn from "@/src/components/BSKCard/NavigatorBtn"
+import NavigatorBtn from "./NavigatorBtn"
 import { CURRENCIES } from "src/constants"
 import styles from "./BSKCard.module.css"
 
@@ -34,7 +34,7 @@ const ProfileCard: React.FC<BSKProfileProps> = (props) => {
             <div className={`${styles[`header`]} ${styles[`header-${type}`]}`}>
                 <Chip type={type}>
                     {type === "mine" ? 'My Bite' : type === 'unlocked' ? 'Unlcoked' : props.currency ? <><CurrencyText currency={props.currency.toUpperCase() as ICurrency} />{` ${props.price}`}</> : 'Free'}</Chip>
-                <Chip type={type} value={`${props.unlockedCnt} ${props.currency ? 'purchased' : 'unlocked'}`}><Icon icon="noofpeople" className="fill-shades-0 mr-[3px]" /></Chip>
+                <Chip type={type} value={`${props.unlockedCnt} ${props.currency ? 'purchased' : 'unlocked'}`}><Icon icon="noofpeople" className={styles['profile-icon']} /></Chip>
             </div>
             <div className={`${styles[`body`]} ${styles[`body-${type}`]}`}>
                 <Image
@@ -61,7 +61,7 @@ const ProfileCard: React.FC<BSKProfileProps> = (props) => {
             </div>
             <div className={styles["footer"]}>
                 <div className={styles["post-time"]}>
-                    <Icon icon="clock" className="mr-[5px] fill-error-500" />
+                    <Icon icon="clock" className={styles['clock-icon']} />
                     <span><PostTime time={props.time} /></span>
                 </div>
                 <div className={styles["title"]}>

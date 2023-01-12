@@ -1,3 +1,11 @@
+.clock-icon {
+    @apply mr-[5px] fill-error-500
+}
+
+.profile-icon {
+    @apply fill-shades-0 mr-[3px]
+}
+
 .bskcard-home {
     @apply relative w-[335px] h-[685px]
 }
@@ -20,10 +28,6 @@
 
 .bskcard-home .bsk-content .header .post-time {
     @apply font-extrabold text-error-500 text-xs inline-flex items-center
-}
-
-.bskcard-home .bsk-content .header .post-time .clock-icon {
-    @apply mr-[5px] fill-error-500
 }
 
 .bskcard-home .bsk-content .body {

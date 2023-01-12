@@ -1,6 +1,6 @@
-import { Avatar } from "template/Avatar";
-import { Button } from "@/template/Button";
-import Icon from "@/template/Icon";
+import { Avatar } from "@/src/components/Avatar";
+import { Button } from "@/src/components/Button";
+import Icon from "@/src/components/Icon";
 import styles from "./Creator.module.css";
 
 interface CreatorProps {

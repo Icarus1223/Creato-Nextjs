@@ -1,13 +1,13 @@
-import { Button } from "@/template/Button";
-import { ContainerButton } from "@/template/ContainerButton";
-import { Input } from "@/template/Input";
-import { Avatar } from "template/Avatar";
+import { Button } from "@/src/components/Button";
+import { ContainerButton } from "@/src/components/ContainerButton";
+import { Input } from "@/src/components/Input";
+import { Avatar } from "@/src/components/Avatar";
 import SideMenu from "@/src/components/SideMenu";
-import Chip from "@/template/Chip";
-import { BSKCard } from "@/src/components/BSKCard";
-import { Creator } from "@/src/components/Creator";
-import Profile from "@/src/components/Profile";
-import Icon from "@/template/Icon";
+import Chip from "@/src/components/Chip";
+import { BSKCard } from "@/template/BSKCard";
+import { Creator } from "@/template/Creator";
+import Profile from "@/template/Profile";
+import Icon from "@/src/components/Icon";
 import { useState } from "react";
 
 import image from "../src/assets/test.png"
