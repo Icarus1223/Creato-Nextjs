@@ -1,3 +1,5 @@
+import type { NextPageWithLayout } from '@/pages/_app'
+import Layout from '@/template/Layout';
 import { Button } from "@/src/components/Button";
 import { ContainerButton } from "@/src/components/ContainerButton";
 import { Input } from "@/src/components/Input";
@@ -14,10 +16,9 @@ import image from "../src/assets/test.png"
 import image1 from "../src/assets/test1.jpg"
 import image2 from "../src/assets/test2.png"
 
-import type { NextPage } from 'next'
 import { useSession, signIn, signOut } from "next-auth/react"
 
-const Home: NextPage = () => {
+const Home: NextPageWithLayout = () => {
   const { data: session } = useSession()
   const [tab, setTab] = useState(0)
 
@@ -333,3 +334,11 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+Home.getLayout = function getLayout(page: React.ReactElement) {
+  return (
+    <Layout>
+      {page}
+    </Layout>
+  )
+}
