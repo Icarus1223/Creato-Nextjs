@@ -11,25 +11,17 @@ interface ProfileProps {
     instagram?: string
 }
 
-import { Avatar } from "../Avatar"
-import { Button } from "../Button";
-import Dropdown from "../Dropdown";
-import Icon from "../Icon";
+import { Avatar } from "@/src/components/Avatar"
+import { Button } from "@/src/components/Button";
+import Dropdown from "@/src/components/Dropdown";
+import Icon from "@/src/components/Icon";
+import Bio from "@/src/components/Profile/Bio";
 import YoutubeImg from "../../assets/img/youtube.png";
 import InstagramImg from "../../assets/img/instagram.png";
 import styles from "./Profile.module.css"
 
 export default function Profile(props: ProfileProps) {
     const [openMore, setOpenMore] = useState(false)
-
-    const Bio = useMemo(() => {
-        if (props.bio) return (
-            <div className="mt-[12px] text-xxs text-shades-0">
-                <span>{props.bio}</span>
-            </div>
-        )
-        else return <></>
-    }, [props.bio])
 
     return (
         <div className={styles["profile"]}>
@@ -78,7 +70,7 @@ export default function Profile(props: ProfileProps) {
                     />
                 </div>
             </div>
-            {Bio}
+            <Bio bio={props.bio} />
             <div className="mt-[22px] flex justify-center">
                 <Button.PrimaryButton
                     value="Edit Profile"
