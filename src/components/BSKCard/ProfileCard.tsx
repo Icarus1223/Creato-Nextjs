@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useMemo } from "react"
 import Image, { StaticImageData } from "next/image"
 import Chip from "@/src/components/Chip"
 import Icon from "@/src/components/Icon"
@@ -26,6 +26,42 @@ export default function ProfileCard(props: BSKProfileProps) {
     const type = props.isMine ? 'mine' : props.locked ? props.currency ? 'locked' : 'free' : 'unlocked'
     const [videoIndex, setVideoIndex] = useState(0)
 
+    const PrevBtn = useMemo(() => {
+        if (videoIndex > 0) return (
+            <Image
+                className="absolute top-[200px] left-[5px] rotate-180 cursor-pointer"
+                src={nextImg}
+                alt="PrevImage"
+                onClick={() => { setVideoIndex((prevIndex: number) => (prevIndex - 1) % props.thumbnails.length) }}
+            />
+        )
+        else return null
+    }, [videoIndex])
+
+    const NextBtn = useMemo(() => {
+        if (videoIndex < (props.thumbnails.length - 1)) return (
+            <Image
+                className="absolute top-[200px] right-[5px] cursor-pointer"
+                src={nextImg}
+                alt="NextImage"
+                onClick={() => { setVideoIndex((prevIndex: number) => (prevIndex + 1) % props.thumbnails.length) }}
+            />
+        )
+        else return null
+    }, [videoIndex])
+
+    const LockedBg = useMemo(() => {
+        if (!props.isLogin) return (
+            <div className={`absolute h-[495px] w-[280px] rounded-b-[15px] top-[-19px] flex justify-center items-center ${styles['locked-bg']}`}>
+                <div className={`px-[10px] w-fit h-[50px] rounded-[7px] border-primary-500 border-[1px] flex justify-center items-center ${styles['lock-btn']}`}>
+                    <span className="relative ml-[30px] font-normal text-base">Unlock</span>
+                </div>
+            </div>
+        )
+        else return null
+    }, [props.isLogin])
+
+
     return (
         <div className={`${styles['bskcard-profile']} bg-shades-0 dark:bg-neutral-800`}>
             <div className={`flex items-center rounded-t-[5px] px-3 py-[5px] h-[28px] ${styles[`header-${type}`]}`}>
@@ -39,30 +75,10 @@ export default function ProfileCard(props: BSKProfileProps) {
                     className="w-full"
                     src={props.thumbnails[videoIndex]}
                 />
-                {!props.isLogin &&
-                    <div className={`absolute h-[495px] w-[280px] flex justify-center items-center ${styles['locked-bg']}`}>
-                        <div className={`px-[10px] w-fit h-[50px] rounded-[7px] border-primary-500 border-[1px] flex justify-center items-center ${styles['lock-btn']}`}>
-                            <span className="relative ml-[30px] font-normal text-base">Unlock</span>
-                        </div>
-                    </div>
-                }
+                {LockedBg}
                 <div className="absolute w-[280px] h-[495px]">
-                    {videoIndex > 0 &&
-                        <Image
-                            className="absolute top-[200px] left-[5px] rotate-180 cursor-pointer"
-                            src={nextImg}
-                            alt="PrevImage"
-                            onClick={() => { setVideoIndex((prevIndex: number) => (prevIndex - 1) % props.thumbnails.length) }}
-                        />
-                    }
-                    {videoIndex < (props.thumbnails.length - 1) &&
-                        <Image
-                            className="absolute top-[200px] right-[5px] cursor-pointer"
-                            src={nextImg}
-                            alt="NextImage"
-                            onClick={() => { setVideoIndex((prevIndex: number) => (prevIndex + 1) % props.thumbnails.length) }}
-                        />
-                    }
+                    {PrevBtn}
+                    {NextBtn}
                 </div>
                 <div className="absolute flex bottom-[8px]">
                     {props.thumbnails.map((thumb: any, index: number) => (

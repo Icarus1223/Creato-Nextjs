@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useMemo, useState } from "react"
 import Image, { StaticImageData } from "next/image"
 import { Avatar } from "@/src/components/Avatar"
 import Chip from "@/src/components/Chip"
@@ -33,6 +33,41 @@ export default function HomeCard(props: BSKHomeProps) {
     const type = props.locked ? props.currency ? 'locked' : 'free' : 'unlocked'
     const [videoIndex, setVideoIndex] = useState(0)
 
+    const PrevBtn = useMemo(() => {
+        if (videoIndex > 0) return (
+            <Image
+                className="absolute top-[200px] left-[5px] rotate-180 cursor-pointer"
+                src={nextImg}
+                alt="PrevImage"
+                onClick={() => { setVideoIndex((prevIndex: number) => (prevIndex - 1) % props.thumbnails.length) }}
+            />
+        )
+        else return null
+    }, [videoIndex])
+
+    const NextBtn = useMemo(() => {
+        if (videoIndex < (props.thumbnails.length - 1)) return (
+            <Image
+                className="absolute top-[200px] right-[5px] cursor-pointer"
+                src={nextImg}
+                alt="NextImage"
+                onClick={() => { setVideoIndex((prevIndex: number) => (prevIndex + 1) % props.thumbnails.length) }}
+            />
+        )
+        else return null
+    }, [videoIndex])
+
+    const LockedBg = useMemo(() => {
+        if (!props.isLogin) return (
+            <div className={`absolute h-[495px] w-[280px] rounded-b-[15px] top-[-19px] flex justify-center items-center ${styles['locked-bg']}`}>
+                <div className={`px-[10px] w-fit h-[50px] rounded-[7px] border-primary-500 border-[1px] flex justify-center items-center ${styles['lock-btn']}`}>
+                    <span className="relative ml-[30px] font-normal text-base">Unlock</span>
+                </div>
+            </div>
+        )
+        else return null
+    }, [props.isLogin])
+
     return (
         <div className={styles['bskcard-home']}>
             <div className={`${styles['bsk-avatar']} bg-shades-0 dark:bg-neutral-800`}>
@@ -56,30 +91,10 @@ export default function HomeCard(props: BSKHomeProps) {
                             src={props.thumbnails[videoIndex]}
                         />
                     </div>
-                    {!props.isLogin &&
-                        <div className={`absolute h-[495px] w-[280px] rounded-b-[15px] top-[-19px] flex justify-center items-center ${styles['locked-bg']}`}>
-                            <div className={`px-[10px] w-fit h-[50px] rounded-[7px] border-primary-500 border-[1px] flex justify-center items-center ${styles['lock-btn']}`}>
-                                <span className="relative ml-[30px] font-normal text-base">Unlock</span>
-                            </div>
-                        </div>
-                    }
+                    {LockedBg}
                     <div className="relative w-[280px]">
-                        {videoIndex > 0 &&
-                            <Image
-                                className="absolute top-[200px] left-[5px] rotate-180 cursor-pointer"
-                                src={nextImg}
-                                alt="PrevImage"
-                                onClick={() => { setVideoIndex((prevIndex: number) => (prevIndex - 1) % props.thumbnails.length) }}
-                            />
-                        }
-                        {videoIndex < (props.thumbnails.length - 1) &&
-                            <Image
-                                className="absolute top-[200px] right-[5px] cursor-pointer"
-                                src={nextImg}
-                                alt="NextImage"
-                                onClick={() => { setVideoIndex((prevIndex: number) => (prevIndex + 1) % props.thumbnails.length) }}
-                            />
-                        }
+                        {PrevBtn}
+                        {NextBtn}
                     </div>
                     <div className="absolute flex bottom-[8px]">
                         {props.thumbnails.map((thumb: any, index: number) => (
