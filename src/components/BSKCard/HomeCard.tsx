@@ -5,7 +5,7 @@ import Chip from "@/src/components/Chip"
 import Icon from "@/src/components/Icon"
 import CurrencyText from "@/src/components/CurrencyText"
 import PostTime from "@/src/components/PostTime"
-import nextImg from "../../assets/img/next-bright.png";
+import NavigatorBtn from "@/src/components/BSKCard/NavigatorBtn"
 import { CURRENCIES } from "src/constants"
 import styles from "./BSKCard.module.css"
 
@@ -29,33 +29,12 @@ interface BSKHomeProps {
     unlockedCnt: number
 }
 
-export default function HomeCard(props: BSKHomeProps) {
+const HomeCard: React.FC<BSKHomeProps> = (props) => {
     const type = props.locked ? props.currency ? 'locked' : 'free' : 'unlocked'
     const [videoIndex, setVideoIndex] = useState(0)
 
-    const PrevBtn = useMemo(() => {
-        if (videoIndex > 0) return (
-            <Image
-                className="absolute top-[200px] left-[5px] rotate-180 cursor-pointer"
-                src={nextImg}
-                alt="PrevImage"
-                onClick={() => { setVideoIndex((prevIndex: number) => (prevIndex - 1) % props.thumbnails.length) }}
-            />
-        )
-        else return null
-    }, [videoIndex])
-
-    const NextBtn = useMemo(() => {
-        if (videoIndex < (props.thumbnails.length - 1)) return (
-            <Image
-                className="absolute top-[200px] right-[5px] cursor-pointer"
-                src={nextImg}
-                alt="NextImage"
-                onClick={() => { setVideoIndex((prevIndex: number) => (prevIndex + 1) % props.thumbnails.length) }}
-            />
-        )
-        else return null
-    }, [videoIndex])
+    const showPrevThumb = () => { setVideoIndex((prevIndex: number) => (prevIndex - 1) % props.thumbnails.length) }
+    const showNextThumb = () => { setVideoIndex((prevIndex: number) => (prevIndex + 1) % props.thumbnails.length) }
 
     const LockedBg = useMemo(() => {
         if (!props.isLogin) return (
@@ -93,8 +72,8 @@ export default function HomeCard(props: BSKHomeProps) {
                     </div>
                     {LockedBg}
                     <div className="relative w-[280px]">
-                        {PrevBtn}
-                        {NextBtn}
+                        {videoIndex > 0 && <NavigatorBtn onClick={showPrevThumb} type="home" direction="prev" />}
+                        {videoIndex < (props.thumbnails.length - 1) && <NavigatorBtn onClick={showNextThumb} type="home" direction="next" />}
                     </div>
                     <div className="absolute flex bottom-[8px]">
                         {props.thumbnails.map((thumb: any, index: number) => (
@@ -117,3 +96,5 @@ export default function HomeCard(props: BSKHomeProps) {
         </div>
     )
 }
+
+export default HomeCard

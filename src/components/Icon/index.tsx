@@ -1,11 +1,11 @@
-import { 
-    AddIcon, 
-    ClockIcon, 
-    CloseIcon, 
-    EditIcon, 
-    MoreIcon, 
-    NoOfPeopleIcon, 
-    ProfileIcon 
+import {
+    AddIcon,
+    ClockIcon,
+    CloseIcon,
+    EditIcon,
+    MoreIcon,
+    NoOfPeopleIcon,
+    ProfileIcon
 } from "../../assets/svg"
 
 interface IconProps {
@@ -13,14 +13,19 @@ interface IconProps {
     className?: string
 }
 
-export default function Icon(props: IconProps) {
+const Icon: React.FC<IconProps> = (props) => {
     const { icon } = props
-    if (icon === 'close') return <CloseIcon className={props.className} />
-    else if (icon === 'clock') return <ClockIcon className={props.className} />
-    else if (icon === 'noofpeople') return <NoOfPeopleIcon className={props.className} />
-    else if (icon === 'add') return <AddIcon className={props.className} />
-    else if (icon === 'profile') return <ProfileIcon className={props.className} />
-    else if (icon === 'edit') return <EditIcon className={props.className} />
-    else if (icon === 'more') return <MoreIcon className={props.className} />
-    else return null
+
+    switch (icon) {
+        case 'close': return <CloseIcon className={props.className} />
+        case 'clock': return <ClockIcon className={props.className} />
+        case 'noofpeople': return <NoOfPeopleIcon className={props.className} />
+        case 'add': return <AddIcon className={props.className} />
+        case 'profile': return <ProfileIcon className={props.className} />
+        case 'edit': return <EditIcon className={props.className} />
+        case 'more': return <MoreIcon className={props.className} />
+        default: return null
+    }
 }
+
+export default Icon

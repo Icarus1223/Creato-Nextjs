@@ -1,3 +1,7 @@
+import { useRef, useEffect, useMemo } from "react";
+import { useOutsideAlerter } from "../../hook";
+import styles from "./Dropdown.module.css";
+
 interface DropdownProps {
     open: boolean,
     setOpen: Function,
@@ -6,11 +10,7 @@ interface DropdownProps {
     className?: string
 }
 
-import { useRef, useEffect, useMemo } from "react";
-import { useOutsideAlerter } from "../../hook";
-import styles from "./Dropdown.module.css";
-
-export default function Dropdown(props: DropdownProps) {
+const Dropdown: React.FC<DropdownProps> = (props) => {
     const wrapRef = useRef(null)
     const res = useOutsideAlerter(wrapRef, props.open)
     useEffect(() => { if (!res) props.setOpen(res) }, [res])
@@ -33,3 +33,5 @@ export default function Dropdown(props: DropdownProps) {
         </div>
     )
 }
+
+export default Dropdown

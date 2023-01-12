@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
+import styles from "./SideMenu.module.css";
 
 type Tab = {
     url: string,
@@ -10,9 +11,8 @@ interface SideMenuProps {
     tab: number,
     setTab: Dispatch<SetStateAction<number>>
 }
-import styles from "./SideMenu.module.css";
 
-export default function SideMenu(props: SideMenuProps) {
+const SideMenu: React.FC<SideMenuProps> = (props) => {
     return (
         <div className={styles['sidemenu']}>
             {props.tabs.map((tab: Tab, index: number) => (
@@ -29,3 +29,5 @@ export default function SideMenu(props: SideMenuProps) {
         </div>
     )
 }
+
+export default SideMenu

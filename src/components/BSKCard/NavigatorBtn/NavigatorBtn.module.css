@@ -1,0 +1,15 @@
+.navigator-home-btn {
+    @apply absolute top-[200px] cursor-pointer
+}
+
+.navigator-profile-btn {
+    @apply absolute top-[217px] cursor-pointer
+}
+
+.navigator-prev {
+    @apply left-[5px] rotate-180
+}
+
+.navigator-next {
+    @apply right-[5px]
+}

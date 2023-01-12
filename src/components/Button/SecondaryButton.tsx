@@ -1,7 +1,7 @@
 import BaseButton, { BaseButtonProps } from "./BaseButton"
 import styles from "./Button.module.css";
 
-export default function PrimaryButton(props: BaseButtonProps) {
+const SecondaryButton: React.FC<BaseButtonProps> = (props) => {
     return (
         <BaseButton
             type="button"
@@ -14,3 +14,5 @@ export default function PrimaryButton(props: BaseButtonProps) {
         </BaseButton>
     )
 }
+
+export default SecondaryButton

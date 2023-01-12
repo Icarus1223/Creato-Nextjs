@@ -3,8 +3,8 @@ export type IBaseInputProps = React.DetailedHTMLProps<
     HTMLInputElement
 >;
 
-function BaseInput({ className, children, ...props }: IBaseInputProps) {
-    return <input className="" {...props}/>
+const BaseInput: React.FC<IBaseInputProps> = ({ className, children, ...props }) => {
+    return <input className="" {...props} />
 }
 
 export default BaseInput

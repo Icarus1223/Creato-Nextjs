@@ -4,7 +4,7 @@ import Chip from "@/src/components/Chip"
 import Icon from "@/src/components/Icon"
 import CurrencyText from "@/src/components/CurrencyText"
 import PostTime from "@/src/components/PostTime"
-import nextImg from "../../assets/img/next-bright.png";
+import NavigatorBtn from "@/src/components/BSKCard/NavigatorBtn"
 import { CURRENCIES } from "src/constants"
 import styles from "./BSKCard.module.css"
 
@@ -22,37 +22,16 @@ interface BSKProfileProps {
     unlockedCnt: number
 }
 
-export default function ProfileCard(props: BSKProfileProps) {
+const ProfileCard: React.FC<BSKProfileProps> = (props) => {
     const type = props.isMine ? 'mine' : props.locked ? props.currency ? 'locked' : 'free' : 'unlocked'
     const [videoIndex, setVideoIndex] = useState(0)
 
-    const PrevBtn = useMemo(() => {
-        if (videoIndex > 0) return (
-            <Image
-                className="absolute top-[200px] left-[5px] rotate-180 cursor-pointer"
-                src={nextImg}
-                alt="PrevImage"
-                onClick={() => { setVideoIndex((prevIndex: number) => (prevIndex - 1) % props.thumbnails.length) }}
-            />
-        )
-        else return null
-    }, [videoIndex])
-
-    const NextBtn = useMemo(() => {
-        if (videoIndex < (props.thumbnails.length - 1)) return (
-            <Image
-                className="absolute top-[200px] right-[5px] cursor-pointer"
-                src={nextImg}
-                alt="NextImage"
-                onClick={() => { setVideoIndex((prevIndex: number) => (prevIndex + 1) % props.thumbnails.length) }}
-            />
-        )
-        else return null
-    }, [videoIndex])
+    const showPrevThumb = () => { setVideoIndex((prevIndex: number) => (prevIndex - 1) % props.thumbnails.length) }
+    const showNextThumb = () => { setVideoIndex((prevIndex: number) => (prevIndex + 1) % props.thumbnails.length) }
 
     const LockedBg = useMemo(() => {
         if (!props.isLogin) return (
-            <div className={`absolute h-[495px] w-[280px] rounded-b-[15px] top-[-19px] flex justify-center items-center ${styles['locked-bg']}`}>
+            <div className={`absolute h-[495px] w-[280px] flex justify-center items-center ${styles['locked-bg']}`}>
                 <div className={`px-[10px] w-fit h-[50px] rounded-[7px] border-primary-500 border-[1px] flex justify-center items-center ${styles['lock-btn']}`}>
                     <span className="relative ml-[30px] font-normal text-base">Unlock</span>
                 </div>
@@ -77,8 +56,8 @@ export default function ProfileCard(props: BSKProfileProps) {
                 />
                 {LockedBg}
                 <div className="absolute w-[280px] h-[495px]">
-                    {PrevBtn}
-                    {NextBtn}
+                    {videoIndex > 0 && <NavigatorBtn onClick={showPrevThumb} type="profile" direction="prev" />}
+                    {videoIndex < (props.thumbnails.length - 1) && <NavigatorBtn onClick={showNextThumb} type="profile" direction="next" />}
                 </div>
                 <div className="absolute flex bottom-[8px]">
                     {props.thumbnails.map((thumb: any, index: number) => (
@@ -98,3 +77,5 @@ export default function ProfileCard(props: BSKProfileProps) {
         </div>
     )
 }
+
+export default ProfileCard

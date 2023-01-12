@@ -1,5 +1,3 @@
-import React from "react"
-
 interface PostTimeProps {
     time: number
 }
@@ -7,7 +5,7 @@ interface PostTimeProps {
 const values = [3600 * 24 * 30, 3600 * 24 * 7, 3600 * 24, 3600, 60];
 const units = ["month", "week", "day", "hour", "min"];
 
-const PostTime = (props: PostTimeProps) => {
+const PostTime: React.FC<PostTimeProps> = (props) => {
 
     const addUnit = (value: number, unit: string) => {
         return value.toString() + " " + (value === 1 ? unit : unit + "s");
@@ -26,7 +24,7 @@ const PostTime = (props: PostTimeProps) => {
     })
     res += ' ago';
 
-    return <React.Fragment>{res}</React.Fragment>
+    return <>{res}</>
 }
 
 export default PostTime

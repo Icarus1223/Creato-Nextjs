@@ -4,7 +4,7 @@ interface BaseNumberInputProps extends IBaseInputProps {
     value?: number
 }
 
-const NumberInput: React.FunctionComponent<BaseNumberInputProps> = ({ step, min, max, ...props }) => {
+const NumberInput: React.FC<BaseNumberInputProps> = ({ step, min, max, ...props }) => {
     return <BaseInput type="number" max={max} min={min} step={step} {...props} />
 }
 

@@ -1,5 +1,13 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import Image from "next/image"
+import { Avatar } from "@/src/components/Avatar"
+import { Button } from "@/src/components/Button";
+import Dropdown from "@/src/components/Dropdown";
+import Icon from "@/src/components/Icon";
+import Bio from "@/src/components/Profile/Bio";
+import YoutubeImg from "@/src/assets/img/youtube.png";
+import InstagramImg from "@/src/assets/img/instagram.png";
+import styles from "./Profile.module.css"
 
 interface ProfileProps {
     name: string,
@@ -11,16 +19,7 @@ interface ProfileProps {
     instagram?: string
 }
 
-import { Avatar } from "@/src/components/Avatar"
-import { Button } from "@/src/components/Button";
-import Dropdown from "@/src/components/Dropdown";
-import Icon from "@/src/components/Icon";
-import Bio from "@/src/components/Profile/Bio";
-import YoutubeImg from "../../assets/img/youtube.png";
-import InstagramImg from "../../assets/img/instagram.png";
-import styles from "./Profile.module.css"
-
-export default function Profile(props: ProfileProps) {
+const Profile: React.FC<ProfileProps> = (props) => {
     const [openMore, setOpenMore] = useState(false)
 
     return (
@@ -82,3 +81,5 @@ export default function Profile(props: ProfileProps) {
         </div>
     )
 }
+
+export default Profile

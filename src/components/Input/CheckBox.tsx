@@ -1,6 +1,6 @@
 import BaseInput, { IBaseInputProps } from "./BaseInput";
 
-const CheckBox: React.FunctionComponent<IBaseInputProps> = ({ children, ...props }) => {
+const CheckBox: React.FC<IBaseInputProps> = ({ children, ...props }) => {
     return <BaseInput type="checkbox" {...props}></BaseInput>
 }
 

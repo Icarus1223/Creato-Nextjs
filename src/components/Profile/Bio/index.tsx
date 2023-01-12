@@ -2,7 +2,7 @@ interface BioProps {
     bio?: string
 }
 
-const Bio = (props: BioProps) => {
+const Bio: React.FC<BioProps> = (props) => {
     if (typeof props.bio === 'undefined') return null
 
     return (

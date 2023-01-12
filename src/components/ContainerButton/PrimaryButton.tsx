@@ -1,7 +1,7 @@
 import BaseButton, { IBaseButtonProps } from "./BaseButton"
 import styles from "./ContainerButton.module.css";
 
-export default function PrimaryButton(props: IBaseButtonProps) {
+const PrimaryButton: React.FC<IBaseButtonProps> = (props) => {
     return (
         <BaseButton
             type="button"
@@ -13,3 +13,5 @@ export default function PrimaryButton(props: IBaseButtonProps) {
         </BaseButton>
     )
 }
+
+export default PrimaryButton
