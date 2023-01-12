@@ -19,11 +19,11 @@ const Dropdown: React.FC<DropdownProps> = (props) => {
         if (props.open) return (
             <ul className={`${styles["menu"]} ${props.className}`} ref={wrapRef}>
                 {props.menu.map((item: React.ReactElement) => (
-                    <li key={item.key} className={`${styles["menu-item"]} hover:bg-neutral-100 dark:hover:bg-neutral-700`}>{item}</li>
+                    <li key={item.key} className={styles["menu-item"]}>{item}</li>
                 ))}
             </ul>
         )
-        else return <></>
+        else return null
     }, [props.open])
 
     return (

@@ -6,7 +6,7 @@ export type IBaseButtonProps = React.DetailedHTMLProps<
 >
 
 const BaseButton: React.FC<IBaseButtonProps> = ({ className, children, ...props }) => {
-    return <button className={`${props.value ? styles['containerBtn'] : styles['btn-icon']} ${className} w-[330px]`} {...props}>{children}</button>
+    return <button className={`${props.value ? styles['containerBtn'] : ''} ${className} w-[330px]`} {...props}>{children}</button>
 }
 
 export default BaseButton

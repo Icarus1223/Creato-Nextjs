@@ -1,14 +1,36 @@
 .admin-creator {
-    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
-    @apply w-[320px] rounded-[24px] p-5
+    @apply w-[320px] rounded-[24px] p-5 shadow-[2px_4px_10px_rgba(0,0,0,0.15)] bg-shades-0 dark:bg-neutral-800
 }
 
 .user-creator {
-    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
-    @apply rounded-[24px] w-[320px] p-5 sm:px-[60px] sm:py-[20px] sm:max-w-[850px] sm:w-full sm:inline-flex sm:justify-between
+    @apply rounded-[24px] w-[320px] p-5 sm:px-[60px] sm:py-[20px] sm:max-w-[850px] sm:w-full sm:inline-flex sm:justify-between shadow-[2px_4px_10px_rgba(0,0,0,0.15)] bg-shades-0 dark:bg-neutral-800
 }
 
 .creator-avatar {
     filter: drop-shadow(2px 4px 10px rgba(0, 0, 0, 0.15));
     @apply flex justify-center
+}
+
+.name {
+    @apply font-extrabold text-xl text-primary-500
+}
+
+.category {
+    @apply font-bold text-sm text-neutral-500 mt-[6px] dark:text-shades-0
+}
+
+.admin-creator .name-category {
+    @apply flex justify-center flex-col items-center   
+}
+
+.admin-creator .buttons {
+    @apply mt-5 flex justify-around
+}
+
+.user-creator .name-category {
+    @apply flex justify-center flex-col items-center mt-5 sm:mt-0 sm:ml-5 sm:items-start
+}
+
+.user-creator .buttons {
+    @apply mt-5 flex justify-center sm:mt-0 sm:items-center sm:float-right
 }

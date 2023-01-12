@@ -6,7 +6,7 @@ import {
     MoreIcon,
     NoOfPeopleIcon,
     ProfileIcon
-} from "../../assets/svg"
+} from "../../src/assets/svg"
 
 interface IconProps {
     icon: string,

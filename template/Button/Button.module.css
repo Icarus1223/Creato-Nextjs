@@ -1,9 +1,9 @@
 .btn {
-    @apply p-4
+    @apply inline-flex items-center justify-center  p-4
 }
 
 .btn-icon {
-    @apply p-2.5 w-[40px] h-[40px]
+    @apply inline-flex items-center justify-center  p-2.5 w-[40px] h-[40px]
 }
 
 .btn-rounded {

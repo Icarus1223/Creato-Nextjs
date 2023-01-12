@@ -1,5 +1,5 @@
 .containerBtn {
-    @apply py-[11.5px] rounded-[10px]
+    @apply inline-flex items-center justify-center py-[11.5px] rounded-[10px]
 }
 
 .containerBtn-primary {

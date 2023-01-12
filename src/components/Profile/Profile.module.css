@@ -1,4 +1,43 @@
 .profile {
-    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
-    @apply px-[20px] pt-[20px] pb-[10px] w-full sm:max-w-[850px] relative
+    @apply relative px-[20px] pt-[20px] pb-[10px] w-full sm:max-w-[850px] shadow-[2px_4px_10px_rgba(0,0,0,0.15)]
+}
+
+.profile .more-dropdown {
+    @apply absolute top-[10px] right-[20px]
+}
+
+.profile .more-dropdown .dropdown {
+    @apply right-0 top-[15px] dark:bg-neutral-800
+}
+
+.profile .more-dropdown .dropdown .trigger {
+    @apply w-fit h-[20px] flex justify-center items-center cursor-pointer   
+}
+
+.profile .more-dropdown .dropdown .menu {
+    @apply font-normal text-sm p-1 w-full text-center dark:text-shades-0
+}
+
+.profile .avatar-social {
+    @apply flex justify-between items-center
+}
+
+.profile .avatar-social .social-icon {
+    @apply w-[40px] h-[40px] flex justify-center items-center cursor-pointer
+}
+
+.profile .name-category {
+    @apply mt-[16px] flex justify-between
+}
+
+.profile .name-cateogory .name {
+    @apply font-bold text-xs mb-[4px] text-shades-0
+}
+
+.profile .name-category .category {
+    @apply font-normal text-xxs text-neutral-900 dark:text-neutral-300
+}
+
+.profile .edit-btn {
+    @apply mt-[22px] flex justify-center
 }

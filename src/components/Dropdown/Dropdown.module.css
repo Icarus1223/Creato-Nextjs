@@ -3,18 +3,17 @@
 }
 
 .menu {
-    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
-    @apply absolute my-[5px] mx-0 p-0 w-[300px] bg-shades-0 transition duration-300
+    @apply absolute my-[5px] mx-0 p-0 w-[300px] bg-shades-0 transition duration-300 shadow-[2px_4px_10px_rgba(0,0,0,0.15)]
 }
 
-.menu > li {
+.menu li {
     @apply p-0 m-3 flex justify-center cursor-pointer
 }
 
-.menu > li:hover {
+.menu li:hover {
     @apply rounded-[10px]
 }
 
-.menu > li > .menu-item {
-    @apply font-normal text-sm
+.menu li.menu-item {
+    @apply font-normal text-sm hover:bg-neutral-100 dark:hover:bg-neutral-700
 }
