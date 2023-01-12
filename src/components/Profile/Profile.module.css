@@ -1,3 +1,7 @@
+.more-icon {
+    @apply fill-shades-100 cursor-pointer
+}
+
 .profile {
     @apply relative px-[20px] pt-[20px] pb-[10px] w-full sm:max-w-[850px] shadow-[2px_4px_10px_rgba(0,0,0,0.15)]
 }

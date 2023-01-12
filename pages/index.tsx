@@ -4,9 +4,9 @@ import { Input } from "@/src/components/Input";
 import { Avatar } from "@/src/components/Avatar";
 import SideMenu from "@/src/components/SideMenu";
 import Chip from "@/src/components/Chip";
-import { BSKCard } from "@/template/BSKCard";
-import { Creator } from "@/template/Creator";
-import Profile from "@/template/Profile";
+import { BSKCard } from "@/src/components/BSKCard";
+import { Creator } from "@/src/components/Creator";
+import Profile from "@/src/components/Profile";
 import Icon from "@/src/components/Icon";
 import { useState } from "react";
 

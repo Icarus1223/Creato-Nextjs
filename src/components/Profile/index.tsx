@@ -31,7 +31,7 @@ const Profile: React.FC<ProfileProps> = (props) => {
                     setOpen={setOpenMore}
                     trigger={
                         <div className={styles["trigger"]} onClick={() => setOpenMore(true)}>
-                            <Icon icon="more" className="fill-shades-100 cursor-pointer" />
+                            <Icon icon="more" className={styles["more-icon"]} />
                         </div>
                     }
                     menu={[
