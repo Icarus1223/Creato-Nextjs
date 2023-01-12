@@ -1,6 +1,6 @@
 import { Button } from "@/template/Button";
 import { ContainerButton } from "@/src/components/ContainerButton";
-import { Input } from "@/src/components/Input";
+import { Input } from "@/template/Input";
 import { Avatar } from "template/Avatar";
 import SideMenu from "@/src/components/SideMenu";
 import Chip from "@/template/Chip";
