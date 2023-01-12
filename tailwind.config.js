@@ -95,6 +95,9 @@ module.exports = {
         100: '#000000',
         200: '#D9D9D9'
       },
+      blackRgba: {
+        40: 'rgba(0, 0, 0, 0.4)'
+      }
     },
     fontSize: {
       'xxs': ['12px', '14px'],

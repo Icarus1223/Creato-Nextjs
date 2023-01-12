@@ -3,33 +3,47 @@
 }
 
 .bskcard-home .bsk-avatar {
-    @apply absolute w-[110px] h-[110px] rounded-full inline-flex justify-center items-center z-20;
-    box-shadow: 0px 3.82609px 3.82609px rgba(0, 0, 0, 0.25);
+    @apply absolute w-[110px] h-[110px] rounded-full inline-flex justify-center items-center z-20 bg-shades-0 dark:bg-neutral-800 shadow-[0px_4px_4px_rgba(0,0,0,0.15)]
 }
 
 .bskcard-home .bsk-content {
-    @apply absolute min-w-[320px] h-[655px] bottom-[0px] left-[15px] rounded-t-[25px] rounded-b-[30px];
-    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+    @apply absolute min-w-[320px] h-[655px] bottom-[0px] left-[15px] rounded-t-[25px] rounded-b-[30px] shadow-[2px_4px_10px_rgba(0,0,0,0.15)] bg-gradient-to-b from-shades-200 to-shades-0 dark:from-neutral-700 dark:to-neutral-800
 }
 
 .bskcard-home .bsk-content .header {
-    @apply relative min-h-[50px] pl-[115px] flex flex-col justify-evenly z-10 rounded-t-[20px];
+    @apply relative min-h-[50px] pl-[115px] flex flex-col justify-evenly z-10 rounded-t-[20px] bg-shades-0 dark:bg-neutral-800
+}
+
+.bskcard-home .bsk-content .header .name {
+    @apply font-extrabold text-neutral-700 text-sm dark:text-shades-0
+}
+
+.bskcard-home .bsk-content .header .post-time {
+    @apply font-extrabold text-error-500 text-xs inline-flex items-center
+}
+
+.bskcard-home .bsk-content .header .post-time .clock-icon {
+    @apply mr-[5px] fill-error-500
 }
 
 .bskcard-home .bsk-content .body {
     @apply relative h-[475px] flex justify-center
 }
 
+.bskcard-home .bsk-content .body .thumb {
+    @apply absolute h-[495px] w-[280px] rounded-b-[15px] overflow-hidden flex items-center justify-center top-[-19px]
+}
+
 .bskcard-home .bsk-content .body .locked-bg {
-    background-color: rgba(0, 0, 0, 0.4);
+    @apply absolute h-[495px] w-[280px] rounded-b-[15px] top-[-19px] flex justify-center items-center bg-blackRgba-40
 }
 
 .bskcard-home .bsk-content .body .locked-bg .lock-btn {
-    @apply bg-shades-0
+    @apply px-[10px] w-fit h-[50px] rounded-[7px] border-primary-500 border-[1px] flex justify-center items-center bg-shades-0
 }
 
 .bskcard-home .bsk-content .body .locked-bg .lock-btn span {
-    @apply text-primary-500
+    @apply relative ml-[30px] font-normal text-base text-primary-500
 }
 
 .bskcard-home .bsk-content .body .locked-bg .lock-btn span::before {
@@ -66,9 +80,16 @@
     @apply pt-[15px] px-[20px] h-[100px]
 }
 
+.bskcard-home .bsk-content .footer .title {
+    @apply line-clamp-2 mt-[10px] font-bold text-xl text-primary-500   
+}
+
 .bskcard-profile {
-    @apply relative w-[280px] h-[625px] rounded-[5px];
-    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+    @apply relative w-[280px] h-[625px] rounded-[5px] shadow-[0px_4px_4px_rgba(0,0,0,0.15)] bg-shades-0 dark:bg-neutral-800
+}
+
+.bskcard-profile .header {
+    @apply flex items-center rounded-t-[5px] px-3 py-[5px] h-[28px]
 }
 
 .bskcard-profile .header-locked {
@@ -85,6 +106,10 @@
 
 .bskcard-profile .header-mine {
     @apply bg-mine-500
+}
+
+.bskcard-profile .body {
+    @apply relative flex justify-center items-center h-[495px] rounded-b-[5px] overflow-hidden
 }
 
 .bskcard-profile .body-free {
@@ -104,15 +129,15 @@
 }
 
 .bskcard-profile .locked-bg {
-    background-color: rgba(0, 0, 0, 0.4);
+    @apply absolute h-[495px] w-[280px] flex justify-center items-center bg-blackRgba-40
 }
 
 .bskcard-profile .locked-bg .lock-btn {
-    @apply bg-shades-0
+    @apply px-[10px] w-fit h-[50px] rounded-[7px] border-primary-500 border-[1px] flex justify-center items-center bg-shades-0 
 }
 
 .bskcard-profile .locked-bg .lock-btn span {
-    @apply text-primary-500
+    @apply relative ml-[30px] font-normal text-base text-primary-500
 }
 
 .bskcard-profile .locked-bg .lock-btn span::before {
@@ -135,4 +160,12 @@
 
 .bskcard-profile .footer {
     @apply my-[13px] mx-[9px]
+}
+
+.bskcard-profile .footer .post-time {
+    @apply font-extrabold text-error-500 text-xs inline-flex items-center
+}
+
+.bskcard-profile .footer .title {
+    @apply line-clamp-2 font-bold text-xl text-primary-500
 }

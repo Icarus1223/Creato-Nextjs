@@ -36,41 +36,36 @@ const HomeCard: React.FC<BSKHomeProps> = (props) => {
     const showPrevThumb = () => { setVideoIndex((prevIndex: number) => (prevIndex - 1) % props.thumbnails.length) }
     const showNextThumb = () => { setVideoIndex((prevIndex: number) => (prevIndex + 1) % props.thumbnails.length) }
 
-    const LockedBg = useMemo(() => {
-        if (!props.isLogin) return (
-            <div className={`absolute h-[495px] w-[280px] rounded-b-[15px] top-[-19px] flex justify-center items-center ${styles['locked-bg']}`}>
-                <div className={`px-[10px] w-fit h-[50px] rounded-[7px] border-primary-500 border-[1px] flex justify-center items-center ${styles['lock-btn']}`}>
-                    <span className="relative ml-[30px] font-normal text-base">Unlock</span>
-                </div>
-            </div>
-        )
-        else return null
-    }, [props.isLogin])
-
     return (
         <div className={styles['bskcard-home']}>
-            <div className={`${styles['bsk-avatar']} bg-shades-0 dark:bg-neutral-800`}>
+            <div className={styles['bsk-avatar']}>
                 <Avatar.CreatorAvatar size="md" src={props.user.avatar} />
             </div>
-            <div className={`${styles["bsk-content"]} bg-gradient-to-b from-shades-200 to-shades-0 dark:from-neutral-700 dark:to-neutral-800`}>
-                <div className={`${styles["header"]} bg-shades-0 dark:bg-neutral-800`}>
-                    <div className="font-extrabold text-neutral-700 text-sm dark:text-shades-0">
+            <div className={styles["bsk-content"]}>
+                <div className={styles["header"]}>
+                    <div className={styles["name"]}>
                         <span>{props.user.name}</span>
                     </div>
-                    <div className="font-extrabold text-error-500 text-xm inline-flex items-center">
-                        <Icon icon="clock" className="mr-[5px] fill-error-500" />
+                    <div className={styles["post-time"]}>
+                        <Icon icon="clock" className={styles["clock-icon"]} />
                         <span><PostTime time={props.time} /></span>
                     </div>
                 </div>
                 <div className={styles["body"]}>
-                    <div className={`absolute h-[495px] w-[280px] rounded-b-[15px] overflow-hidden flex items-center justify-center top-[-19px] ${styles[`thumbnail-${type}`]}`}>
+                    <div className={`${styles[`thumb`]} ${styles[`thumbnail-${type}`]}`}>
                         <Image
                             alt="BSKHomeImage"
                             className="w-full"
                             src={props.thumbnails[videoIndex]}
                         />
                     </div>
-                    {LockedBg}
+                    {!props.isLogin &&
+                        <div className={styles['locked-bg']}>
+                            <div className={styles['lock-btn']}>
+                                <span>Unlock</span>
+                            </div>
+                        </div>
+                    }
                     <div className="relative w-[280px]">
                         {videoIndex > 0 && <NavigatorBtn onClick={showPrevThumb} type="home" direction="prev" />}
                         {videoIndex < (props.thumbnails.length - 1) && <NavigatorBtn onClick={showNextThumb} type="home" direction="next" />}
@@ -86,9 +81,11 @@ const HomeCard: React.FC<BSKHomeProps> = (props) => {
                         <Chip className="mr-[9px]" type={type}>
                             {type === 'unlocked' ? 'Unlcoked' : props.currency ? <><CurrencyText currency={props.currency.toUpperCase() as ICurrency} />{` ${props.price}`}</> : 'Free'}
                         </Chip>
-                        <Chip type={type} value={`${props.unlockedCnt} ${props.currency ? 'purchased' : 'unlocked'}`}><Icon icon="noofpeople" className="fill-shades-0 mr-[3px]" /></Chip>
+                        <Chip type={type} value={`${props.unlockedCnt} ${props.currency ? 'purchased' : 'unlocked'}`}>
+                            <Icon icon="noofpeople" className="fill-shades-0 mr-[3px]" />
+                        </Chip>
                     </div>
-                    <div className="line-clamp-2 mt-[10px] font-bold text-xl text-primary-500">
+                    <div className={styles["title"]}>
                         <span>{props.title}</span>
                     </div>
                 </div>

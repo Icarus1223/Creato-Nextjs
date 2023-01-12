@@ -1,5 +1,5 @@
 import { Button } from "@/template/Button";
-import { ContainerButton } from "@/src/components/ContainerButton";
+import { ContainerButton } from "@/template/ContainerButton";
 import { Input } from "@/template/Input";
 import { Avatar } from "template/Avatar";
 import SideMenu from "@/src/components/SideMenu";

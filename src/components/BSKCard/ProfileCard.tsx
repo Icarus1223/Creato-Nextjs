@@ -29,32 +29,26 @@ const ProfileCard: React.FC<BSKProfileProps> = (props) => {
     const showPrevThumb = () => { setVideoIndex((prevIndex: number) => (prevIndex - 1) % props.thumbnails.length) }
     const showNextThumb = () => { setVideoIndex((prevIndex: number) => (prevIndex + 1) % props.thumbnails.length) }
 
-    const LockedBg = useMemo(() => {
-        if (!props.isLogin) return (
-            <div className={`absolute h-[495px] w-[280px] flex justify-center items-center ${styles['locked-bg']}`}>
-                <div className={`px-[10px] w-fit h-[50px] rounded-[7px] border-primary-500 border-[1px] flex justify-center items-center ${styles['lock-btn']}`}>
-                    <span className="relative ml-[30px] font-normal text-base">Unlock</span>
-                </div>
-            </div>
-        )
-        else return null
-    }, [props.isLogin])
-
-
     return (
-        <div className={`${styles['bskcard-profile']} bg-shades-0 dark:bg-neutral-800`}>
-            <div className={`flex items-center rounded-t-[5px] px-3 py-[5px] h-[28px] ${styles[`header-${type}`]}`}>
+        <div className={styles['bskcard-profile']}>
+            <div className={`${styles[`header`]} ${styles[`header-${type}`]}`}>
                 <Chip type={type}>
                     {type === "mine" ? 'My Bite' : type === 'unlocked' ? 'Unlcoked' : props.currency ? <><CurrencyText currency={props.currency.toUpperCase() as ICurrency} />{` ${props.price}`}</> : 'Free'}</Chip>
                 <Chip type={type} value={`${props.unlockedCnt} ${props.currency ? 'purchased' : 'unlocked'}`}><Icon icon="noofpeople" className="fill-shades-0 mr-[3px]" /></Chip>
             </div>
-            <div className={`relative flex justify-center items-center h-[495px] rounded-b-[5px] overflow-hidden ${styles[`body-${type}`]}`}>
+            <div className={`${styles[`body`]} ${styles[`body-${type}`]}`}>
                 <Image
                     alt="BSKProfileImage"
                     className="w-full"
                     src={props.thumbnails[videoIndex]}
                 />
-                {LockedBg}
+                {!props.isLogin &&
+                    <div className={styles['locked-bg']}>
+                        <div className={styles['lock-btn']}>
+                            <span>Unlock</span>
+                        </div>
+                    </div>
+                }
                 <div className="absolute w-[280px] h-[495px]">
                     {videoIndex > 0 && <NavigatorBtn onClick={showPrevThumb} type="profile" direction="prev" />}
                     {videoIndex < (props.thumbnails.length - 1) && <NavigatorBtn onClick={showNextThumb} type="profile" direction="next" />}
@@ -66,11 +60,11 @@ const ProfileCard: React.FC<BSKProfileProps> = (props) => {
                 </div>
             </div>
             <div className={styles["footer"]}>
-                <div className="font-extrabold text-error-500 text-xm inline-flex items-center">
+                <div className={styles["post-time"]}>
                     <Icon icon="clock" className="mr-[5px] fill-error-500" />
                     <span><PostTime time={props.time} /></span>
                 </div>
-                <div className="line-clamp-2 font-bold text-xl text-primary-500">
+                <div className={styles["title"]}>
                     <span>{props.title}</span>
                 </div>
             </div>
