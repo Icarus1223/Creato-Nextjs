@@ -10,7 +10,6 @@ import { BSKCard } from "@/src/components/BSKCard";
 import { Creator } from "@/src/components/Creator";
 import Profile from "@/src/components/Profile";
 import Icon from "@/src/components/Icon";
-import { useState } from "react";
 
 import image from "../src/assets/test.png"
 import image1 from "../src/assets/test1.jpg"
@@ -20,7 +19,6 @@ import { useSession, signIn, signOut } from "next-auth/react"
 
 const Home: NextPageWithLayout = () => {
   const { data: session } = useSession()
-  const [tab, setTab] = useState(0)
 
   return (
     <div className="px-2 py-2 dark:bg-neutral-800">
@@ -145,12 +143,10 @@ const Home: NextPageWithLayout = () => {
       <h1>SideMenu</h1>
       <div className="w-[500px]">
         <SideMenu
-          tab={tab}
-          setTab={setTab}
           tabs={[
-            { url: "tab1", name: "Tab1" },
-            { url: "tab2", name: "Tab2" },
-            { url: "tab3", name: "Tab3" },
+            { id: 1, name: "tab1", component: <></> },
+            { id: 2, name: "tab2", component: <></> },
+            { id: 3, name: "tab3", component: <></> },
           ]}
         />
       </div>

@@ -1,32 +1,47 @@
-import { Dispatch, SetStateAction } from "react";
+import React from "react";
+import { Tab } from '@headlessui/react'
 import styles from "./SideMenu.module.css";
 
 type Tab = {
-    url: string,
-    name: string
+    id: number,
+    name: string,
+    component: React.ReactNode
 }
 
 interface SideMenuProps {
     tabs: Array<Tab>,
-    tab: number,
-    setTab: Dispatch<SetStateAction<number>>
+}
+
+const classNames = (...classes: Array<string>) => {
+    return classes.filter(Boolean).join(' ')
 }
 
 const SideMenu: React.FC<SideMenuProps> = (props) => {
     return (
-        <div className={styles['sidemenu']}>
-            {props.tabs.map((tab: Tab, index: number) => (
-                <div
-                    className={index === props.tab ? styles[`sidemenu-menu-active`] : styles['sidemenu-menu']}
-                    key={index}
-                    onClick={() => {
-                        props.setTab(index)
-                    }}
-                >
-                    <span>{tab.name}</span>
-                </div>
-            ))}
-        </div>
+        <Tab.Group>
+            <Tab.List className={styles["sidemenu"]}>
+                {props.tabs.map((tab) => (
+                    <Tab
+                        key={tab.id}
+                        className={({ selected }) =>
+                            classNames(
+                                'w-full rounded-[10px] !font-bold text-xs sm:text-sm outline-none',
+                                selected
+                                    ? 'bg-shades-0 text-primary-500'
+                                    : 'text-shades-0'
+                            )
+                        }
+                    >
+                        {tab.name}
+                    </Tab>
+                ))}
+            </Tab.List>
+            <Tab.Panels>
+                {props.tabs.map((tab) => (
+                    <Tab.Panel key={tab.id}>{tab.component}</Tab.Panel>
+                ))}
+            </Tab.Panels>
+        </Tab.Group>
     )
 }
 
