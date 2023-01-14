@@ -3,17 +3,13 @@
 }
 
 .menu {
-    @apply absolute my-[5px] mx-0 p-0 w-[300px] bg-shades-0 transition duration-300 shadow-[2px_4px_10px_rgba(0,0,0,0.15)]
+    @apply absolute right-0 my-[5px] mx-0 p-0 w-[300px] bg-shades-0 transition duration-300 shadow-[2px_4px_10px_rgba(0,0,0,0.15)] dark:bg-neutral-800
 }
 
-.menu li {
-    @apply p-0 m-3 flex justify-center cursor-pointer
+.menu .item {
+    @apply p-1 m-3 flex justify-center cursor-pointer font-normal text-sm hover:bg-neutral-100 dark:hover:bg-neutral-700
 }
 
-.menu li:hover {
+.menu .item:hover {
     @apply rounded-[10px]
-}
-
-.menu li.menu-item {
-    @apply font-normal text-sm hover:bg-neutral-100 dark:hover:bg-neutral-700
 }

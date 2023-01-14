@@ -1,36 +1,42 @@
-import { useRef, useEffect, useMemo } from "react";
-import { useOutsideAlerter } from "../../hook";
+import React from "react";
+import { Menu, Transition } from '@headlessui/react';
 import styles from "./Dropdown.module.css";
 
+type Item = {
+    id: any,
+    element: React.ReactElement
+}
+
 interface DropdownProps {
-    open: boolean,
-    setOpen: Function,
     trigger: React.ReactElement,
-    menu: Array<React.ReactElement>,
+    menu: Array<Item>,
     className?: string
 }
 
 const Dropdown: React.FC<DropdownProps> = (props) => {
-    const wrapRef = useRef(null)
-    const res = useOutsideAlerter(wrapRef, props.open)
-    useEffect(() => { if (!res) props.setOpen(res) }, [res])
-
-    const DropdownBody = useMemo(() => {
-        if (props.open) return (
-            <ul className={`${styles["menu"]} ${props.className}`} ref={wrapRef}>
-                {props.menu.map((item: React.ReactElement) => (
-                    <li key={item.key} className={styles["menu-item"]}>{item}</li>
-                ))}
-            </ul>
-        )
-        else return null
-    }, [props.open])
-
     return (
-        <div className={styles["dropdown"]}>
-            {props.trigger}
-            {DropdownBody}
-        </div>
+        <Menu as="div" className={styles["dropdown"]}>
+            <Menu.Button className="inline-flex w-full justify-center rounded-md bg-shades-10 bg-opacity-20 px-4 py-2 text-sm font-normal text-shades-0 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+                {props.trigger}
+            </Menu.Button>
+            <Transition
+                as={React.Fragment}
+                enter="transition ease-out duration-100"
+                enterFrom="transform opacity-0 scale-95"
+                enterTo="transform opacity-100 scale-100"
+                leave="transition ease-in duration-75"
+                leaveFrom="transform opacity-100 scale-100"
+                leaveTo="transform opacity-0 scale-95"
+            >
+                <Menu.Items className={styles["menu"]}>
+                    {props.menu.map((menu: Item) => (
+                        <Menu.Item key={menu.id} className={styles["item"]}>
+                            {menu.element}
+                        </Menu.Item>
+                    ))}
+                </Menu.Items>
+            </Transition>
+        </Menu>
     )
 }
 

@@ -27,16 +27,14 @@ const Profile: React.FC<ProfileProps> = (props) => {
             <div className={styles["more-dropdown"]}>
                 <Dropdown
                     className={styles["dropdown"]}
-                    open={openMore}
-                    setOpen={setOpenMore}
                     trigger={
                         <div className={styles["trigger"]} onClick={() => setOpenMore(true)}>
                             <Icon icon="more" className={styles["more-icon"]} />
                         </div>
                     }
                     menu={[
-                        <span key={0} className={styles["menu"]} onClick={() => setOpenMore(false)}>Copy link</span>,
-                        <span key={1} className={styles["menu"]} onClick={() => setOpenMore(false)}>Cancel</span>
+                        { id: 0, element: <span className={styles["menu"]} onClick={() => setOpenMore(false)}>Copy link</span> },
+                        { id: 1, element: <span className={styles["menu"]} onClick={() => setOpenMore(false)}>Cancel</span> }
                     ]}
                 />
             </div>
