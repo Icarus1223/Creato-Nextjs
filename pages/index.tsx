@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import type { NextPageWithLayout } from '@/pages/_app'
 import Layout from '@/template/Layout';
 import { Button } from "@/src/components/Button";
@@ -9,6 +10,7 @@ import Chip from "@/src/components/Chip";
 import { BSKCard } from "@/src/components/BSKCard";
 import { Creator } from "@/src/components/Creator";
 import Profile from "@/src/components/Profile";
+import { Modal } from '@/src/components/Modal';
 import Icon from "@/src/components/Icon";
 
 import image from "../src/assets/test.png"
@@ -19,6 +21,7 @@ import { useSession, signIn, signOut } from "next-auth/react"
 
 const Home: NextPageWithLayout = () => {
   const { data: session } = useSession()
+  const [isOpen, setOpen] = useState(false)
 
   return (
     <div className="px-2 py-2 dark:bg-neutral-800">
@@ -325,6 +328,10 @@ const Home: NextPageWithLayout = () => {
         profileUrl="/"
         bio="Full Stack Developer"
       />
+      <br /><br />
+      <h1>Modal</h1>
+      <Button.PrimaryButton onClick={() => setOpen(!isOpen)} value="Open Modal" />
+      <Modal.BaseModal isOpen={isOpen} setOpen={setOpen} />
     </div>
   );
 }
