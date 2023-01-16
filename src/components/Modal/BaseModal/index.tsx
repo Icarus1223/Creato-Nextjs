@@ -49,7 +49,7 @@ const BaseModal: React.FC<IBaseModalProps> = (props) => {
                             <Dialog.Panel className={`${className} ${styles["modal"]}`}>
                                 <Dialog.Title className={`${styles["modal-header"]} ${typeof closeIcon !== 'undefined' ? 'justify-between' : 'justify-center'}`}>
                                     <span>{title}</span>
-                                    {typeof closeIcon !== 'undefined' && <span onClick={closeModal}><Icon icon="close" className="cursor-pointer" /></span>}
+                                    {typeof closeIcon !== 'undefined' && <span onClick={closeModal}><Icon icon="close" className="cursor-pointer dark:fill-shades-0" /></span>}
                                 </Dialog.Title>
                                 {children}
                             </Dialog.Panel>
