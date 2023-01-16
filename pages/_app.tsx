@@ -18,7 +18,7 @@ const App: React.FC<AppPropsWithLayout> = ({ Component, pageProps }) => {
 
   return (
     <ErrorBoundary>
-      <ThemeProvider enableSystem={true} attribute="class" forcedTheme=''>
+      <ThemeProvider enableSystem={true} attribute="class" forcedTheme='light'>
         <SessionProvider session={pageProps.session}>
           {getLayout(<Component {...pageProps} />)}
         </SessionProvider>

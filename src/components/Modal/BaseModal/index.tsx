@@ -1,17 +1,28 @@
 import { Dispatch, SetStateAction, Fragment } from "react";
 import { Dialog, Transition } from '@headlessui/react';
+import Icon from "../../Icon";
+import styles from "./BaseModal.module.css";
 
-export interface IBaseModalProps {
+type IModalProps = React.DetailedHTMLProps<
+    React.HtmlHTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+>;
+
+export interface IBaseModalProps extends IModalProps {
     isOpen: boolean,
-    setOpen: Dispatch<SetStateAction<boolean>>
+    setOpen: Dispatch<SetStateAction<boolean>>,
+    className?: string,
+    title: string,
+    closeIcon?: any,
 }
 
 const BaseModal: React.FC<IBaseModalProps> = (props) => {
-    const { isOpen, setOpen } = props
+    const { isOpen, setOpen, className, title, closeIcon, children } = props
+    const closeModal = () => { setOpen(false) }
 
     return (
         <Transition appear show={isOpen} as={Fragment}>
-            <Dialog as="div" className="relative z-50 bg-shades-0" onClose={() => setOpen(false)}>
+            <Dialog as="div" className="relative z-50" onClose={closeModal}>
                 <Transition.Child
                     as={Fragment}
                     enter="ease-out duration-300"
@@ -35,29 +46,12 @@ const BaseModal: React.FC<IBaseModalProps> = (props) => {
                             leaveFrom="opacity-100 scale-100"
                             leaveTo="opacity-0 scale-95"
                         >
-                            <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                                <Dialog.Title
-                                    as="h3"
-                                    className="text-lg font-medium leading-6 text-gray-900"
-                                >
-                                    Payment successful
+                            <Dialog.Panel className={`${className} ${styles["modal"]}`}>
+                                <Dialog.Title className={`${styles["modal-header"]} ${typeof closeIcon !== 'undefined' ? 'justify-between' : 'justify-center'}`}>
+                                    <span>{title}</span>
+                                    {typeof closeIcon !== 'undefined' && <span onClick={closeModal}><Icon icon="close" className="cursor-pointer" /></span>}
                                 </Dialog.Title>
-                                <div className="mt-2">
-                                    <p className="text-sm text-gray-500">
-                                        Your payment has been successfully submitted. We’ve sent
-                                        you an email with all of the details of your order.
-                                    </p>
-                                </div>
-
-                                <div className="mt-4">
-                                    <button
-                                        type="button"
-                                        className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                                        onClick={() => setOpen(false)}
-                                    >
-                                        Got it, thanks!
-                                    </button>
-                                </div>
+                                {children}
                             </Dialog.Panel>
                         </Transition.Child>
                     </div>

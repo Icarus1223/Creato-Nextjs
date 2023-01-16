@@ -1,0 +1,7 @@
+.modal {
+    @apply w-[275px] p-6 transition-all bg-shades-0 dark:bg-neutral-800 rounded-[5px] shadow-[2px_4px_10px_rgba(0,0,0,0.15)]
+}
+
+.modal-header {
+    @apply flex items-center text-lg p-2 font-semibold
+}

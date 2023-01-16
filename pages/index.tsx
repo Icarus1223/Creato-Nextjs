@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import type { NextPageWithLayout } from '@/pages/_app'
 import Layout from '@/template/Layout';
 import { Button } from "@/src/components/Button";
@@ -22,6 +22,7 @@ import { useSession, signIn, signOut } from "next-auth/react"
 const Home: NextPageWithLayout = () => {
   const { data: session } = useSession()
   const [isOpen, setOpen] = useState(false)
+  const [isOpen1, setOpen1] = useState(false)
 
   return (
     <div className="px-2 py-2 dark:bg-neutral-800">
@@ -330,8 +331,37 @@ const Home: NextPageWithLayout = () => {
       />
       <br /><br />
       <h1>Modal</h1>
-      <Button.PrimaryButton onClick={() => setOpen(!isOpen)} value="Open Modal" />
-      <Modal.BaseModal isOpen={isOpen} setOpen={setOpen} />
+      <Button.PrimaryButton onClick={() => setOpen(true)} value="Normal Button one" />
+      <Button.PrimaryButton onClick={() => setOpen1(true)} value="Normal Button two" />
+      <Modal.NormalModal
+        isOpen={isOpen}
+        setOpen={setOpen}
+        title="Delete"
+        closeIcon
+        buttons={[
+          {
+            id: 0,
+            element: <Button.PrimaryButton value="Delete" rounded="true" outline='true' width='110px' onClick={() => alert("alert")} />
+          },
+          {
+            id: 1,
+            element: <Button.PrimaryButton value="Close" rounded="true" width='110px' onClick={() => setOpen(false)} />
+          }
+        ]}
+        bodyText='Delete Data?'
+      />
+      <Modal.NormalModal
+        isOpen={isOpen1}
+        setOpen={setOpen1}
+        title="Quit"
+        buttons={[
+          {
+            id: 0,
+            element: <Button.PrimaryButton value="Delete" rounded="true" outline='true' width='220px' onClick={() => alert("alert")} />
+          }
+        ]}
+        bodyText='Are you sure to quit?'
+      />
     </div>
   );
 }

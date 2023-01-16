@@ -1,5 +1,5 @@
-import BaseModal from "./BaseModal";
+import NormalModal from "./NormalModal"
 
 export const Modal = {
-    BaseModal
+    NormalModal
 }
