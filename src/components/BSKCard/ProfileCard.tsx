@@ -10,7 +10,7 @@ import styles from "./BSKCard.module.css"
 
 type ICurrency = keyof typeof CURRENCIES
 
-interface BSKProfileProps {
+export interface BSKProfileProps {
     thumbnails: Array<string | StaticImageData>,
     isLogin: boolean,
     isMine?: boolean,

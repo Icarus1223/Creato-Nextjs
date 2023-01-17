@@ -1,0 +1,11 @@
+.BSK-list {
+    @apply max-w-[900px] flex w-full flex-wrap justify-evenly
+}
+
+.BSK-container {
+    @apply w-[300px] h-[660px] flex justify-center items-center
+}
+
+.BSK-item {
+    @apply cursor-pointer hover:scale-107
+}

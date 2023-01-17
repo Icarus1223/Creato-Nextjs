@@ -116,6 +116,9 @@ module.exports = {
       'semibold': ['Lato-semibold'],
       'bold': ['Lato-bold'],
       'extrabold': ['Lato-extrabold']
+    },
+    scale: {
+      '107': '1.07',
     }
   },
   plugins: [

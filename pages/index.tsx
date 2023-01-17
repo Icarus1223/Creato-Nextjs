@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import type { NextPageWithLayout } from '@/pages/_app'
 import Layout from '@/template/Layout';
+import BSKList from '@/template/components/BSKList';
 import { Button } from "@/src/components/Button";
 import { ContainerButton } from "@/src/components/ContainerButton";
 import { Input } from "@/src/components/Input";
@@ -18,6 +19,47 @@ import image1 from "../src/assets/test1.jpg"
 import image2 from "../src/assets/test2.png"
 
 import { useSession, signIn, signOut } from "next-auth/react"
+
+const BSKData = [
+  {
+    thumbnails: [image, image1, image2],
+    isLogin: false,
+    locked: true,
+    time: 20000,
+    title: 'BSK title BSK title BSK titlte BSK title BSK title BSK title BSK title BSK title',
+    currency: 'usd',
+    price: 10,
+    unlockedCnt: 2
+  },
+  {
+    thumbnails: [image, image1, image2],
+    isLogin: true,
+    locked: true,
+    time: 5000,
+    title: 'BSK title BSK title BSK titlte BSK title BSK title BSK title BSK title BSK title',
+    unlockedCnt: 2
+  },
+  {
+    thumbnails: [image, image1, image2],
+    isLogin: true,
+    locked: true,
+    time: 30000,
+    title: 'BSK title BSK title BSK titlte BSK title BSK title BSK title BSK title BSK title',
+    currency: 'gbp',
+    price: 20,
+    unlockedCnt: 2
+  },
+  {
+    thumbnails: [image, image1, image2],
+    isLogin: true,
+    locked: true,
+    time: 30000,
+    title: 'BSK title BSK title BSK titlte BSK title BSK title BSK title BSK title BSK title',
+    currency: 'gbp',
+    price: 20,
+    unlockedCnt: 2
+  }
+]
 
 const Home: NextPageWithLayout = () => {
   const { data: session } = useSession()
@@ -362,6 +404,9 @@ const Home: NextPageWithLayout = () => {
         ]}
         bodyText='Are you sure to quit?'
       />
+      <br/><br/>
+      <h1>BSKList</h1>
+      <BSKList BSKs={BSKData}/>
     </div>
   );
 }
