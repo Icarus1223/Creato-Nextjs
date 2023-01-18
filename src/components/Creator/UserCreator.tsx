@@ -3,7 +3,7 @@ import { Button } from "@/src/components/Button";
 import Icon from "@/src/components/Icon";
 import styles from "./Creator.module.css";
 
-interface CreatorProps {
+export interface CreatorProps {
     name: string,
     avatar: string,
     categories: string,

@@ -19,6 +19,7 @@ import image1 from "../src/assets/test1.jpg"
 import image2 from "../src/assets/test2.png"
 
 import { useSession, signIn, signOut } from "next-auth/react"
+import CreatorList from '@/template/components/CreatorList';
 
 const BSKData = [
   {
@@ -58,6 +59,31 @@ const BSKData = [
     currency: 'gbp',
     price: 20,
     unlockedCnt: 2
+  }
+]
+
+const creatorData = [
+  {
+    avatar: "https://i.pravatar.cc/150?img=3",
+    categories: "Tictok Creator",
+    name: "Benjamin",
+    profileUrl: "/"
+  },
+  {
+    avatar: "https://i.pravatar.cc/150?img=3",
+    categories: "Tictok Creator",
+    name: "Benjamin",
+    profileUrl: "/"
+  }, {
+    avatar: "https://i.pravatar.cc/150?img=3",
+    categories: "Tictok Creator",
+    name: "Benjamin",
+    profileUrl: "/"
+  }, {
+    avatar: "https://i.pravatar.cc/150?img=3",
+    categories: "Tictok Creator",
+    name: "Benjamin",
+    profileUrl: "/"
   }
 ]
 
@@ -404,9 +430,12 @@ const Home: NextPageWithLayout = () => {
         ]}
         bodyText='Are you sure to quit?'
       />
-      <br/><br/>
+      <br /><br />
       <h1>BSKList</h1>
-      <BSKList BSKs={BSKData}/>
+      <BSKList BSKs={BSKData} />
+      <br /><br />
+      <h1>Userlist</h1>
+      <CreatorList creators={creatorData} />
     </div>
   );
 }

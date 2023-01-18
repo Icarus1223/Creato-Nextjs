@@ -1,0 +1,7 @@
+.creator-list {
+    @apply max-w-[850px] w-full
+}
+
+.creator-container {
+    @apply mb-[20px] flex justify-center
+}
