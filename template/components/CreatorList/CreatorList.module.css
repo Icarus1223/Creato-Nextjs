@@ -3,5 +3,5 @@
 }
 
 .creator-container {
-    @apply mb-[20px] flex justify-center
+    @apply mb-6 flex justify-center
 }

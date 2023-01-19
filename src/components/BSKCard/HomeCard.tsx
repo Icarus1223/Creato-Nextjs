@@ -61,7 +61,7 @@ const HomeCard: React.FC<BSKHomeProps> = (props) => {
                     </div>
                     {!props.isLogin &&
                         <div className={styles['locked-bg']}>
-                            <div className={styles['lock-btn']}>
+                            <div className={styles['lock-part']}>
                                 <span>Unlock</span>
                             </div>
                         </div>

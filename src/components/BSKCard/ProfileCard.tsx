@@ -44,7 +44,7 @@ const ProfileCard: React.FC<BSKProfileProps> = (props) => {
                 />
                 {!props.isLogin &&
                     <div className={styles['locked-bg']}>
-                        <div className={styles['lock-btn']}>
+                        <div className={styles['lock-part']}>
                             <span>Unlock</span>
                         </div>
                     </div>

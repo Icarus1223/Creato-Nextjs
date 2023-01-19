@@ -224,10 +224,10 @@ const Home: NextPageWithLayout = () => {
       </div>
       <br /><br />
       <h1>Chip</h1>
-      <Chip type="free" value="free" />
-      <Chip type="locked" value="Lock" />
-      <Chip type="unlocked" value="Unlocked" />
-      <Chip type="mine" value="Mine" />
+      <Chip type="FREE" value="Free" />
+      <Chip type="LOCKED" value="Lock" />
+      <Chip type="UNLOCKED" value="Unlocked" />
+      <Chip type="MINE" value="Mine" />
       <br /><br />
       <h1>BSK Card</h1>
       <h2>Home Card</h2>

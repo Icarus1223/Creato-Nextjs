@@ -5,14 +5,21 @@ type IChipProps = React.DetailedHTMLProps<
     HTMLDivElement
 >
 
+enum ChipTypeEnum {
+    FREE = 'free',
+    UNLOCKED = 'unlocked',
+    LOCKED = 'locked',
+    MINE = 'mine'
+}
+
 interface ChipProps extends IChipProps {
-    type: string //free unlocked locked mine
+    type: keyof typeof ChipTypeEnum,
     value?: string
 }
 
 const Chip: React.FC<ChipProps> = (props) => {
     return (
-        <div className={`${styles['chip']} ${styles[`chip-${props.type}`]} ${props.className}`}>
+        <div className={`${styles['chip']} ${styles[`${ChipTypeEnum[props.type]}`]} ${props.className}`}>
             <span>{props.children}</span>
             <span>{props.value}</span>
         </div>

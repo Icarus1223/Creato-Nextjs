@@ -2,18 +2,18 @@
     @apply h-[19px] rounded-[90px] px-[12px] w-fit text-shades-0 text-xs font-bold flex items-center
 }
 
-.chip-free {
+.chip.free {
     @apply bg-free-500
 }
 
-.chip-locked {
+.chip.locked {
     @apply bg-locked-500
 }
 
-.chip-unlocked {
+.chip.unlocked {
     @apply bg-unlocked-500
 }
 
-.chip-mine {
+.chip.mine {
     @apply bg-mine-500
 }
