@@ -1,3 +1,4 @@
+import { ChipType } from "src/constants";
 import styles from "./Chip.module.css";
 
 type IChipProps = React.DetailedHTMLProps<
@@ -5,21 +6,14 @@ type IChipProps = React.DetailedHTMLProps<
     HTMLDivElement
 >
 
-enum ChipTypeEnum {
-    FREE = 'free',
-    UNLOCKED = 'unlocked',
-    LOCKED = 'locked',
-    MINE = 'mine'
-}
-
 interface ChipProps extends IChipProps {
-    type: keyof typeof ChipTypeEnum,
+    type: keyof typeof ChipType,
     value?: string
 }
 
 const Chip: React.FC<ChipProps> = (props) => {
     return (
-        <div className={`${styles['chip']} ${styles[`${ChipTypeEnum[props.type]}`]} ${props.className}`}>
+        <div className={`${styles['chip']} ${styles[`${ChipType[props.type]}`]} ${props.className}`}>
             <span>{props.children}</span>
             <span>{props.value}</span>
         </div>

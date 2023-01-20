@@ -18,3 +18,10 @@ export enum CURRENCIES {
     PHP = '₱',
     IDR = 'Rp'
 }
+
+export enum ChipType {
+    FREE = 'free',
+    UNLOCKED = 'unlocked',
+    LOCKED = 'locked',
+    MINE = 'mine'
+}

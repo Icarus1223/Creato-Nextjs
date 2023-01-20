@@ -23,7 +23,7 @@ export interface BSKProfileProps {
 }
 
 const ProfileCard: React.FC<BSKProfileProps> = (props) => {
-    const type = props.isMine ? 'mine' : props.locked ? props.currency ? 'locked' : 'free' : 'unlocked'
+    const type = props.isMine ? 'MINE' : props.locked ? props.currency ? 'LOCKED' : 'FREE' : 'UNLOCKED'
     const [videoIndex, setVideoIndex] = useState(0)
 
     const showPrevThumb = () => { setVideoIndex((prevIndex: number) => (prevIndex - 1) % props.thumbnails.length) }
@@ -33,12 +33,12 @@ const ProfileCard: React.FC<BSKProfileProps> = (props) => {
         <div className={styles['bskcard-profile']}>
             <div className={`${styles[`header`]} ${styles[`header-${type}`]}`}>
                 <Chip type={type}>
-                    {type === "mine" ? 'My Bite' : type === 'unlocked' ? 'Unlcoked' : props.currency ? <><CurrencyText currency={props.currency.toUpperCase() as ICurrency} />{` ${props.price}`}</> : 'Free'}</Chip>
-                <Chip type={type} value={`${props.unlockedCnt} ${props.currency ? 'purchased' : 'unlocked'}`}><Icon icon="noofpeople" className={styles['profile-icon']} /></Chip>
+                    {type === "MINE" ? 'My Bite' : type === 'UNLOCKED' ? 'Unlcoked' : props.currency ? <><CurrencyText currency={props.currency.toUpperCase() as ICurrency} />{` ${props.price}`}</> : 'Free'}</Chip>
+                <Chip type={type} value={`${props.unlockedCnt} ${props.currency ? 'purchased' : 'UNLOCKED'}`}><Icon icon="noofpeople" className={styles['profile-icon']} /></Chip>
             </div>
             <div className={`${styles[`body`]} ${styles[`body-${type}`]}`}>
                 <Image
-                    alt="BSKProfileImage"
+                    alt="BSKProfileCard Image"
                     className="w-full"
                     src={props.thumbnails[videoIndex]}
                 />

@@ -30,7 +30,7 @@ interface BSKHomeProps {
 }
 
 const HomeCard: React.FC<BSKHomeProps> = (props) => {
-    const type = props.locked ? props.currency ? 'locked' : 'free' : 'unlocked'
+    const type = props.locked ? props.currency ? 'LOCKED' : 'FREE' : 'UNLOCKED'
     const [videoIndex, setVideoIndex] = useState(0)
 
     const showPrevThumb = () => { setVideoIndex((prevIndex: number) => (prevIndex - 1) % props.thumbnails.length) }
@@ -39,7 +39,7 @@ const HomeCard: React.FC<BSKHomeProps> = (props) => {
     return (
         <div className={styles['bskcard-home']}>
             <div className={styles['bsk-avatar']}>
-                <Avatar.CreatorAvatar size="md" src={props.user.avatar} />
+                <Avatar.CreatorAvatar size="md" src={props.user.avatar} alt="BSKHomeCard Avatar" />
             </div>
             <div className={styles["bsk-content"]}>
                 <div className={styles["header"]}>
@@ -79,7 +79,7 @@ const HomeCard: React.FC<BSKHomeProps> = (props) => {
                 <div className={styles["footer"]}>
                     <div className="flex justify-center">
                         <Chip className="mr-[9px]" type={type}>
-                            {type === 'unlocked' ? 'Unlcoked' : props.currency ? <><CurrencyText currency={props.currency.toUpperCase() as ICurrency} />{` ${props.price}`}</> : 'Free'}
+                            {type === 'UNLOCKED' ? 'Unlcoked' : props.currency ? <><CurrencyText currency={props.currency.toUpperCase() as ICurrency} />{` ${props.price}`}</> : 'Free'}
                         </Chip>
                         <Chip type={type} value={`${props.unlockedCnt} ${props.currency ? 'purchased' : 'unlocked'}`}>
                             <Icon icon="noofpeople" className={styles["profile-icon"]} />
