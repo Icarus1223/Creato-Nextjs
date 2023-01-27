@@ -7,6 +7,9 @@ const nextConfig = {
     NEXTAUTH_SECRET: '1d60cbb66c5e7140d8a272e03a9eb9b6',
     SERVER_URL: 'https://bitesized.creatogether.io'
   },
+  images: {
+    domains: ['i.pravatar.cc'],
+  },
   reactStrictMode: true,
   swcMinify: true,
   webpack: config => {

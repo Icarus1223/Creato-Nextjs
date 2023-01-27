@@ -31,10 +31,10 @@ const ProfileCard: React.FC<BSKProfileProps> = (props) => {
 
     return (
         <div className={styles['bskcard-profile']}>
-            <div className={`${styles[`header`]} ${styles[`header-${type}`]}`}>
+            <div className={`${styles[`header`]} ${styles[`header-${type.toLowerCase()}`]}`}>
                 <Chip type={type}>
                     {type === "MINE" ? 'My Bite' : type === 'UNLOCKED' ? 'Unlcoked' : props.currency ? <><CurrencyText currency={props.currency.toUpperCase() as ICurrency} />{` ${props.price}`}</> : 'Free'}</Chip>
-                <Chip type={type} value={`${props.unlockedCnt} ${props.currency ? 'purchased' : 'UNLOCKED'}`}><Icon icon="noofpeople" className={styles['profile-icon']} /></Chip>
+                <Chip type={type} value={`${props.unlockedCnt} ${props.currency ? 'purchased' : 'Unlocked'}`}><Icon icon="noofpeople" className={styles['profile-icon']} /></Chip>
             </div>
             <div className={`${styles[`body`]} ${styles[`body-${type}`]}`}>
                 <Image

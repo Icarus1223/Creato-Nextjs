@@ -10,8 +10,8 @@ export interface BaseImgProps {
 
 import styles from "./Avatar.module.css";
 
-const BaseAvatar: React.FC<BaseImgProps> = ({ size, className, ...props }) => {
-    return <Image className={`${styles['avatar']} ${styles[`avatar-${size}`]} ${className}`} {...props} />
+const BaseAvatar: React.FC<BaseImgProps> = ({ size, className, src, alt }) => {
+    return <Image className={`${styles['avatar']} ${styles[`avatar-${size}`]} ${className}`} src={src} alt={alt} width={100} height={100} />
 }
 
 export default BaseAvatar

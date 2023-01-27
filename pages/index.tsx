@@ -205,11 +205,11 @@ const Home: NextPageWithLayout = () => {
       <h1>Avatar</h1>
       <h2>CreatorAvatar</h2>
       <div className="flex">
-        <Avatar.CreatorAvatar size="xs" src="https://i.pravatar.cc/150?img=3" />
-        <Avatar.CreatorAvatar size="sm" src="https://i.pravatar.cc/150?img=3" />
-        <Avatar.CreatorAvatar size="md" src="https://i.pravatar.cc/150?img=3" />
-        <Avatar.CreatorAvatar size="lg" src="https://i.pravatar.cc/150?img=3" />
-        <Avatar.CreatorAvatar size="xl" hover="true" src="https://i.pravatar.cc/150?img=3" />
+        <Avatar.CreatorAvatar size="xs" alt="xs" src="https://i.pravatar.cc/150?img=3" />
+        <Avatar.CreatorAvatar size="sm" alt="sm" src="https://i.pravatar.cc/150?img=3" />
+        <Avatar.CreatorAvatar size="md" alt="md" src="https://i.pravatar.cc/150?img=3" />
+        <Avatar.CreatorAvatar size="lg" alt="lg" src="https://i.pravatar.cc/150?img=3" />
+        <Avatar.CreatorAvatar size="xl" alt="xl" hover="true" src="https://i.pravatar.cc/150?img=3" />
       </div>
       <br /><br />
       <h1>SideMenu</h1>
